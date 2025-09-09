@@ -5,10 +5,10 @@
     <classes>
       <class name="Admin_Masters_Test.Distributor_Master_Test">
         <methods>
-          <include name="close"/>
-          <include name="afterSuite"/>
+          <include name="tearDown"/>
           <include name="openbrowser"/>
           <include name="Distributor_Add"/>
+          <include name="generateReport"/>
           <include name="Data_Provider"/>
         </methods>
       </class> <!-- Admin_Masters_Test.Distributor_Master_Test -->

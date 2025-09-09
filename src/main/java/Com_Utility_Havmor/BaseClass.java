@@ -1,10 +1,13 @@
 package Com_Utility_Havmor;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +22,7 @@ public class BaseClass {
 	 public static WebDriver driver;
 	    public static Confiq_Data_Provider_Havmor confiq;
 	    public static Excel_Data_Provider_Havmor excel;
+	    public WebDriverWait wait;
 	 
 	    // BeforeSuite to initialize the ExtentReports
 	    @BeforeSuite
@@ -42,6 +46,8 @@ public class BaseClass {
 	        driver.manage().window().maximize();
 	        
 	        ObjectRepo_Havmor.driver = driver;
+	        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	        
 	        
 	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	 
@@ -53,30 +59,37 @@ public class BaseClass {
 	        Thread.sleep(1000);
 	        Liabrary_Havmor.custom_Sendkeys(loginelements.getPassword(), excel.getStringdata2("Sheet1", 1, 1), "Password Field");
 	        Thread.sleep(3000);
+	        
+	        // Wait for Continue button
+	        wait.until(ExpectedConditions.elementToBeClickable(loginelements.getContinue()));
 	        Liabrary_Havmor.custom_click(loginelements.getContinue(), "Continue Btn");
 	        Thread.sleep(1000);
 	        
-	        Liabrary_Havmor.custom_Sendkeys(loginelements.getTxtOTP(), excel.getStringdata("Sheet1", 1, 2), "OTP Field");
+	        Liabrary_Havmor.custom_Sendkeys(loginelements.getTxtOTP(), excel.getStringdata2("Sheet1", 1, 2), "OTP Field");
 	        Thread.sleep(1000);
+	        
+	        wait.until(ExpectedConditions.elementToBeClickable(loginelements.getVerify_OTP()));
 	        Liabrary_Havmor.custom_click(loginelements.getVerify_OTP(), "Verify OTP Btn");
 	        Thread.sleep(1000);
 	        
 	        
 	    }
+	    
 	// AfterMethod to close the browser after each test
-	    @AfterMethod
-	    public void close() {
-	        // Quit the driver after the test
+	    // AfterMethod → Always close browser
+	    @AfterMethod(alwaysRun = true)
+	    public void tearDown() {
 	        if (driver != null) {
 	            driver.quit();
 	        }
 	    }
 	 
+	    
 	    // AfterSuite to finalize the ExtentReports and generate the final report after all tests are executed
+	    // AfterSuite → Finalize report
 	    @AfterSuite
-	    public void afterSuite() {
-	        // Finalize the report after all tests are executed
-	    	ObjectRepo_Havmor.finalizeReport();
+	    public void generateReport() {
+	        ObjectRepo_Havmor.finalizeReport();
 	    }
 	}
 	

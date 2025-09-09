@@ -28,6 +28,13 @@ public class Distributor_Master_Test extends BaseClass{
 	Thread.sleep(1000);
 	
 	
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_02", "Verify that user Click On Distributor Master Sub Menu ", () ->{
+		Liabrary_Havmor.custom_click(home.getDistributorMaster_SubMenu(), "Click On Distributor Master Menu");      
+		});
+		Thread.sleep(1000);
+	
+	
+	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_02", "Verify that user Click On Distributor Master Menu ", () ->{
 	Liabrary_Havmor.custom_click(DM.getDistributor_Master(), "Click On Distributor Master Menu");
 	});

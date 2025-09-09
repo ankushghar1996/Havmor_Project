@@ -63,7 +63,7 @@ WebDriver driver;
 	private WebElement Scheme_Menu;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//ul[@class='nav nav-treeview']/li[@class='nav-item menu-is-opening menu-open']//p[normalize-space()='Distributor Master'])[1]")
+	@FindBy(how = How.XPATH, using = "(//ul[@class='nav nav-treeview']/li//p[normalize-space()='Distributor Master'])[1]")
 	private WebElement DistributorMaster_SubMenu;
 	
 	
