@@ -10,7 +10,11 @@ public class Route_Master_Add_BTN_Main {
 	   @FindBy(how = How.XPATH, using = "(//div[@id='mainDiv']//ul//li//p[text()='Route Master'])[2]")
 	   private WebElement Route_Master;
 	   
-	   @FindBy(how = How.XPATH, using = "")
+	   public WebElement getRoute_Name_Excel() {
+		return Route_Name_Excel;
+	}
+
+	@FindBy(how = How.XPATH, using = "")
 	   private WebElement Route_Name_Excel;
 	   
 	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_radGridRouteMaster_GridData']//tbody//tr)[1]")

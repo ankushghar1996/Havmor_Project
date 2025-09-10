@@ -1,0 +1,29 @@
+<<<<<<< HEAD
+/target/
+=======
+# Maven build
+/target/
+
+# TestNG reports
+/test-output/
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IntelliJ IDEA (agar kabhi use karo)
+.idea/
+*.iml
+
+# Excel/Config backup (agar accidentally ban jaye)
+~$*
+>>>>>>> d92cac472d1179457300a08f185bbf8185be9bfa

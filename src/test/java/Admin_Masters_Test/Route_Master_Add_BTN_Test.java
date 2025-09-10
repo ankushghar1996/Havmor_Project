@@ -74,7 +74,7 @@ public class Route_Master_Add_BTN_Test  extends BaseClass{
         Thread.sleep(1000);
         
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_11", "Verify that user Click on Salesman Name Dropdown Value", () ->{
-        Liabrary_Havmor.custom_Sendkeys(loginelements.getTxtOTP(), excel.getStringdata2("Sheet1", 1, 2), "OTP Field");
+        Liabrary_Havmor.custom_Sendkeys(RMADD.getRoute_Name_Excel(), excel.getStringdata2("Sheet1", 1, 2), "OTP Field");
         });
         Thread.sleep(1000);
 
