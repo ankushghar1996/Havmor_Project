@@ -1,9 +1,13 @@
 package Admin_Masters_Test;
 
+import java.time.Duration;
+
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import Admin_Masters.PJP_Master_Main;
 import Admin_Masters.Route_Master_Add_BTN_Main;
 import Com_LoginPage_POM.HomePage_Havmor;
 import Com_Utility_Havmor.BaseClass;
@@ -33,18 +37,35 @@ public class Route_Master_Add_BTN_Test  extends BaseClass{
     	});
     	Thread.sleep(1000);
     	
-    	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_04", "Verify that user Click on Add Button", () ->{
-        Liabrary_Havmor.custom_click(RMADD.getAdd_Button(),"Add Button");
-        });
-        Thread.sleep(1000);
+//    	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_04", "Verify that user Click on Add Button", () ->{
+//        Liabrary_Havmor.custom_click(RMADD.getAdd_Button(),"Add Button");
+//        });
+//        Thread.sleep(1000);
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_05", "Verify that user Click on Add Button", () ->{
-        Liabrary_Havmor.custom_click(RMADD.getAdd_Button(),"Add Button");
-        });
-        Thread.sleep(1000);
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_05", "Verify that user Click on Add Button",() -> {
+        	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        	        
+//        	        // Wait for overlay (modal) to disappear before clicking
+//        	        wait.until(ExpectedConditions.invisibilityOfElementLocated(
+//        	            By.id("myModal") // use the actual modal/overlay locator
+//        	        ));
+//        	        
+        	        // Wait until Add Button is clickable
+        	        WebElement addBtn = wait.until(
+        	            ExpectedConditions.elementToBeClickable(RMADD.getAdd_Button())
+        	        );
+
+        	        // Click it
+        	        Liabrary_Havmor.custom_click(addBtn, "Add Button");
+        	    }
+        	);
+
             
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_06", "Verify that user Click on Channel Type Dropdown", () ->{
-        Liabrary_Havmor.custom_click(RMADD.getChannel_Type_Dropdown(),"Channel Type Dropdown");
+        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        	WebElement channelDropdown = wait.until(ExpectedConditions.elementToBeClickable(RMADD.getChannel_Type_Dropdown()));
+        	channelDropdown.click();
+
         });
         Thread.sleep(1000);
         
@@ -74,7 +95,7 @@ public class Route_Master_Add_BTN_Test  extends BaseClass{
         Thread.sleep(1000);
         
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_11", "Verify that user Click on Salesman Name Dropdown Value", () ->{
-        Liabrary_Havmor.custom_Sendkeys(RMADD.getRoute_Name_Excel(), excel.getStringdata2("Sheet1", 1, 2), "OTP Field");
+        Liabrary_Havmor.custom_Sendkeys(RMADD.getRoute_Name_Excel(), excel.getStringdata2("Route_Add", 1, 0), "Route Name");
         });
         Thread.sleep(1000);
 

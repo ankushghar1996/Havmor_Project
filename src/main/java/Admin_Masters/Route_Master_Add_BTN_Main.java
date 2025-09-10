@@ -14,7 +14,7 @@ public class Route_Master_Add_BTN_Main {
 		return Route_Name_Excel;
 	}
 
-	@FindBy(how = How.XPATH, using = "")
+	   @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtRouteName']")
 	   private WebElement Route_Name_Excel;
 	   
 	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_radGridRouteMaster_GridData']//tbody//tr)[1]")
@@ -23,19 +23,19 @@ public class Route_Master_Add_BTN_Main {
 	   @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnAdd']")
 	   private WebElement Add_Button;
 	   
-	   @FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlchaneltype']")
+	   @FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlchaneltype_Arrow']")
 	   private WebElement Channel_Type_Dropdown;
 	   
 	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlchaneltype_DropDown']//ul//li)[1]")
 	   private WebElement Channel_Type_Dropdown_Value;
 	   
-	   @FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor']")
+	   @FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_Arrow']")
 	   private WebElement Distributor_Name;
 	   
 	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_DropDown']//ul//li)[5]")
 	   private WebElement Distributor_Name_Value;
 	   
-	   @FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsalesman']")
+	   @FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsalesman_Arrow']")
 	   private WebElement Salesman_Name_Dropdown;
 	   
 	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsalesman_DropDown']//ul//li)[1]")
