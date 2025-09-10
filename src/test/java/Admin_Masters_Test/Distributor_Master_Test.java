@@ -15,7 +15,7 @@ public class Distributor_Master_Test extends BaseClass{
 
 	
 	@Test
-	public void Distributor_Add() throws Exception {
+	public void Distributor_Homepage() throws Exception {
 	
 	
 	HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
@@ -34,11 +34,12 @@ public class Distributor_Master_Test extends BaseClass{
 		Thread.sleep(1000);
 	
 	
-	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_02", "Verify that user Click On Distributor Master Menu ", () ->{
 	Liabrary_Havmor.custom_click(DM.getDistributor_Master(), "Click On Distributor Master Menu");
 	});
 	Thread.sleep(1000);
+	
+	
 	
 	
 	}
