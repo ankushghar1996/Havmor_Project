@@ -156,7 +156,8 @@ WebDriver driver;
 	private WebElement Sales_Hierarchy_dropdown;
 	
 	
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlArea_DropDown']//child::ul//li[normalize-space()='Mah Pune/MaiEnt.']")
+
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlArea_DropDown']//child::ul//li[normalize-space()='Mumbai']")
 	private WebElement Sales_Hierarchy_Value;
 	
 	
@@ -211,9 +212,10 @@ WebDriver driver;
 	@FindBy(how = How.XPATH, using = "//div[@class='col-md-3 mb-2']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState']")
 	private WebElement State_dropdown;
 	
-	//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[15]
+
+	
 	//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[15]")
 	private WebElement State_dropdown_value;
 	
 	
