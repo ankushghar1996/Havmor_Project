@@ -19,6 +19,24 @@ WebDriver driver;
 	@FindBy(how=How.XPATH,using="(//div[@id='mainDiv']//ul//li//p[text()='Route Master'])[1]")
     private WebElement Route_Master_Submenu;
 	
+	public WebElement getSalesman_Master_Submenu() {
+		return Salesman_Master_Submenu;
+	}
+
+
+
+
+
+	public WebElement getSalesman_Transfer() {
+		return Salesman_Transfer;
+	}
+
+	@FindBy(how=How.XPATH,using="(//div[@id='mainDiv']//ul//li//p[text()='Salesman Master'])[1]")
+    private WebElement Salesman_Master_Submenu;
+	
+	@FindBy(how=How.XPATH,using="(//div[@id='mainDiv']//ul//li//p[text()='Salesman Transfer'])[1]")
+    private WebElement Salesman_Transfer;
+	
 	public WebElement getRoute_Master_Submenu() {
 		return Route_Master_Submenu;
 	}

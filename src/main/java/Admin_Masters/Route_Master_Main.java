@@ -52,6 +52,62 @@ public class Route_Master_Main {
    
    @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnSave']")
    private WebElement Save_Button;
+
+public WebElement getRoute_Master() {
+	return Route_Master;
+}
+
+public WebElement getGrid_Data() {
+	return Grid_Data;
+}
+
+public WebElement getAdd_Button() {
+	return Add_Button;
+}
+
+public WebElement getChannel_Type_Dropdown() {
+	return Channel_Type_Dropdown;
+}
+
+public WebElement getChannel_Type_Dropdown_Value() {
+	return Channel_Type_Dropdown_Value;
+}
+
+public WebElement getDistributor_Name() {
+	return Distributor_Name;
+}
+
+public WebElement getDistributor_Name_Value() {
+	return Distributor_Name_Value;
+}
+
+public WebElement getSalesman_Name_Dropdown() {
+	return Salesman_Name_Dropdown;
+}
+
+public WebElement getSalesman_Name_Dropdown_Value() {
+	return Salesman_Name_Dropdown_Value;
+}
+
+public WebElement getVisit_Frequency_Dropdown() {
+	return Visit_Frequency_Dropdown;
+}
+
+public WebElement getVisit_Frequency_Dropdown_Value() {
+	return Visit_Frequency_Dropdown_Value;
+}
+
+public WebElement getWeekDay1_Dropdown() {
+	return WeekDay1_Dropdown;
+}
+
+public WebElement getWeekDay1_Dropdown_Value() {
+	return WeekDay1_Dropdown_Value;
+}
+
+public WebElement getSave_Button() {
+	return Save_Button;
+}
    
    
    
