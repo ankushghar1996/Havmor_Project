@@ -2,15 +2,19 @@ package Com_Utility_Havmor;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.poi.ss.usermodel.Cell;                    
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Cell;
+
+
+
 
 
 public class Excel_Data_Provider_Havmor {
@@ -49,6 +53,57 @@ private XSSFWorkbook wb;
 		
 }
 	
+	
+	public String getStringdata2(String sheetname, int rownum, int cellnum) {
+	    XSSFSheet sheet = wb.getSheet(sheetname);
+	    if (sheet == null) {
+	        throw new RuntimeException("❌ Sheet not found: " + sheetname);
+	    }
+
+	    Row row = sheet.getRow(rownum);
+	    if (row == null) {
+	        throw new RuntimeException("❌ Row " + rownum + " not found in sheet: " + sheetname);
+	    }
+
+	    Cell cell = row.getCell(cellnum);
+	    if (cell == null) {
+	        return "";  // Empty cell
+	    }
+
+	    switch (cell.getCellType()) {
+	        case STRING:
+	            return cell.getStringCellValue();
+
+	        case NUMERIC:
+	            if (DateUtil.isCellDateFormatted(cell)) {
+	                return cell.getDateCellValue().toString();
+	            } else {
+	                double numericValue = cell.getNumericCellValue();
+	                if (numericValue == (long) numericValue) {
+	                    return String.valueOf((long) numericValue); // integer
+	                } else {
+	                    return String.valueOf(numericValue); // decimal
+	                }
+	            }
+
+	        case BOOLEAN:
+	            return String.valueOf(cell.getBooleanCellValue());
+
+	        case FORMULA:
+	            return cell.getCellFormula();
+
+	        default:
+	            return "";
+	    }
+	}
+
+
+	
+	
+	
+	
+	/*
+	
 	public String getStringdata2(String sheetname, int rownum, int cellnum) {
 
 	    Cell cell = wb.getSheet(sheetname).getRow(rownum).getCell(cellnum);
@@ -77,6 +132,7 @@ private XSSFWorkbook wb;
 
 	}
  
+	*/
 	
 	
 	public  String get_Date(String sheetname,int rownum,int cellnum) {
