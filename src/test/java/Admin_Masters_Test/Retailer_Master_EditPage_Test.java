@@ -21,6 +21,7 @@ public class Retailer_Master_EditPage_Test extends BaseClass{
 		Retailer_Master_AddPage Add = PageFactory.initElements(driver , Retailer_Master_AddPage.class);
 		
 		
+		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Edit_TC_01", "Verify that user Click On Master Menu ", () ->{
 		Liabrary_Havmor.custom_click(home.getMaster_Menu(), "Click On Master Menu");      
 		});
