@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Admin_Masters_Test.Distributor_Master_Test">
+      <class name="Admin_Masters_Test.Distributor_Master_AddPage">
         <methods>
+          <include name="Distributor_Add"/>
           <include name="tearDown"/>
           <include name="openbrowser"/>
-          <include name="Distributor_Add"/>
           <include name="generateReport"/>
           <include name="Data_Provider"/>
         </methods>
-      </class> <!-- Admin_Masters_Test.Distributor_Master_Test -->
+      </class> <!-- Admin_Masters_Test.Distributor_Master_AddPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
