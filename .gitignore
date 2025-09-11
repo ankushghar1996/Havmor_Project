@@ -1,33 +1,45 @@
-<<<<<<< HEAD
+# =========================
+# Build & Output Folders
+# =========================
 /target/
-=======
-# Maven build
-/target/
-
-# TestNG reports
 /test-output/
+/bin/
 
-# Eclipse specific files
+# =========================
+# Eclipse Specific Files
+# =========================
 .classpath
 .project
 .settings/
 
-# Logs and temp files
+# =========================
+# Logs & Temp Files
+# =========================
 *.log
 *.tmp
 
-# OS specific files
+# =========================
+# OS Specific Files
+# =========================
 .DS_Store
 Thumbs.db
 
-# IntelliJ IDEA (agar kabhi use karo)
+# =========================
+# IntelliJ IDEA Files
+# =========================
 .idea/
 *.iml
 
-# Excel/Config backup (agar accidentally ban jaye)
+# =========================
+# Excel/Config Files
+# =========================
+# Ignore all Excel files globally
+*.xlsx
+*.xls
+
+# BUT allow Excel files inside Excel_TestData folder
+!Excel_TestData/*.xlsx
+!Excel_TestData/*.xls
+
+# Ignore temporary Excel backup files
 ~$*
-<<<<<<< HEAD
-/bin/
-=======
->>>>>>> d92cac472d1179457300a08f185bbf8185be9bfa
->>>>>>> 4f9a48fa912bebb1252f0d75f7d0a88cf9651da6
