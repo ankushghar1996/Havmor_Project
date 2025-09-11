@@ -4,38 +4,40 @@
 /target/
 /test-output/
 /bin/
- 
+
+
 # =========================
 # Eclipse Specific Files
 # =========================
 .classpath
 .project
 .settings/
- 
+
 # =========================
 # Logs & Temp Files
 # =========================
 *.log
 *.tmp
- 
+
 # =========================
 # OS Specific Files
 # =========================
 .DS_Store
 Thumbs.db
- 
+
 # =========================
 # IntelliJ IDEA Files
 # =========================
 .idea/
 *.iml
- 
+
 # =========================
 # Excel/Config Files
 # =========================
 # Ignore all Excel files globally
 *.xlsx
 *.xls
+
  
 # BUT allow Excel files inside Excel_TestData folder
 !Excel_TestData/*.xlsx
@@ -44,3 +46,4 @@ Thumbs.db
 # Ignore temporary Excel backup files
 ~$*
  
+
