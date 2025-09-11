@@ -19,13 +19,16 @@ WebDriver driver;
 	@FindBy(how=How.XPATH,using="(//div[@id='mainDiv']//ul//li//p[text()='Route Master'])[1]")
     private WebElement Route_Master_Submenu;
 	
+	@FindBy(how=How.XPATH,using="//div[@id='mainDiv']//p[text()='Product Management']")
+    private WebElement Product_Management_Submenu;
+	
+	public WebElement getProduct_Management_Submenu() {
+		return Product_Management_Submenu;
+	}
+
 	public WebElement getSalesman_Master_Submenu() {
 		return Salesman_Master_Submenu;
 	}
-
-
-
-
 
 	public WebElement getSalesman_Transfer() {
 		return Salesman_Transfer;
