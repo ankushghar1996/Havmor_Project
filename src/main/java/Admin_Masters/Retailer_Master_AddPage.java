@@ -309,7 +309,7 @@ public class Retailer_Master_AddPage {
 	private WebElement GstType;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGstType_DropDown']//ul//li)[1]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGstType_DropDown']//ul//li)[2]")
 	private WebElement GstType_value;
 	
 	
@@ -457,6 +457,28 @@ public class Retailer_Master_AddPage {
 	
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlType3_DropDown']//ul//li)[1]")
 	private WebElement Type3_value;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtgstNumbers']")
+	private WebElement gstNumbers;
+
+
+	public WebElement getGstNumbers() {
+		return gstNumbers;
+	}
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtBankIfscCode']")
+	private WebElement BankIfscCode;
+
+
+	public WebElement getBankIfscCode() {
+		return BankIfscCode;
+	}
+	
+	
+	
+	
 	
 	
 	
