@@ -1,0 +1,72 @@
+package Admin_Masters;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+public class Media_Upload_Main {
+
+	
+	@FindBy(how=How.XPATH,using="")
+    private WebElement Media_Upload;
+	
+	
+	@FindBy(how=How.XPATH,using="")
+    private WebElement Add_Media;
+	
+	public WebElement getMedia_Upload() {
+		return Media_Upload;
+	}
+
+	public WebElement getAdd_Media() {
+		return Add_Media;
+	}
+
+	public WebElement getCategory() {
+		return Category;
+	}
+
+	public WebElement getCategory_Value() {
+		return Category_Value;
+	}
+
+	public WebElement getMedia_Title_Textbox_Excel() {
+		return Media_Title_Textbox_Excel;
+	}
+
+	public WebElement getDescription_Textbox_Excel() {
+		return Description_Textbox_Excel;
+	}
+
+	public WebElement getSelect_Image_Upload_Button() {
+		return Select_Image_Upload_Button;
+	}
+
+	public WebElement getSave_Button() {
+		return Save_Button;
+	}
+
+	@FindBy(how=How.XPATH,using="")
+    private WebElement Category;
+	
+	@FindBy(how=How.XPATH,using="")
+    private WebElement Category_Value;
+	
+	@FindBy(how=How.XPATH,using="")
+    private WebElement Media_Title_Textbox_Excel;
+	
+	@FindBy(how=How.XPATH,using="")
+    private WebElement Description_Textbox_Excel;
+	
+	@FindBy(how=How.XPATH,using="")
+    private WebElement Select_Image_Upload_Button;
+	
+	@FindBy(how=How.XPATH,using="")
+    private WebElement Save_Button;
+	
+	
+	
+	
+	
+	
+}

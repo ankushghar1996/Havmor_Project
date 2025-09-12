@@ -74,7 +74,7 @@ public class Product_Image_Uplod_Test extends BaseClass {
 			        );
 
 			        // Build an absolute path to your file
-			        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor11.png";
+			        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb Size.jpg";
 			        System.out.println("Uploading file: " + filePath);
 
 			        // Send the file path directly to the hidden file input

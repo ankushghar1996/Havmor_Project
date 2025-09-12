@@ -22,8 +22,52 @@ WebDriver driver;
 	@FindBy(how=How.XPATH,using="//div[@id='mainDiv']//p[text()='Product Management']")
     private WebElement Product_Management_Submenu;
 	
+	@FindBy(how=How.XPATH,using="//div[@id='mainDiv']//p[text()='Product Master']")
+    private WebElement Product_Master_Submenu;
+	
+	@FindBy(how=How.XPATH,using="//div[@id='mainDiv']//p[text()='Special Product Defination']")
+    private WebElement Special_Product_Defination_Submenu;
+	
+	@FindBy(how=How.XPATH,using="//div[@id='mainDiv']//p[text()='Product Image Upload']")
+    private WebElement Product_Image_Upload_Submenu;
+	
+	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Activity']")
+	private WebElement Activity_Master_Menu;
+	
+	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Media']")
+	private WebElement Activity_Media_SubMenu;
+	
+	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='PJP Management']")
+	private WebElement PJP_Management_SubMenu;
+
+	public WebElement getActivity_Master_Menu() {
+		return Activity_Master_Menu;
+	}
+
+	public WebElement getActivity_Media_SubMenu() {
+		return Activity_Media_SubMenu;
+	}
+
+	public WebElement getPJP_Management_SubMenu() {
+		return PJP_Management_SubMenu;
+	}
+
 	public WebElement getProduct_Management_Submenu() {
 		return Product_Management_Submenu;
+	}
+
+	public WebElement getSpecial_Product_Defination_Submenu() {
+		return Special_Product_Defination_Submenu;
+	}
+
+	public WebElement getProduct_Master_Submenu() {
+		return Product_Master_Submenu;
+	}
+
+
+
+	public WebElement getProduct_Image_Upload_Submenu() {
+		return Product_Image_Upload_Submenu;
 	}
 
 	public WebElement getSalesman_Master_Submenu() {
