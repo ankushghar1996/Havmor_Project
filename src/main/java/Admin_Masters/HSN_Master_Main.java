@@ -6,8 +6,7 @@ import org.openqa.selenium.support.How;
 
 public class HSN_Master_Main {
 
-	
-	
+
 	@FindBy(how=How.XPATH , using = "//input[@id='ParentMasterContentPlaceHolder1_BtnExport']")
 	private WebElement Download_Template;
 	
@@ -18,6 +17,7 @@ public class HSN_Master_Main {
 	public WebElement getHSN_Master() {
 		return HSN_Master;
 	}
+	
 
 	@FindBy(how=How.XPATH , using = "//input[@id='ParentMasterContentPlaceHolder1_UploadButton']")
 	private WebElement Select_File_to_upload;
@@ -26,8 +26,8 @@ public class HSN_Master_Main {
 	private WebElement Upload_button;
 
 	public WebElement getDownload_Template() {
-		return Download_Template;
-	}
+		return Download_Template; 
+	} 
 
 	public WebElement getSelect_File_to_upload() {
 		return Select_File_to_upload;
@@ -39,14 +39,6 @@ public class HSN_Master_Main {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }
