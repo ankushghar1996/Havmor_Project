@@ -49,7 +49,8 @@ public class BaseClass {
 	        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 	        
 	        
-	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	 
 	        // Initialize the LoginPage object using PageFactory
 	        LoginPage loginelements = PageFactory.initElements(driver, LoginPage.class);
