@@ -9,10 +9,26 @@ public class HomePage_Havmor {
 
 WebDriver driver;
 	
+	public WebElement getTarget_Upload_Submenu() {
+	return Target_Upload_Submenu;
+}
+
+public WebElement getTarget_Menu() {
+	return Target_Menu;
+}
+
 	public WebDriver getDriver() {
 	return driver;
 }
+	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Target Upload']")
+	private WebElement Target_Upload_Submenu;
 	
+	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Target']")
+	private WebElement Target_Menu;
+	
+	
+
+
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Master']")
 	private WebElement Master_Menu;
 	

@@ -1,4 +1,4 @@
-package Admin_Masters;
+package Admin_Activity_Main;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -2,21 +2,25 @@ package Com_Utility_Havmor;
  
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
- 
+import org.openqa.selenium.TimeoutException;   // ✅ This one
+
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
- 
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -61,11 +65,24 @@ public class ObjectRepo_Havmor {
     public static void startTestAndLog_1_SS(String testNumber, String testDescription, Runnable action) {
         test = extent.createTest(testNumber, testDescription); // ✅ Create test
  
-        try {
-            test.info(testDescription); // ✅ Log step
-            action.run(); // ✅ Execute action
- 
-            // ✅ Flash message check after action
+        try {  // ✅ Outer try for everything
+
+            // --- Wait for old toast to disappear
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(ExpectedConditions.invisibilityOfElementLocated(
+                        By.xpath("//div[@id='toast-container']")));
+            } catch (TimeoutException te) {
+                // ignore if still visible, proceed
+            }
+
+            test.info(testDescription);
+
+            // --- Run the actual step
+            action.run();
+
+
+            // 2️⃣ Now look for new flash messages
             List<WebElement> flashMessages = driver.findElements(By.xpath("//div[@id='toast-container']"));
             boolean flashErrorFound = false;
  
@@ -105,13 +122,19 @@ public class ObjectRepo_Havmor {
                 captureScreenshot("Screenshot - Passed");
             } else {
                 // ❌ Fail only for error messages, NOT for safe ones
-                throw new RuntimeException("Flash error found — test failed.");
+               // throw new RuntimeException("Flash error found — test failed.");
+            	 // Mark fail but do NOT throw, so execution continues
+                test.fail("❌ Flash error found in step: " + testDescription);
+            	
             }
  
         } catch (Exception e) {
+//            test.fail("❌ Exception in step: " + testDescription + " | " + e.getMessage());
+//            captureScreenshot("Screenshot - Exception");
+//            throw new RuntimeException(e);       
             test.fail("❌ Exception in step: " + testDescription + " | " + e.getMessage());
             captureScreenshot("Screenshot - Exception");
-            throw new RuntimeException(e);
+            // No throw here either
         }
     }
 /*
