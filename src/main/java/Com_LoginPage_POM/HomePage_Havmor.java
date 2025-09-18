@@ -55,6 +55,10 @@ public WebElement getTarget_Menu() {
 	
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='PJP Management']")
 	private WebElement PJP_Management_SubMenu;
+	
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='mainDiv']//ul//li//p[text()='Scheme Setup']")
+	private WebElement Scheme_Setup_Submenu;
 
 	public WebElement getActivity_Master_Menu() {
 		return Activity_Master_Menu;
