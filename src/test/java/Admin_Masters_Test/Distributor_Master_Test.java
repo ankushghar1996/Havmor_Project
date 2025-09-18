@@ -18,7 +18,7 @@ public class Distributor_Master_Test extends BaseClass{
 
 	public void Distributor_Homepage() throws Exception {
 
-	
+
 	
 	HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
 	Distributor_Master DM = PageFactory.initElements(driver , Distributor_Master.class);
