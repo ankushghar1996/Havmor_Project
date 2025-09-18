@@ -9,10 +9,26 @@ public class HomePage_Havmor {
 
 WebDriver driver;
 	
+	public WebElement getTarget_Upload_Submenu() {
+	return Target_Upload_Submenu;
+}
+
+public WebElement getTarget_Menu() {
+	return Target_Menu;
+}
+
 	public WebDriver getDriver() {
 	return driver;
 }
+	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Target Upload']")
+	private WebElement Target_Upload_Submenu;
 	
+	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Target']")
+	private WebElement Target_Menu;
+	
+	
+
+
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Master']")
 	private WebElement Master_Menu;
 	
@@ -39,6 +55,10 @@ WebDriver driver;
 	
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='PJP Management']")
 	private WebElement PJP_Management_SubMenu;
+	
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='mainDiv']//ul//li//p[text()='Scheme Setup']")
+	private WebElement Scheme_Setup_Submenu;
 
 	public WebElement getActivity_Master_Menu() {
 		return Activity_Master_Menu;
