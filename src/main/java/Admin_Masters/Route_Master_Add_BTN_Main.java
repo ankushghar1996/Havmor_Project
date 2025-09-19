@@ -26,7 +26,7 @@ public class Route_Master_Add_BTN_Main {
 	   @FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlchaneltype_Arrow']")
 	   private WebElement Channel_Type_Dropdown;
 	   
-	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlchaneltype_DropDown']//ul//li)[1]")
+	   @FindBy(how = How.XPATH, using = "(//div[@class='rcbSlide']//child::div/ul/li[text()='Distributor'])[1]")
 	   private WebElement Channel_Type_Dropdown_Value;
 	   
 	   @FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_Arrow']")

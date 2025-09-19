@@ -90,13 +90,13 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtAadhaarNo']")
 	private WebElement Adhar_Number_Textbox_EXCEL;
 	
-	@FindBy(how = How.XPATH, using = "ParentMasterContentPlaceHolder1_txtPanNo")
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtPanNo']")
 	private WebElement Pan_Number_Textbox_EXCEL;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtAccountHolderName']")
 	private WebElement Account_Holder_Name_Textbox_EXCEL;
 	
-	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtAccountHolderName']")
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtBankAccountNo']")
 	private WebElement Bank_Account_Number_Textbox_EXCEL;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtBankIfscCode']")

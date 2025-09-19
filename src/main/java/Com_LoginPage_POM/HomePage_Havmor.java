@@ -32,6 +32,25 @@ public WebElement getTarget_Menu() {
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Master']")
 	private WebElement Master_Menu;
 	
+	@FindBy(how = How.XPATH, using = "(//p[text()='User Master'])[1]")
+	private WebElement User_Master_Menu;
+	
+	@FindBy(how = How.XPATH, using = "(//p[text()='User Master'])[2]")
+	private WebElement User_Master_Submenu;
+	
+	
+	
+	public WebElement getUser_Master_Menu() {
+		return User_Master_Menu;
+	}
+
+	public WebElement getUser_Master_Submenu() {
+		return User_Master_Submenu;
+	}
+
+	public WebElement getScheme_Setup_Submenu() {
+		return Scheme_Setup_Submenu;
+	}
 	@FindBy(how=How.XPATH,using="(//div[@id='mainDiv']//ul//li//p[text()='Route Master'])[1]")
     private WebElement Route_Master_Submenu;
 	
