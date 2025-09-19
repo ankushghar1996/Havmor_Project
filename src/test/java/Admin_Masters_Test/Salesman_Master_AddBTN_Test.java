@@ -134,8 +134,8 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
        	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_26", "Verify that user click on Bank Name Dropdown Value", () ->{
          Liabrary_Havmor.custom_click(STMADD.getBank_Name_Value(), " Bank Name Dropdown Value"); });  
           Thread.sleep(1000);
-       //   Account Holder Name
           
+       //   Account Holder Name         
           ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_27", "Verify that user Should Enter Account Holder Name in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getAccount_Holder_Name_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 8), "Account Holder Name");
           });
@@ -158,20 +158,20 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
         Thread.sleep(1000);
         
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_31", "Verify that user Should Enter Salary Contribution in Textbox", () ->{
-            Liabrary_Havmor.custom_Sendkeys(STMADD.getSalary_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 12), "Salary Contribution");
-             });
-            Thread.sleep(1000);
+        Liabrary_Havmor.custom_Sendkeys(STMADD.getSalary_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 12), "Salary Contribution");
+         });
+         Thread.sleep(1000);
                        
-              ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_32", "Verify that user Should Enter Distributor Contribution in Textbox", () ->{
-               Liabrary_Havmor.custom_Sendkeys(STMADD.getDistributor_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 13), "Distributor Contribution");
-             });
-            Thread.sleep(1000);
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_32", "Verify that user Should Enter Distributor Contribution in Textbox", () ->{
+          Liabrary_Havmor.custom_Sendkeys(STMADD.getDistributor_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 13), "Distributor Contribution");
+         });
+        Thread.sleep(1000);
             
             
-            ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_33", "Verify that user Should Enter Company Contribution in Textbox", () ->{
-                Liabrary_Havmor.custom_Sendkeys(STMADD.getCompany_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 14), "Company Contribution");
-              });
-             Thread.sleep(1000);
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_33", "Verify that user Should Enter Company Contribution in Textbox", () ->{
+        Liabrary_Havmor.custom_Sendkeys(STMADD.getCompany_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 14), "Company Contribution");
+         });
+       Thread.sleep(1000);
              
      ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_34", "Verify that user click on Save Button ", () ->{
        Liabrary_Havmor.custom_click(STMADD.getSave_Button(), " Save Button "); });  

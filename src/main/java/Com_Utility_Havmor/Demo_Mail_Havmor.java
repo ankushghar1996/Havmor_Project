@@ -25,11 +25,6 @@ public class Demo_Mail_Havmor {
             System.err.println("❌ Failed to zip report: " + e.getMessage());
             return;
         }
- 
- 
-        
- 
- 
 
         // OneDrive shared folder URL (update as per your OneDrive)
         String oneDriveLink = "https://heerasoftware0.sharepoint.com/sites/QATeam/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FQATeam%2FShared%20Documents%2FQA%20Shared%20Folder&viewid=efe5bcf8%2De44d%2D4de2%2Db0cd%2D8ac68543bb53&p=true&ga=1";
@@ -75,7 +70,6 @@ public class Demo_Mail_Havmor {
 	           email.addTo("jidnyesh.borse@heerasoftware.com");
 //            // email.addTo("rohit.deshpande@heerasoftware.com");
 
-
  
             // Attach the ZIP report
             EmailAttachment attachment = new EmailAttachment();
@@ -116,7 +110,6 @@ public class Demo_Mail_Havmor {
         Path targetDir = Paths.get(sharedDrivePath);
         Path targetPath = targetDir.resolve(sourceFile.getName());
  
-
         Files.createDirectories(targetDir); // Make sure folder exists
         Files.copy(sourceFile.toPath(), targetPath, StandardCopyOption.REPLACE_EXISTING);
         System.out.println("✅ Report copied to shared folder: " + targetPath);
