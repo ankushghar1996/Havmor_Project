@@ -41,6 +41,9 @@ public class ObjectRepo_Havmor {
             reportDir.mkdirs();
         }
         ExtentSparkReporter reporter = new ExtentSparkReporter(reportFolderPath + "TestReport.html");
+        // ✅ this is the key line – embed all CSS/JS inside HTML
+        reporter.config().setOfflineMode(true); 
+        
         reporter.config().setDocumentTitle("Test Execution Report");
         reporter.config().setReportName("Automation Test Report For Fosroc_HO");
         reporter.config().setTheme(Theme.DARK);
