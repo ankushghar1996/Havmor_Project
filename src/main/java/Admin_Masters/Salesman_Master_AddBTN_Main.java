@@ -72,6 +72,13 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtEmployeeCode']")
 	private WebElement Employee_Code_UserId_Textbox_EXCEL;
 	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtUserId']")
+	private WebElement UserId_Textbox_EXCEL;
+	
+	public WebElement getUserId_Textbox_EXCEL() {
+		return UserId_Textbox_EXCEL;
+	}
+
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtSalesmanName']")
 	private WebElement Salesman_Name_Textbox_EXCEL;
 	
