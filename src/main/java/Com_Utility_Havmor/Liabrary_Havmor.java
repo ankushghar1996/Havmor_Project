@@ -58,9 +58,20 @@ public static void dropdown(WebElement element, String name, WebDriver driver) {
 			}
 		}
 	
+	public static void custom_click(WebElement element, String fieldName) {
+	    //ObjectRepo.startTestAndLog_1_SS("Click_" + fieldName, "Click on " + fieldName, () -> {
+	        WebDriverWait wait = new WebDriverWait(ObjectRepo_Havmor.driver, Duration.ofSeconds(10));
+	        wait.until(ExpectedConditions.elementToBeClickable(element));
+
+	        // Optional: highlight element before clicking (for debugging)
+	        ((JavascriptExecutor) ObjectRepo_Havmor.driver).executeScript("arguments[0].style.border='2px solid red'", element);
+
+	        element.click();
+	        System.out.println(fieldName + " was clicked successfully!");
+	  //  });
+	}
 	
-	
-	
+	/*
 	public static void custom_click(WebElement element, String fieldName) {
 	    WebDriver driver = ObjectRepo_Havmor.driver;
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -90,7 +101,7 @@ public static void dropdown(WebElement element, String name, WebDriver driver) {
 	        throw e;
 	    }
 	}
-
+*/
 
 
 	

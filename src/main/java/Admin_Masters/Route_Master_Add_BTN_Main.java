@@ -23,7 +23,7 @@ public class Route_Master_Add_BTN_Main {
 	   @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnAdd']")
 	   private WebElement Add_Button;
 	   
-	   @FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlchaneltype_Arrow']")
+	   @FindBy(how = How.XPATH, using = "//div[@class='col-md-12']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlchaneltype']")
 	   private WebElement Channel_Type_Dropdown;
 	   
 	   @FindBy(how = How.XPATH, using = "(//div[@class='rcbSlide']//child::div/ul/li[text()='Distributor'])[1]")
