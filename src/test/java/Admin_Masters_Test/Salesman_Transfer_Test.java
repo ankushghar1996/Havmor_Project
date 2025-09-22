@@ -31,6 +31,7 @@ public class Salesman_Transfer_Test extends BaseClass {
         Liabrary_Havmor.custom_click(STM.getSalesman_Transfer(), " Salesman Transfer "); });  
         Thread.sleep(1000);
 	
+        
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_04", "Verify that user click on From Distributor ", () ->{
         Liabrary_Havmor.custom_click(STM.getFrom_Distributor(), "From Distributor"); });  
         Thread.sleep(1000);
@@ -68,4 +69,5 @@ public class Salesman_Transfer_Test extends BaseClass {
 	
 	
 }
+  
 }
