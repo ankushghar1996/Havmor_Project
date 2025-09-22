@@ -62,17 +62,35 @@ public static void dropdown(WebElement element, String name, WebDriver driver) {
 	
 	
 	public static void custom_click(WebElement element, String fieldName) {
-	    //ObjectRepo.startTestAndLog_1_SS("Click_" + fieldName, "Click on " + fieldName, () -> {
-	        WebDriverWait wait = new WebDriverWait(ObjectRepo_Havmor.driver, Duration.ofSeconds(10));
+	    WebDriver driver = ObjectRepo_Havmor.driver;
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    try {
+	        // 1. Scroll into view so headless runs see the element
+	        ((JavascriptExecutor) driver)
+	                .executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+
+	        // 2. Wait until clickable
 	        wait.until(ExpectedConditions.elementToBeClickable(element));
 
-	        // Optional: highlight element before clicking (for debugging)
-	        ((JavascriptExecutor) ObjectRepo_Havmor.driver).executeScript("arguments[0].style.border='2px solid red'", element);
+	        // 3. Highlight with red border temporarily
+	        ((JavascriptExecutor) driver)
+	                .executeScript("arguments[0].style.border='2px solid red';", element);
 
+	        // 4. Click
 	        element.click();
 	        System.out.println(fieldName + " was clicked successfully!");
-	  //  });
+
+	        // 5. Remove the border afterwards so it doesn’t “stick” red
+	        ((JavascriptExecutor) driver)
+	                .executeScript("arguments[0].style.border='';", element);
+
+	    } catch (Exception e) {
+	        System.out.println("Unable to click on " + fieldName + " due to: " + e.getMessage());
+	        throw e;
+	    }
 	}
+
 
 
 	
