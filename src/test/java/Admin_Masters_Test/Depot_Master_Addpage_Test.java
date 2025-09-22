@@ -1,5 +1,8 @@
 package Admin_Masters_Test;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -114,6 +117,12 @@ public class Depot_Master_Addpage_Test extends BaseClass{
 		Liabrary_Havmor.custom_Sendkeys(Add.getPinCode(), excel.getStringdata2("Depot_Add", 1, 7), "send PinCode");      
 		});
 		Thread.sleep(1000);
+		
+		
+		 WebElement scroll3 = driver.findElement(By.xpath("//span[@id='ParentMasterContentPlaceHolder1_lblGSTType']"));
+	    	JavascriptExecutor jse3= (JavascriptExecutor)driver;
+	    	jse3.executeScript("arguments[0].scrollIntoView(true);", scroll3);
+	        Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Depot_Master_Test_Add_TC_17", "Verify that user Click On GST Type Dropdown", () ->{

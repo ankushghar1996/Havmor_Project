@@ -157,7 +157,7 @@ WebDriver driver;
 	
 	
 
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlArea_DropDown']//child::ul//li[normalize-space()='Mumbai']")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlArea_DropDown']//ul//li[1]")
 	private WebElement Sales_Hierarchy_Value;
 	
 	
@@ -213,9 +213,9 @@ WebDriver driver;
 	private WebElement State_dropdown;
 	
 
-	
+	//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[15]
 	//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[15]")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']")
 	private WebElement State_dropdown_value;
 	
 	
@@ -223,7 +223,7 @@ WebDriver driver;
 	private WebElement City_dropdown;
 	
 	
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlCity_DropDown']//ul//li[normalize-space()='Mumbai']")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlCity_DropDown']//ul//li[1]")
 	private WebElement City_dropdown_Value;
 	
 	
@@ -235,11 +235,11 @@ WebDriver driver;
 	private WebElement txtpanNumber;
 	
 	
-	@FindBy(how = How.XPATH, using = "//div[@class='input-box mb-3']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFSSAIType']")
+	@FindBy(how = How.XPATH, using = "//div[@class='col-md-3 mb-2']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFSSAIType']")
 	private WebElement FSSAIType_dropdown;
 	
 	
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFSSAIType_DropDown']//ul//li[normalize-space()='State']")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFSSAIType_DropDown']//ul//li[1]")
 	private WebElement FSSAIType_dropdown_Value;
 	
 	
@@ -252,21 +252,49 @@ WebDriver driver;
 	
 	
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='col-md-12']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGstType']")
+	private WebElement GstType_dropdown;
 	
 	
+	public WebElement getGstType_dropdown() {
+		return GstType_dropdown;
+	}
+
+
+	public WebElement getGstType_dropdown_value() {
+		return GstType_dropdown_value;
+	}
+
+
+	public WebElement getTxtGSTNumber() {
+		return txtGSTNumber;
+	}
+
+
+	public WebElement getGSTState_dropdown() {
+		return GSTState_dropdown;
+	}
+
+
+	public WebElement getGSTState_dropdown_values() {
+		return GSTState_dropdown_values;
+	}
+
+
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGstType_DropDown']//ul//li)[2]")
+	private WebElement GstType_dropdown_value;
 	
 	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtGSTNumber']")
+	private WebElement txtGSTNumber;
 	
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='col-md-12']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGSTState']")
+	private WebElement GSTState_dropdown;
 	
 	
-	
-	
-	
-	
-	
-	
-	
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']")
+	private WebElement GSTState_dropdown_values;
 	
 	
 	

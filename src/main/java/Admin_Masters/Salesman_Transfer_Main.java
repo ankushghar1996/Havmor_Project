@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 public class Salesman_Transfer_Main {
 
 	
-	@FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromDistributor_Arrow']")
+	@FindBy(how = How.XPATH, using = "//div[@class='col-md-12 ml-0']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromDistributor']")
 	private WebElement From_Distributor;
 	
 	public WebElement getFrom_Distributor() {
@@ -50,13 +50,13 @@ public class Salesman_Transfer_Main {
 		return Salesman_Transfer;
 	}
 
-	@FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlToDistributor_Arrow']")
+	@FindBy(how = How.XPATH, using = "//div[@class='col-md-5']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlToDistributor']")
 	private WebElement To_Distributor;
 	
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromDistributor_DropDown']//ul//li)[1]")
 	private WebElement From_Distributor_Value;
 	
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlToDistributor_DropDown']//ul//li)[1]")
 	private WebElement To_Distributor_Value;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_RadGrid0_ctl00_ctl04_pTemplate0SelectCheckBox']")
