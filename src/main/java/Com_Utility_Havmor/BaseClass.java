@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,24 +38,19 @@ public class BaseClass {
 	    // BeforeMethod to open the browser and run the login process
 	    @BeforeMethod
 	    public void openbrowser() throws Exception {
-	    	 WebDriverManager.chromedriver().setup();
-
-	         // detect headless from system property
-	         String runMode = System.getProperty("runMode", "normal"); // pass -DrunMode=headless from Jenkins
-	         if (runMode.equalsIgnoreCase("headless")) {
-	             ChromeOptions options = new ChromeOptions();
-	             options.addArguments("--headless=new");
-	             options.addArguments("--window-size=1920,1080");
-	             driver = new ChromeDriver(options);
-	         } else {
-	             driver = new ChromeDriver();
-	             driver.manage().window().maximize();
-	         }
-
-	         driver.get("https://havmoruat.hspldms.com/");
-	         ObjectRepo_Havmor.driver = driver;
-	         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-	         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	        // Automatically download and set up the ChromeDriver using WebDriverManager
+	        WebDriverManager.chromedriver().setup();
+	        // Initialize the WebDriver for Chrome browser
+	        driver = new ChromeDriver();
+	        driver.get("https://havmoruat.hspldms.com/");
+	        driver.manage().window().maximize();
+	        
+	        ObjectRepo_Havmor.driver = driver;
+	        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	        
+	        
+	    //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	 
 	        // Initialize the LoginPage object using PageFactory
 	        LoginPage loginelements = PageFactory.initElements(driver, LoginPage.class);
