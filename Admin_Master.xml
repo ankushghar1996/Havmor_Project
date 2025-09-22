@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+     
+      <!-- Admin Master Credential Master -->
+      <class name="Admin_Masters_Test.Depot_Master_Addpage_Test"/>
+      
+      <class name="Admin_Masters_Test.Distributor_DeactivationPage_Test"/>
+      <class name="Admin_Masters_Test.Distributor_Master_Add"/>
+      <class name="Admin_Masters_Test.Distributor_Master_AddPage"/>
+      <class name="Admin_Masters_Test.Distributor_Master_Test"/>
+      <class name="Admin_Masters_Test.HSN_Master_Test"/>
+      <class name="Admin_Masters_Test.PJP_Master_Page_Test"/>
+      <class name="Admin_Masters_Test.Product_Image_Uplod_Test"/>
+      <class name="Admin_Masters_Test.Retailer_Beat_Alignment_Test"/>
+      <class name="Admin_Masters_Test.Retailer_Master_AddPage_Test"/>
+      <class name="Admin_Masters_Test.Retailer_Master_EditPage_Test"/>
+      <class name="Admin_Masters_Test.Retailer_Transfer_Test"/>
+      <class name="Admin_Masters_Test.Route_Master_Add_BTN_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Extension_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Master_AddBTN_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Transfer_Test"/>
+      <class name="Admin_Masters_Test.User_master_Add_BTN_Test"/>
+      <class name="Admin_Masters_Test.Vendor_Master_Add_Test"/>
+     
+            
+      </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite --> 

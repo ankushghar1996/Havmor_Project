@@ -59,7 +59,7 @@ public class Salesman_Extension_Main {
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromDistributor_DropDown']//ul//li)[1]")
 	private WebElement From_Distributor_Value;
 	
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "(//div[@class='rcbSlide']//child::div//ul//li)[1]")
 	private WebElement To_Distributor_Value;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_RadGrid0_ctl00_ctl04_pTemplate0SelectCheckBox']")

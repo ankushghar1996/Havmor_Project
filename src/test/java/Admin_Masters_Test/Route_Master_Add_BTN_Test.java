@@ -17,7 +17,7 @@ import Com_Utility_Havmor.ObjectRepo_Havmor;
 public class Route_Master_Add_BTN_Test  extends BaseClass{
 	
 	@Test
-    public void PJP_Front_Page() throws Exception {
+    public void RM_Add_Page() throws Exception {
 
         Route_Master_Add_BTN_Main RMADD = PageFactory.initElements(driver, Route_Master_Add_BTN_Main.class);
         HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
