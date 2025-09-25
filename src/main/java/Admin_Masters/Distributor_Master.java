@@ -15,7 +15,7 @@ WebDriver driver;
 }
 	
 	
-	@FindBy(how = How.XPATH, using = "(//ul[@class='nav nav-treeview']/li[@class='nav-item menu-is-opening menu-open']//p[normalize-space()='Distributor Master'])[2]")
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Distributor Creation']")
 	private WebElement Distributor_Master;
 
 	public WebElement getDistributor_Master() {
