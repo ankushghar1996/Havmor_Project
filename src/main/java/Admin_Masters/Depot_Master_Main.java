@@ -136,11 +136,11 @@ public class Depot_Master_Main {
 	}
 
 
-	@FindBy(how = How.XPATH, using = "(//p[normalize-space()='Depot Master'])[1]")
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Depot Master']")
 	private WebElement Depot_Master_submenu;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//p[normalize-space()='Depot Master'])[2]")
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Depot Creation']")
 	private WebElement Depot_Master;
 	
 	
