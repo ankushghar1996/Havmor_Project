@@ -1,6 +1,7 @@
 package Admin_Masters_Test;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -162,32 +163,71 @@ public class Distributor_Master_Add extends BaseClass{
 		
 		
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_23", "Verify that user send PAN Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(DM.getTxtpanNumber(), excel.getStringdata2("Distributor_Add", 1, 9), "send PAN Number");
+		 WebElement scroll3 = driver.findElement(By.xpath("//span[@id='ParentMasterContentPlaceHolder1_Label20']"));
+	    	JavascriptExecutor jse3= (JavascriptExecutor)driver;
+	    	jse3.executeScript("arguments[0].scrollIntoView(true);", scroll3);
+	        Thread.sleep(1000);
+	        
+	        
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_24", "Verify that user send PAN Number", () ->{
+		  Liabrary_Havmor.custom_Sendkeys(DM.getTxtpanNumber(), excel.getStringdata2("Distributor_Add", 1, 9), "send PAN Number");
+	   	  });
+	   	Thread.sleep(1000);	    
+	        
+	        
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_25", "Verify that user click on GST Type dropdown", () ->{
+		  Liabrary_Havmor.custom_click(DM.getGstType_dropdown(), "click on GST Type dropdown");
 		});
-		Thread.sleep(1000);	
+	    Thread.sleep(1000);
 		
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_24", "Verify that user click on FSSAI dropdown", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_26", "Verify that user click on GST Type value dropdown", () ->{
+		  Liabrary_Havmor.custom_click(DM.getGstType_dropdown_value(), "click on GST Type value dropdown");
+		  });
+		  Thread.sleep(1000);
+	    
+	  
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_27", "Verify that user send PAN Number", () ->{
+		  Liabrary_Havmor.custom_Sendkeys(DM.getTxtGSTNumber(), excel.getStringdata2("Distributor_Add", 1, 10), "send GST Number");
+		  });
+	    	Thread.sleep(1000);		  
+		  
+		  
+		  
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_28", "Verify that user click on GST state Type dropdown", () ->{
+		  Liabrary_Havmor.custom_click(DM.getState_dropdown(), "click on GST state Type dropdown");
+		  });
+	  	  Thread.sleep(1000);
+	  		
+	  		
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_29", "Verify that user click on GST State Type value dropdown", () ->{
+  		  Liabrary_Havmor.custom_click(DM.getState_dropdown_value(), "click on GST state Type value dropdown");
+  		  });
+	  	  Thread.sleep(1000);  
+		  
+		
+		
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_30", "Verify that user click on FSSAI dropdown", () ->{
 		Liabrary_Havmor.custom_click(DM.getFSSAIType_dropdown(), "click on FSSAI dropdown");
 		});
 		Thread.sleep(1000);	
 		
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_25", "Verify that user click on FSSAI value dropdown", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_31", "Verify that user click on FSSAI value dropdown", () ->{
 		Liabrary_Havmor.custom_click(DM.getFSSAIType_dropdown_Value(), "click on FSSAI value dropdown");
 		});
 		Thread.sleep(1000);	
 		
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_26", "Verify that user send FSSAI licene number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(DM.getTxtFSSAILicense(), excel.getStringdata2("Distributor_Add", 1, 10), "send FSSAI licene number");
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_32", "Verify that user send FSSAI licene number", () ->{
+		Liabrary_Havmor.custom_Sendkeys(DM.getTxtFSSAILicense(), excel.getStringdata2("Distributor_Add", 1, 11), "send FSSAI licene number");
 		});
 		Thread.sleep(1000);	
 		
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_27", "Verify that user send FSSAI licene number", () ->{	
-		driver.findElement(By.xpath("//input[@id='ctl00_ParentMasterContentPlaceHolder1_dtpFSSAIExpiry_dateInput']")).sendKeys("20/09/2025");
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_33", "Verify that user send FSSAI Expiry date", () ->{	
+		Liabrary_Havmor.custom_Sendkeys(DM.getTxtFSSAILicense_dateInput(), excel.getStringdata2("Distributor_Add", 1, 12), "send FSSAI Expiry date");
+	//	driver.findElement(By.xpath("//input[@id='ctl00_ParentMasterContentPlaceHolder1_dtpFSSAIExpiry_dateInput']")).sendKeys("20/09/2025");
 	});
 	Thread.sleep(1000);
 	

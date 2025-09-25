@@ -9,7 +9,6 @@
       
       <class name="Admin_Masters_Test.Distributor_DeactivationPage_Test"/>
       <class name="Admin_Masters_Test.Distributor_Master_Add"/>
-      <class name="Admin_Masters_Test.Distributor_Master_AddPage"/>
       <class name="Admin_Masters_Test.Distributor_Master_Test"/>
       <class name="Admin_Masters_Test.HSN_Master_Test"/>
       <class name="Admin_Masters_Test.PJP_Master_Page_Test"/>
