@@ -73,6 +73,15 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
           });
           Thread.sleep(1000);
           
+
+          //useer id
+          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_14", "Verify that user Should Enter UserId in Textbox", () ->{
+          Liabrary_Havmor.custom_Sendkeys(STMADD.getEmployee_Code_UserId_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 1), "Employee Code/UserId");
+           });
+         Thread.sleep(1000);
+          
+          
+    
           ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_14", "Verify that user Should Enter Salesman Name in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getSalesman_Name_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 1), "Salesman Name");
           });
