@@ -8,7 +8,7 @@ public class Admin_Scheme_Master_Main {
 	
 	//Basic Info Tab Button	
 	@FindBy(how=How.XPATH,using = "//div[@id='mainDiv']//ul//li//p[text()='Scheme Master']")
-	private WebElement Scheme_Master;
+	private WebElement Scheme_Creation;
 	
 	@FindBy(how=How.XPATH,using = "//div[@id='ParentMasterContentPlaceHolder1_SchemeMasterdiv']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSearch']")
 	private WebElement Search_Button;
@@ -19,6 +19,251 @@ public class Admin_Scheme_Master_Main {
 	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_BtnAdd']")
 	private WebElement Add_Button;
 	
+	
+	public WebElement getScheme_Creation() {
+		return Scheme_Creation;
+	}
+
+	public WebElement getSearch_Button() {
+		return Search_Button;
+	}
+
+	public WebElement getScheme_Grid_Data() {
+		return Scheme_Grid_Data;
+	}
+
+	public WebElement getAdd_Button() {
+		return Add_Button;
+	}
+
+	public WebElement getScheme_Short_Name_Textbox_EXCEL() {
+		return Scheme_Short_Name_Textbox_EXCEL;
+	}
+
+	public WebElement getScheme_Name_Textbox() {
+		return Scheme_Name_Textbox;
+	}
+
+	public WebElement getScheme_Description_Textbox_EXCEL() {
+		return Scheme_Description_Textbox_EXCEL;
+	}
+
+	public WebElement getScheme_Type_Dropdown() {
+		return Scheme_Type_Dropdown;
+	}
+
+	public WebElement getScheme_Type_Dropdown_Value() {
+		return Scheme_Type_Dropdown_Value;
+	}
+
+	public WebElement getScheme_Mechanics_Dropdown() {
+		return Scheme_Mechanics_Dropdown;
+	}
+
+	public WebElement getScheme_Mechanics_Dropdown_Value() {
+		return Scheme_Mechanics_Dropdown_Value;
+	}
+
+	public WebElement getScheme_Method_Dropdown() {
+		return Scheme_Method_Dropdown;
+	}
+
+	public WebElement getScheme_Method_Dropdown_Value1_In_bill_scheme() {
+		return Scheme_Method_Dropdown_Value1_In_bill_scheme;
+	}
+
+	public WebElement getScheme_Method_Dropdown_Value2_Running_Purchases() {
+		return Scheme_Method_Dropdown_Value2_Running_Purchases;
+	}
+
+	public WebElement getScheme_Method_Dropdown_Value3_Periodic_QPS() {
+		return Scheme_Method_Dropdown_Value3_Periodic_QPS;
+	}
+
+	public WebElement getApply_in_No_of_Bills_Textbox_EXCEL() {
+		return Apply_in_No_of_Bills_Textbox_EXCEL;
+	}
+
+	public WebElement getNo_of_Bills_Per_Day_Textbox_EXCEL() {
+		return No_of_Bills_Per_Day_Textbox_EXCEL;
+	}
+
+	public WebElement getOrder_Source_Dropdown() {
+		return Order_Source_Dropdown;
+	}
+
+	public WebElement getMinimum_or_Skus_Dropdown() {
+		return Minimum_or_Skus_Dropdown;
+	}
+
+	public WebElement getFrom_MRP_Textbox_EXCEL() {
+		return From_MRP_Textbox_EXCEL;
+	}
+
+	public WebElement getTo_MRP_Textbox_EXCEL() {
+		return To_MRP_Textbox_EXCEL;
+	}
+
+	public WebElement getFree_Qty_Treatment_Dropdown() {
+		return Free_Qty_Treatment_Dropdown;
+	}
+
+	public WebElement getFree_Qty_Treatment_Dropdown_Value() {
+		return Free_Qty_Treatment_Dropdown_Value;
+	}
+
+	public WebElement getSave_And_ContinueBTN() {
+		return Save_And_ContinueBTN;
+	}
+
+	public WebElement getProduct_Hierarchy_Dropdown() {
+		return Product_Hierarchy_Dropdown;
+	}
+
+	public WebElement getProduct_Hierarchy_Dropdown_Value1() {
+		return Product_Hierarchy_Dropdown_Value1;
+	}
+
+	public WebElement getProduct_Hierarchy_Dropdown_Value2() {
+		return Product_Hierarchy_Dropdown_Value2;
+	}
+
+	public WebElement getProduct_Hierarchy_Dropdown_Value3() {
+		return Product_Hierarchy_Dropdown_Value3;
+	}
+
+	public WebElement getProduct_Hierarchy_Dropdown_Value4() {
+		return Product_Hierarchy_Dropdown_Value4;
+	}
+
+	public WebElement getDownload_Template() {
+		return Download_Template;
+	}
+
+	public WebElement getSelect_File_to_upload_CSV_Product_Info() {
+		return Select_File_to_upload_CSV_Product_Info;
+	}
+
+	public WebElement getUpload_Button_Product_Info() {
+		return Upload_Button_Product_Info;
+	}
+
+	public WebElement getSlab_Type_Dropdown() {
+		return Slab_Type_Dropdown;
+	}
+
+	public WebElement getSlab_Type_Dropdown_Value() {
+		return Slab_Type_Dropdown_Value;
+	}
+
+	public WebElement getSlab_Calculation_On_Dropdown() {
+		return Slab_Calculation_On_Dropdown;
+	}
+
+	public WebElement getSlab_Calculation_On_Value_Textbox_EXCEL() {
+		return Slab_Calculation_On_Value_Textbox_EXCEL;
+	}
+
+	public WebElement getBasis_for_Scheme_Bifurcation_Dropdown() {
+		return Basis_for_Scheme_Bifurcation_Dropdown;
+	}
+
+	public WebElement getBasis_for_Scheme_Bifurcation_Dropdown_Value() {
+		return Basis_for_Scheme_Bifurcation_Dropdown_Value;
+	}
+
+	public WebElement getIs_purchase_limit_applicable_Dropdown() {
+		return Is_purchase_limit_applicable_Dropdown;
+	}
+
+	public WebElement getIs_purchase_limit_applicable_Dropdown_Value() {
+		return Is_purchase_limit_applicable_Dropdown_Value;
+	}
+
+	public WebElement getDiscount_Calculated_on_Dropdown() {
+		return Discount_Calculated_on_Dropdown;
+	}
+
+	public WebElement getDiscount_Calculated_On_Dropdown_Value() {
+		return Discount_Calculated_On_Dropdown_Value;
+	}
+
+	public WebElement getSlab_Add_Link1_BTN() {
+		return Slab_Add_Link1_BTN;
+	}
+
+	public WebElement getOn_QTY__Textbox_EXCEL() {
+		return On_QTY__Textbox_EXCEL;
+	}
+
+	public WebElement getFrom_Discount__Textbox_EXCEL() {
+		return From_Discount__Textbox_EXCEL;
+	}
+
+	public WebElement getTo_Discount__Textbox_EXCEL() {
+		return To_Discount__Textbox_EXCEL;
+	}
+
+	public WebElement getFlat_Discount__Textbox_EXCEL() {
+		return Flat_Discount__Textbox_EXCEL;
+	}
+
+	public WebElement getDiscount_Per_Unit__Textbox_EXCEL() {
+		return Discount_Per_Unit__Textbox_EXCEL;
+	}
+
+	public WebElement getAdd_Slab_Button() {
+		return Add_Slab_Button;
+	}
+
+	public WebElement getNational_Budget__Textbox_EXCEL() {
+		return National_Budget__Textbox_EXCEL;
+	}
+
+	public WebElement getAllocated_Budget_Per_Distributor_Textbox_EXCEL() {
+		return Allocated_Budget_Per_Distributor_Textbox_EXCEL;
+	}
+
+	public WebElement getAllocated_Budget_Per_Retailer_Textbox_EXCEL() {
+		return Allocated_Budget_Per_Retailer_Textbox_EXCEL;
+	}
+
+	public WebElement getUpload_Retailer_Specific_Budget_Switch_Button() {
+		return Upload_Retailer_Specific_Budget_Switch_Button;
+	}
+
+	public WebElement getUpload_Distributor_Specific_Budget_Switch_Button() {
+		return Upload_Distributor_Specific_Budget_Switch_Button;
+	}
+
+	public WebElement getDownload_Template_Retailer() {
+		return Download_Template_Retailer;
+	}
+
+	public WebElement getDownload_Template_Distributor() {
+		return Download_Template_Distributor;
+	}
+
+	public WebElement getSelect_File_to_upload_Retailer_CSV_Budget_Upload() {
+		return Select_File_to_upload_Retailer_CSV_Budget_Upload;
+	}
+
+	public WebElement getUpload_Button_Retailer_Budget_Info() {
+		return Upload_Button_Retailer_Budget_Info;
+	}
+
+	public WebElement getSelect_File_to_upload_Distributor_CSV_Budget_Upload() {
+		return Select_File_to_upload_Distributor_CSV_Budget_Upload;
+	}
+
+	public WebElement getUpload_Button_Distributor_Budget_Info() {
+		return Upload_Button_Distributor_Budget_Info;
+	}
+
+	public WebElement getFinal_Close_Button_Budget_INFO() {
+		return Final_Close_Button_Budget_INFO;
+	}
+
 	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_txtSchemeName']")
 	private WebElement Scheme_Short_Name_Textbox_EXCEL;
 		
