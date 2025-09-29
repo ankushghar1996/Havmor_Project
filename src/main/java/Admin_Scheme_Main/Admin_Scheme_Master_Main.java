@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 public class Admin_Scheme_Master_Main {
 	
 	//Basic Info Tab Button	
-	@FindBy(how=How.XPATH,using = "//div[@id='mainDiv']//ul//li//p[text()='Scheme Master']")
+	@FindBy(how=How.XPATH,using = "//div[@id='mainDiv']//ul//li//p[text()='Scheme Creation']")
 	private WebElement Scheme_Creation;
 	
 	@FindBy(how=How.XPATH,using = "//div[@id='ParentMasterContentPlaceHolder1_SchemeMasterdiv']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSearch']")
@@ -20,6 +20,36 @@ public class Admin_Scheme_Master_Main {
 	private WebElement Add_Button;
 	
 	
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGLCode']")
+	private WebElement GL_Code_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ddlOrderSource']")
+	private WebElement Order_Source;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ddlOrderSource_DropDown']//ul//li[text()='ALL']")
+	private WebElement Order_Source_Value;
+	
+	
+	//div[@id='ddlOrderSource_DropDown']//ul//li[text()='ALL']
+	public WebElement getGL_Code_Dropdown() {
+		return GL_Code_Dropdown;
+	}
+
+	public WebElement getGL_Code_Dropdown_Value() {
+		return GL_Code_Dropdown_Value;
+	}
+
+	@FindBy(how=How.XPATH,using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGLCode_DropDown']//ul//li)[1]")
+	private WebElement GL_Code_Dropdown_Value;
+	
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_txtActivityCode']")
+	private WebElement Activity_Code_Textbox_Excel;
+	
+
+	public WebElement getActivity_Code_Textbox_Excel() {
+		return Activity_Code_Textbox_Excel;
+	}
+
 	public WebElement getScheme_Creation() {
 		return Scheme_Creation;
 	}
@@ -88,8 +118,24 @@ public class Admin_Scheme_Master_Main {
 		return No_of_Bills_Per_Day_Textbox_EXCEL;
 	}
 
+	public WebElement getClaimable_Dropdown() {
+		return Claimable_Dropdown;
+	}
+
+	public WebElement getClaimable_Dropdown_Value() {
+		return Claimable_Dropdown_Value;
+	}
+
 	public WebElement getOrder_Source_Dropdown() {
 		return Order_Source_Dropdown;
+	}
+
+	public WebElement getOrder_Source() {
+		return Order_Source;
+	}
+
+	public WebElement getOrder_Source_Value() {
+		return Order_Source_Value;
 	}
 
 	public WebElement getMinimum_or_Skus_Dropdown() {
@@ -264,7 +310,7 @@ public class Admin_Scheme_Master_Main {
 		return Final_Close_Button_Budget_INFO;
 	}
 
-	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_txtSchemeName']")
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_txt1shortName']")
 	private WebElement Scheme_Short_Name_Textbox_EXCEL;
 		
 	@FindBy(how=How.XPATH,using = "//div[@class='row ml-4 mr-4']//child::input[@id='ParentMasterContentPlaceHolder1_txtSchemeName']")
@@ -309,6 +355,13 @@ public class Admin_Scheme_Master_Main {
 	@FindBy(how=How.XPATH,using = "//div[@class='row ml-4 mr-4']//child::input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlMinLinesOrSkus_Input']")
 	private WebElement Minimum_or_Skus_Dropdown;
 	
+	public WebElement getMinimum_or_Skus_Dropdown_Value() {
+		return Minimum_or_Skus_Dropdown_Value;
+	}
+
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlMinLinesOrSkus_DropDown']//li[text()='Minimum line']")
+	private WebElement Minimum_or_Skus_Dropdown_Value;
+	
 	@FindBy(how=How.XPATH,using = "//div[@class='row ml-4 mr-4']//child::input[@id='ctl00_ParentMasterContentPlaceHolder1_txtFromMRP']")
 	private WebElement From_MRP_Textbox_EXCEL;
 	
@@ -324,6 +377,13 @@ public class Admin_Scheme_Master_Main {
 	@FindBy(how=How.XPATH,using = "//div[@class='Custom-Footer fixed-bottom']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSaveDetails']")
 	private WebElement Save_And_ContinueBTN; 
 	
+	@FindBy(how=How.XPATH,using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlClaimableScheme_Input']")
+	private WebElement  Claimable_Dropdown; 
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlClaimableScheme_DropDown']//ul//li[text()='Yes']")
+	private WebElement  Claimable_Dropdown_Value; 
+	
+
 
 	//Product info Tab Button	
 	@FindBy(how=How.XPATH,using = "//div[@class='Hierarchysection ml-3 mr-3']//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlProductHierarchy_Input']")
