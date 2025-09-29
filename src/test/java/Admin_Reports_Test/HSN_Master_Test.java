@@ -6,10 +6,11 @@ import org.testng.annotations.Test;
 import Admin_Reports.HSN_Master_Main;
 import Com_LoginPage_POM.HomePage_Havmor;
 import Com_Utility_Havmor.BaseClass;
+import Com_Utility_Havmor.BaseClass_otp;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
-public class HSN_Master_Test extends BaseClass {
+public class HSN_Master_Test extends BaseClass_otp {
 	
 	
 	@Test
