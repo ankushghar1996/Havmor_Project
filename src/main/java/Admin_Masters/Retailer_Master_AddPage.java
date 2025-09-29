@@ -8,7 +8,7 @@ public class Retailer_Master_AddPage {
 
 	
 	
-	@FindBy(how = How.XPATH, using = "(//p[contains(text(),'Retailer Master')])[1]")
+	@FindBy(how = How.XPATH, using = "//p[@class='menu-color'][normalize-space()='Retailer Master']")
 	private WebElement Retailer_Master_Submenu;
 	
 	
@@ -17,7 +17,7 @@ public class Retailer_Master_AddPage {
 	}
 
 
-	@FindBy(how = How.XPATH, using = "(//p[contains(text(),'Retailer Master')])[2]")
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Retailer Creation']")
 	private WebElement Retailer_Master_menu;
 	
 	

@@ -117,10 +117,10 @@ public WebElement getTarget_Menu() {
 		return Salesman_Transfer;
 	}
 
-	@FindBy(how=How.XPATH,using="(//div[@id='mainDiv']//ul//li//p[text()='Salesman Master'])[1]")
+	@FindBy(how=How.XPATH,using="//p[@class='menu-color'][normalize-space()='Salesman Master']")
     private WebElement Salesman_Master_Submenu;
 	
-	@FindBy(how=How.XPATH,using="(//div[@id='mainDiv']//ul//li//p[text()='Salesman Transfer'])[1]")
+	@FindBy(how=How.XPATH,using="//p[normalize-space()='Salesman Transfer']")
     private WebElement Salesman_Transfer;
 	
 	public WebElement getRoute_Master_Submenu() {

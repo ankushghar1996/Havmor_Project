@@ -17,7 +17,7 @@ public class Salesman_Master_AddBTN_Main {
 		return Save_Button;
 	}
 
-	@FindBy(how = How.XPATH, using = "(//div[@id='mainDiv']//p[text()='Salesman Master'])[2]")
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Salesman Creation']")
 	private WebElement Salesman_Master;
 	
 	public WebElement getSalesman_Master() {
