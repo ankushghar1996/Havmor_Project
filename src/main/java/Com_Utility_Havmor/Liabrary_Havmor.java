@@ -2,6 +2,7 @@
 package Com_Utility_Havmor;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -235,12 +236,101 @@ public static void dropdown(WebElement element, String name, WebDriver driver) {
 	
 
 	
-	
-	
-	
-	
-	
-	
-	
-}
 
+	    // 📅 Main method — From/To date select karne ke liye
+	    public static void pickDate(WebDriver driver, String baseId,
+	                                String month, String year, String day) {
+	        WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(10));
+
+	        // 1️⃣ Open calendar
+	        driver.findElement(By.id(baseId + "_popupButton")).click();
+
+	        String wrapperId = baseId + "_calendar_wrapper";
+	        By header = By.id(baseId + "_calendar_Title");
+
+	        wait.until(ExpectedConditions.visibilityOfElementLocated(header));
+
+	        // 2️⃣ Navigate month & year
+	        List<String> months = Arrays.asList(
+	            "January","February","March","April","May","June",
+	            "July","August","September","October","November","December"
+	        );
+
+	        int maxMonthNavigation = 60; // up to 5 years
+
+	        for (int i = 0; i < maxMonthNavigation; i++) {
+	            String[] parts = driver.findElement(header).getText().trim().split("\\s+");
+	            String curMonth = parts[0];
+	            String curYear  = parts[1];
+
+	            if (curMonth.equalsIgnoreCase(month) && curYear.equals(year)) break;
+
+	            int curM = months.indexOf(curMonth);
+	            int tarM = months.indexOf(month);
+	            int curY = Integer.parseInt(curYear);
+	            int tarY = Integer.parseInt(year);
+
+	            boolean goNext = (curY < tarY) || (curY == tarY && curM < tarM);
+
+	            By next = By.id(baseId + "_calendar_NN");
+	            By prev = By.id(baseId + "_calendar_PP");
+	            By nextAlt = By.xpath("//div[@id='" + wrapperId + "']//a[@title='Next Month']");
+	            By prevAlt = By.xpath("//div[@id='" + wrapperId + "']//a[@title='Previous Month']");
+
+	            try {
+	                if (goNext) {
+	                    click(wait, next, nextAlt);
+	                } else {
+	                    click(wait, prev, prevAlt);
+	                }
+	            } catch (Exception e) {
+	                break;
+	            }
+	        }
+
+	        // 3️⃣ Select the day
+	        By dayLocator = By.xpath(
+	            "//div[@id='" + wrapperId + "']//table[contains(@class,'rcMainTable')]"
+	          + "//td[not(contains(@class,'rcOtherMonth'))]/a[normalize-space()='" + day + "']"
+	        );
+
+	        wait.until(ExpectedConditions.elementToBeClickable(dayLocator)).click();
+	    }
+
+	    // 🔹 Helper for safe arrow click (Next/Previous)
+	    private static void click(WebDriverWait wait, By primary, By fallback) {
+	        try {
+	            wait.until(ExpectedConditions.elementToBeClickable(primary)).click();
+	        } catch (Exception e) {
+	            wait.until(ExpectedConditions.elementToBeClickable(fallback)).click();
+	        }
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	}
+
+
+	
+	
+	
+	
+	

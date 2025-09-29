@@ -74,7 +74,7 @@ public class Salesman_Transfer_Main {
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btncancel']")
 	private WebElement Close_Button;
 	
-	@FindBy(how=How.XPATH,using="(//div[@id='mainDiv']//ul//li//p[text()='Salesman Transfer'])[1]")
+	@FindBy(how=How.XPATH,using="//p[normalize-space()='Salesman Transfer']")
     private WebElement Salesman_Transfer;
 	
 	

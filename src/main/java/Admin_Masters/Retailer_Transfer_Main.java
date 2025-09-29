@@ -96,7 +96,7 @@ public class Retailer_Transfer_Main {
 	}
 
 
-	@FindBy(how = How.XPATH, using = "(//p[contains(text(),'Retailer Master')])[1]")
+	@FindBy(how = How.XPATH, using = "//p[@class='menu-color'][normalize-space()='Retailer Master']")
 	private WebElement Retailer_Master_Submenu;
 	
 	

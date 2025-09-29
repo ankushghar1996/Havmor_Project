@@ -110,7 +110,7 @@ public class Vendor_Master_Main {
 	}
 
 
-	@FindBy(how = How.XPATH, using = "(//p[contains(text(),'Vendor Master')])[2]")
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Vendor Creation']")
 	private WebElement Vendor_Master;
 	
 	
@@ -191,7 +191,7 @@ public class Vendor_Master_Main {
 	}
 
 
-	@FindBy(how = How.XPATH, using = "(//p[contains(text(),'Vendor Master')])[1]")
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Vendor Master']")
 	private WebElement Vendor_Master_submenu;
 	
 	
