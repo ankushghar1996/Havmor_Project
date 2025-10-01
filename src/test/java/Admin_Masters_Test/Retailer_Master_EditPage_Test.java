@@ -39,11 +39,30 @@ public class Retailer_Master_EditPage_Test extends BaseClass{
 		});
 		Thread.sleep(1000);
 	
+		
+		//Grid data Edit
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Edit_TC__04", "Verify that user Click on Edit Button //Grid Data Edit First Value", () ->{
+	    Liabrary_Havmor.custom_click(Add.getEdit_btn(), "Click On Grid Row Edit Button");      
+	     });
+		Thread.sleep(1000);
+			
+			
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Edit_TC__05", "Verify that user Click on Retailer Firm Name Field should Clear", () ->{
+		Liabrary_Havmor.custom_clear(Add.getRetailer_Firm_Name())    ;  
+		});
+		Thread.sleep(1000);
+				
+				
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Edit_TC__06", "Verify that user Enter Retailer Firm Name in Field ", () ->{
+		Liabrary_Havmor.custom_Sendkeys(Add.getRetailer_Firm_Name(), "Mango Belgian Firm", "Add New Retailer Firm")  ;
+		});
+		
 	
-	
-	
-	
-	
+		
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Edit_TC__07", "Verify that user Click on ", () ->{
+		Liabrary_Havmor.custom_click(Add.getSave_btn(), "Save Button");
+		});
+		Thread.sleep(1000);	
 	
 	
 	

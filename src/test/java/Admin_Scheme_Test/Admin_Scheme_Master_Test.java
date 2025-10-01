@@ -248,8 +248,7 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_19", "Click on GL Code Dropdown Value", () ->{
             Liabrary_Havmor.custom_click(ASMM.getGL_Code_Dropdown_Value(), "GL Code Dropdown Value");
         });
-        Thread.sleep(1000);
-        
+        Thread.sleep(1000);        
      
         
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_20", "Click on Order Source Dropdown", () ->{
@@ -261,6 +260,7 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
             Liabrary_Havmor.custom_click(ASMM.getOrder_Source_Value(), "Order Source Dropdown Value");
         });
         Thread.sleep(1000);
+        
         
      // scroll to the bottom of the page
         ((JavascriptExecutor)driver)
@@ -287,7 +287,27 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
         });
         Thread.sleep(1000);
         
-     //
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_26", "Enter Activity Code", () ->{
+            Liabrary_Havmor.custom_Sendkeys(ASMM.getActivity_Code_Textbox_Excel(), excel.getStringdata2("Scheme_Add", 1, 7), "Activity Code");
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_27", "Click on Free Qty Treatment Dropdown", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getFree_Qty_Treatment_Dropdown(), "Free Qty Treatment Dropdown"); 
+        });
+        Thread.sleep(1000);
+          
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_28", "Click on Free Qty Treatment Dropdown Value", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getFree_Qty_Treatment_Dropdown_Value(), "Free Qty Treatment Dropdown Value"); 
+        });
+        Thread.sleep(1000);
+        
+        
+     //Page 2 Product Info
+        
+        
+        
+    
    
     }
 }
