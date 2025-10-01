@@ -359,7 +359,7 @@ public class Admin_Scheme_Master_Main {
 		return Minimum_or_Skus_Dropdown_Value;
 	}
 
-	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlMinLinesOrSkus_DropDown']//li[text()='Minimum line']")
+	@FindBy(how=How.XPATH,using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlMinLinesOrSkus_DropDown']//ul//li)[3]")
 	private WebElement Minimum_or_Skus_Dropdown_Value;
 	
 	@FindBy(how=How.XPATH,using = "//div[@class='row ml-4 mr-4']//child::input[@id='ctl00_ParentMasterContentPlaceHolder1_txtFromMRP']")
@@ -371,7 +371,7 @@ public class Admin_Scheme_Master_Main {
 	@FindBy(how=How.XPATH,using = "//div[@class='row ml-4 mr-4']//child::input[@id='ddlFreeQtyTreatment_Input']")
 	private WebElement Free_Qty_Treatment_Dropdown; 
 	
-	@FindBy(how=How.XPATH,using = "//div[@class='content-wrapper']//child::div/ul/li[text()='Not Applicable']")
+	@FindBy(how=How.XPATH,using = "(//div[@id='ddlFreeQtyTreatment_DropDown']//ul//li)[4]")
 	private WebElement Free_Qty_Treatment_Dropdown_Value; 
 	
 	@FindBy(how=How.XPATH,using = "//div[@class='Custom-Footer fixed-bottom']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSaveDetails']")

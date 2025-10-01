@@ -1,6 +1,13 @@
 package Admin_Masters_Test;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import Admin_Masters.Retailer_Master_AddPage;
@@ -129,16 +136,16 @@ public class Retailer_Master_AddPage_Test extends BaseClass{
 		Thread.sleep(1000);
 		
 		
-		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__19", "Verify that user click on Type2 dropdown", () ->{
-		Liabrary_Havmor.custom_click(Add.getType2(), "click on Type2 dropdown");      
-		});
-		Thread.sleep(1000);
+//		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__19", "Verify that user click on Type2 dropdown", () ->{
+//		Liabrary_Havmor.custom_click(Add.getType2(), "click on Type2 dropdown");      
+//		});
+//		Thread.sleep(1000);
 					
 					
-		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__20", "Verify that user click on Type2 dropdown value", () ->{
-		Liabrary_Havmor.custom_click(Add.getType2_value(), "click on Type2 dropdown value");      
-		});
-		Thread.sleep(1000);
+//		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__20", "Verify that user click on Type2 dropdown value", () ->{
+//		Liabrary_Havmor.custom_click(Add.getType2_value(), "click on Type2 dropdown value");      
+//		});
+//		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__21", "Verify that user click on Type3 dropdown", () ->{
@@ -233,13 +240,13 @@ public class Retailer_Master_AddPage_Test extends BaseClass{
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__36", "Verify that user send PAN Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getPANNo(), excel.getStringdata2("Retailer_Add", 1, 10), "send PAN Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getPANNo(), excel.getStringdata2("Retailer_Add", 1, 9), "send PAN Number");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__37", "Verify that user send Potential Business", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getTotlBusinessInConstructionChemicals(), excel.getStringdata2("Retailer_Add", 1, 11), "send Potential Business");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getTotlBusinessInConstructionChemicals(), excel.getStringdata2("Retailer_Add", 1, 10), "send Potential Business");    
 		});
 		Thread.sleep(1000);
 		
@@ -257,13 +264,13 @@ public class Retailer_Master_AddPage_Test extends BaseClass{
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__40", "Verify that user send GST Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getGstNumbers(), excel.getStringdata2("Retailer_Add", 1, 12), "send GST Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getGstNumbers(), excel.getStringdata2("Retailer_Add", 1, 11), "send GST Number");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__41", "Verify that user send Food License Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getLiceseNumber(), excel.getStringdata2("Retailer_Add", 1, 13), "send Food License Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getLiceseNumber(), excel.getStringdata2("Retailer_Add", 1, 12), "send Food License Number");    
 		});
 		Thread.sleep(1000);
 		
@@ -281,7 +288,7 @@ public class Retailer_Master_AddPage_Test extends BaseClass{
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__44", "Verify that user send Expiry Date", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getExpiry_date(), excel.getStringdata2("Retailer_Add", 1, 14), "send Food Expiry Date");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getExpiry_date(), excel.getStringdata2("Retailer_Add", 1, 13), "send Food Expiry Date");    
 		});
 		Thread.sleep(1000);
 		
@@ -299,21 +306,165 @@ public class Retailer_Master_AddPage_Test extends BaseClass{
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__47", "Verify that user send Bank Account Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getBankAccountNo(), excel.getStringdata2("Retailer_Add", 1, 15), "send Bank Account Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getBankAccountNo(), excel.getStringdata2("Retailer_Add", 1, 14), "send Bank Account Number");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__48", "Verify that user send Bank IFSC Code", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getBankIfscCode(), excel.getStringdata2("Retailer_Add", 1, 16), "send Bank IFSC Code");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getBankIfscCode(), excel.getStringdata2("Retailer_Add", 1, 15), "send Bank IFSC Code");    
 		});
 		Thread.sleep(1000);
 		
+		// scroll to the bottom of the page
+		WebElement scroll3 = driver.findElement(By.xpath("//span[@id='ParentMasterContentPlaceHolder1_lblDocument4']"));
+    	JavascriptExecutor jse3= (JavascriptExecutor)driver;
+    	jse3.executeScript("arguments[0].scrollIntoView(true);", scroll3);
+        Thread.sleep(1000);
 		
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__49", "Verify that user Click on Select File to upload 1 ", () ->{
+       		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        // Wait for the file input to be present in the DOM
+	        WebElement uploadInput = wait.until(
+	            ExpectedConditions.presenceOfElementLocated(
+	                By.id("ParentMasterContentPlaceHolder1_fileUpload1"))
+	        );
+	        // Build an absolute path to your file
+	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb-Size.jpeg";
+	        System.out.println("Uploading file: " + filePath);
+	        
+	        // Send the file path directly to the hidden file input
+	        uploadInput.sendKeys(filePath);
+       	});
+       	Thread.sleep(5000);
+       	
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__50", "Verify that user Click on Select File to upload 2 ", () ->{
+       		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        // Wait for the file input to be present in the DOM
+	        WebElement uploadInput = wait.until(
+	            ExpectedConditions.presenceOfElementLocated(
+	                By.id("ParentMasterContentPlaceHolder1_fileUpload2"))
+	        );
+	        // Build an absolute path to your file
+	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb-Size.jpeg";
+	        System.out.println("Uploading file: " + filePath);
+	        
+	        // Send the file path directly to the hidden file input
+	        uploadInput.sendKeys(filePath);
+       	});
+       	Thread.sleep(5000);
+       	
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__51", "Verify that user Click on Select File to upload 3 ", () ->{
+       		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        // Wait for the file input to be present in the DOM
+	        WebElement uploadInput = wait.until(
+	            ExpectedConditions.presenceOfElementLocated(
+	                By.id("ParentMasterContentPlaceHolder1_fileUpload3"))
+	        );
+	        // Build an absolute path to your file
+	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb-Size.jpeg";
+	        System.out.println("Uploading file: " + filePath);
+	        
+	        // Send the file path directly to the hidden file input
+	        uploadInput.sendKeys(filePath);
+       	});
+       	Thread.sleep(5000);
+       	
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__52", "Verify that user Click on Select File to upload 1 ", () ->{
+       		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        // Wait for the file input to be present in the DOM
+	        WebElement uploadInput = wait.until(
+	            ExpectedConditions.presenceOfElementLocated(
+	                By.id("ParentMasterContentPlaceHolder1_fileUpload4"))
+	        );
+	        // Build an absolute path to your file
+	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb-Size.jpeg";
+	        System.out.println("Uploading file: " + filePath);
+	        
+	        // Send the file path directly to the hidden file input
+	        uploadInput.sendKeys(filePath);
+       	});
+       	Thread.sleep(5000);
+       	
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__53", "Verify that user Click on Select File to upload 2 ", () ->{
+       		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        // Wait for the file input to be present in the DOM
+	        WebElement uploadInput = wait.until(
+	            ExpectedConditions.presenceOfElementLocated(
+	                By.id("ParentMasterContentPlaceHolder1_fileUpload5"))
+	        );
+	        // Build an absolute path to your file
+	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb-Size.jpeg";
+	        System.out.println("Uploading file: " + filePath);
+	        
+	        // Send the file path directly to the hidden file input
+	        uploadInput.sendKeys(filePath);
+       	});
+       	Thread.sleep(5000);
+       	
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__54", "Verify that user Click on Select File to upload 3 ", () ->{
+       		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        // Wait for the file input to be present in the DOM
+	        WebElement uploadInput = wait.until(
+	            ExpectedConditions.presenceOfElementLocated(
+	                By.id("ParentMasterContentPlaceHolder1_fileUpload6"))
+	        );
+	        // Build an absolute path to your file
+	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb-Size.jpeg";
+	        System.out.println("Uploading file: " + filePath);
+	        
+	        // Send the file path directly to the hidden file input
+	        uploadInput.sendKeys(filePath);
+       	});
+       	Thread.sleep(5000);
 		
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__55", "Verify that user click on Godown Address", () ->{
+    		Liabrary_Havmor.custom_click(Add.getGodown_Address(), "click on Godown Address");
+    		});
+    		Thread.sleep(1000);
+    	
+    	
+    	
+    	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__56", "Verify that user send Godown Address Name", () ->{
+    		Liabrary_Havmor.custom_Sendkeys(Add.getShippingAddressName(), excel.getStringdata2("Retailer_Add", 1, 16), "send Godown Address Name");
+    		});
+    		Thread.sleep(1000);
+    	
+    	
+    		
+    	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__57", "Verify that user send Godown Address", () ->{
+    		Liabrary_Havmor.custom_Sendkeys(Add.getShippingAddress(), excel.getStringdata2("Retailer_Add", 1, 17), "send Godown Address");
+    		});
+    		Thread.sleep(1000);	
+    		
+    		
+    	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__58", "Verify that user click on Godown State dropdown", () ->{
+       		 Liabrary_Havmor.custom_click(Add.getGodown_state(), "click on Godown State dropdown");
+       		 });
+       	  Thread.sleep(1000);
+    	   		  		
+    	   		  		
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__59", "Verify that user click on Godown State dropdown value", () ->{
+    	   	 Liabrary_Havmor.custom_click(Add.getGodown_state_value(), "click on Godown State dropdown value");
+        	  });
+       	     Thread.sleep(1000);	
+    		
+    		
+        ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__60", "Verify that user click on Godown city dropdown", () ->{
+       		 Liabrary_Havmor.custom_click(Add.getGodown_City(), "click on Godown city dropdown");
+       		 });
+        	  Thread.sleep(1000);
+    	   		  		
+    	   		  		
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__61", "Verify that user click on Godown city dropdown value", () ->{
+       		Liabrary_Havmor.custom_click(Add.getGodown_City_Value(), "click on Godown city dropdown value");
+           });
+       	Thread.sleep(1000);
 		
-		
-		
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__62", "Verify that user send Godown Pincode", () ->{
+    		Liabrary_Havmor.custom_Sendkeys(Add.getPinCode_Godown(), excel.getStringdata2("Retailer_Add", 1, 18), "send Godown Pincode");
+    		});
+    		Thread.sleep(1000);
 		
 		
 		

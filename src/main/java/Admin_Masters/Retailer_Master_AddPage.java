@@ -6,7 +6,48 @@ import org.openqa.selenium.support.How;
 
 public class Retailer_Master_AddPage {
 
+	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-link btn-block text-left label_default']")
+	private WebElement Godown_Address;
 	
+	@FindBy(how = How.XPATH, using = "//input[@id='txtGD1ShippingAddressName1']")
+		private WebElement ShippingAddressName;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtRetailerFirmName']")
+	private WebElement Retailer_Firm_Name;
+		
+		
+	
+	
+		public WebElement getRetailer_Firm_Name() {
+		return Retailer_Firm_Name;
+	}
+
+
+		@FindBy(how = How.XPATH, using = "//input[@id='txtGD1ShippingAddLine1']")
+		private WebElement ShippingAddress;
+		
+		
+		@FindBy(how = How.XPATH, using = "//select[@id='ddlGD1State']")
+		private WebElement Godown_state;
+		
+		
+		@FindBy(how = How.XPATH, using = "//select[@id='ddlGD1State']//option[normalize-space()='Maharashtra']")
+		private WebElement Godown_state_value;
+		
+		
+		@FindBy(how = How.XPATH, using = "//select[@id='ddlGD1City']")
+		private WebElement Godown_City;
+		
+		
+		@FindBy(how = How.XPATH, using = "//select[@id='ddlGD1City']//option[normalize-space()='Mumbai']")
+		private WebElement Godown_City_Value;
+		
+		
+		@FindBy(how = How.XPATH, using = "//input[@id='txtGD1PinCode']")
+		private WebElement PinCode_Godown;
+		
+		
+		
 	
 	@FindBy(how = How.XPATH, using = "//p[@class='menu-color'][normalize-space()='Retailer Master']")
 	private WebElement Retailer_Master_Submenu;
@@ -21,6 +62,46 @@ public class Retailer_Master_AddPage {
 	private WebElement Retailer_Master_menu;
 	
 	
+	public WebElement getGodown_Address() {
+		return Godown_Address;
+	}
+
+
+	public WebElement getShippingAddressName() {
+		return ShippingAddressName;
+	}
+
+
+	public WebElement getShippingAddress() {
+		return ShippingAddress;
+	}
+
+
+	public WebElement getGodown_state() {
+		return Godown_state;
+	}
+
+
+	public WebElement getGodown_state_value() {
+		return Godown_state_value;
+	}
+
+
+	public WebElement getGodown_City() {
+		return Godown_City;
+	}
+
+
+	public WebElement getGodown_City_Value() {
+		return Godown_City_Value;
+	}
+
+
+	public WebElement getPinCode_Godown() {
+		return PinCode_Godown;
+	}
+
+
 	public WebElement getRetailer_Master_menu() {
 		return Retailer_Master_menu;
 	}
@@ -217,7 +298,7 @@ public class Retailer_Master_AddPage {
 	private WebElement Distributor;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_DropDown']//ul//li)[1]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_DropDown']//ul//li)[2]")
 	private WebElement Distributor_value;
 	
 	
@@ -374,8 +455,9 @@ public class Retailer_Master_AddPage {
 		return Close_btn;
 	}
 
+	
 
-	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnUpdate']")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_radGridRetailerMaster_GridData']//child::table//tr//td//a[@id='ctl00_ParentMasterContentPlaceHolder1_radGridRetailerMaster_ctl00_ctl04_BtnUpdate']")
 	private WebElement Edit_btn;
 	
 	

@@ -74,7 +74,19 @@ private XSSFWorkbook wb;
 	    switch (cell.getCellType()) {
 	        case STRING:
 	            return cell.getStringCellValue();
+	            
+	            
+	            
+	        case NUMERIC:
+	            if (DateUtil.isCellDateFormatted(cell)) {
+	                return cell.getDateCellValue().toString();
+	            } else {
+	                double numericValue = cell.getNumericCellValue();
+	                DecimalFormat df = new DecimalFormat("#.##"); // choose format you want
+	                return df.format(numericValue);
+	            }
 
+/*
 	        case NUMERIC:
 	            if (DateUtil.isCellDateFormatted(cell)) {
 	                return cell.getDateCellValue().toString();
@@ -85,7 +97,7 @@ private XSSFWorkbook wb;
 	                } else {
 	                    return String.valueOf(numericValue); // decimal
 	                }
-	            }
+	            } */
 	          
 	       
 

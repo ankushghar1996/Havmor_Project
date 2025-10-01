@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 public class Route_Master_Add_BTN_Main {
 
 	
-	   @FindBy(how = How.XPATH, using = "(//div[@id='mainDiv']//ul//li//p[text()='Route Master'])[2]")
+	   @FindBy(how = How.XPATH, using = "//div[@id='mainDiv']//ul//li//p[text()='Retailer Creation']")
 	   private WebElement Route_Master;
 	   
 	   public WebElement getRoute_Name_Excel() {

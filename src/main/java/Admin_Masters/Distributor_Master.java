@@ -1,12 +1,12 @@
 package Admin_Masters;
-
+ 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
+ 
 public class Distributor_Master {
-
+ 
 	
 WebDriver driver;
 	
@@ -17,7 +17,7 @@ WebDriver driver;
 	
 	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Distributor Creation']")
 	private WebElement Distributor_Master;
-
+ 
 	public WebElement getDistributor_Master() {
 		return Distributor_Master;
 	}
@@ -30,133 +30,133 @@ WebDriver driver;
 	public WebElement getAdd_btn() {
 		return Add_btn;
 	}
-
-
+ 
+ 
 	public WebElement getSales_Hierarchy_dropdown() {
 		return Sales_Hierarchy_dropdown;
 	}
-
-
+ 
+ 
 	public WebElement getSales_Hierarchy_Value() {
 		return Sales_Hierarchy_Value;
 	}
-
-
+ 
+ 
 	public WebElement getDistributorCode() {
 		return DistributorCode;
 	}
-
-
+ 
+ 
 	public WebElement getDistributorName() {
 		return DistributorName;
 	}
-
-
+ 
+ 
 	public WebElement getDistributorCategory() {
 		return DistributorCategory;
 	}
-
-
+ 
+ 
 	public WebElement getModernTrade_CheckBox() {
 		return ModernTrade_CheckBox;
 	}
-
-
+ 
+ 
 	public WebElement getDepoCode() {
 		return DepoCode;
 	}
-
-
+ 
+ 
 	public WebElement getDepoCode_value() {
 		return DepoCode_value;
 	}
-
-
+ 
+ 
 	public WebElement getTxtContactPersonName() {
 		return txtContactPersonName;
 	}
-
-
+ 
+ 
 	public WebElement getTxtContactNumber() {
 		return txtContactNumber;
 	}
-
-
+ 
+ 
 	public WebElement getTxtEmail() {
 		return txtEmail;
 	}
-
-
+ 
+ 
 	public WebElement getTxtAddress1() {
 		return txtAddress1;
 	}
-
-
+ 
+ 
 	public WebElement getTxtAddress2() {
 		return txtAddress2;
 	}
-
-
+ 
+ 
 	public WebElement getTxtAddress3() {
 		return txtAddress3;
 	}
-
-
+ 
+ 
 	public WebElement getState_dropdown() {
 		return State_dropdown;
 	}
-
-
+ 
+ 
 	public WebElement getState_dropdown_value() {
 		return State_dropdown_value;
 	}
-
-
+ 
+ 
 	public WebElement getCity_dropdown() {
 		return City_dropdown;
 	}
-
-
+ 
+ 
 	public WebElement getCity_dropdown_Value() {
 		return City_dropdown_Value;
 	}
-
-
+ 
+ 
 	public WebElement getTxtPinCode() {
 		return txtPinCode;
 	}
-
-
+ 
+ 
 	public WebElement getTxtpanNumber() {
 		return txtpanNumber;
 	}
-
-
+ 
+ 
 	public WebElement getFSSAIType_dropdown() {
 		return FSSAIType_dropdown;
 	}
-
-
+ 
+ 
 	public WebElement getFSSAIType_dropdown_Value() {
 		return FSSAIType_dropdown_Value;
 	}
-
-
+ 
+ 
 	public WebElement getTxtFSSAILicense() {
 		return txtFSSAILicense;
 	}
-
-
+ 
+ 
 	public WebElement getTxtFSSAILicense_dateInput() {
 		return txtFSSAILicense_dateInput;
 	}
-
-
+ 
+ 
 	@FindBy(how = How.XPATH, using = "//div[@id='ParentMasterContentPlaceHolder1_divUserBody']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlArea']")
 	private WebElement Sales_Hierarchy_dropdown;
 	
 	
-
+ 
 	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlArea_DropDown']//ul//li[1]")
 	private WebElement Sales_Hierarchy_Value;
 	
@@ -212,7 +212,7 @@ WebDriver driver;
 	@FindBy(how = How.XPATH, using = "//div[@class='col-md-3 mb-2']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState']")
 	private WebElement State_dropdown;
 	
-
+ 
 	//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[15]
 	//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']
 	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']")
@@ -250,8 +250,6 @@ WebDriver driver;
 	@FindBy(how = How.XPATH, using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_dtpFSSAIExpiry_dateInput']")
 	private WebElement txtFSSAILicense_dateInput;
 	
-	
-	
 	@FindBy(how = How.XPATH, using = "//div[@class='col-md-12']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGstType']")
 	private WebElement GstType_dropdown;
 	
@@ -259,28 +257,28 @@ WebDriver driver;
 	public WebElement getGstType_dropdown() {
 		return GstType_dropdown;
 	}
-
-
+ 
+ 
 	public WebElement getGstType_dropdown_value() {
 		return GstType_dropdown_value;
 	}
-
-
+ 
+ 
 	public WebElement getTxtGSTNumber() {
 		return txtGSTNumber;
 	}
-
-
+ 
+ 
 	public WebElement getGSTState_dropdown() {
 		return GSTState_dropdown;
 	}
-
-
+ 
+ 
 	public WebElement getGSTState_dropdown_values() {
 		return GSTState_dropdown_values;
 	}
-
-
+ 
+ 
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGstType_DropDown']//ul//li)[2]")
 	private WebElement GstType_dropdown_value;
 	
@@ -301,12 +299,16 @@ WebDriver driver;
 	@FindBy(how = How.XPATH, using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_dtpFSSAIExpiry_dateInput']")
 	private WebElement FSSAI_ExpiryDate;
 
+
 	public WebElement getFSSAI_ExpiryDate() {
 		return FSSAI_ExpiryDate;
 	}
 	
 	
+
+
 	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-link btn-block text-left label_default collapsed']")
+
 	private WebElement Godown_Address;
 	
 	
@@ -314,51 +316,53 @@ WebDriver driver;
 		return Godown_Address;
 	}
 
-
+ 
+ 
 	public WebElement getShippingAddressName() {
 		return ShippingAddressName;
 	}
-
-
+ 
+ 
 	public WebElement getShippingAddress() {
 		return ShippingAddress;
 	}
-
-
+ 
+ 
 	public WebElement getGodown_state() {
 		return Godown_state;
 	}
-
-
+ 
+ 
 	public WebElement getGodown_state_value() {
 		return Godown_state_value;
 	}
-
-
+ 
+ 
 	public WebElement getGodown_City() {
 		return Godown_City;
 	}
-
-
+ 
+ 
 	public WebElement getGodown_City_Value() {
 		return Godown_City_Value;
 	}
-
-
+ 
+ 
 	public WebElement getPinCode() {
 		return PinCode;
 	}
-
-
+ 
+ 
 	public WebElement getSave_btn() {
 		return Save_btn;
 	}
-
-
+ 
+ 
 	public WebElement getClose_btn() {
 		return Close_btn;
 	}
-
+ 
+ 
 
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtGD1ShippingAddressName1']")
 	private WebElement ShippingAddressName;
@@ -407,3 +411,4 @@ WebDriver driver;
 	
 	
 }
+ 
