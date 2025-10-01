@@ -43,9 +43,9 @@ public class SalesMan_Approval_ZSM_Test extends BaseClass_SE{
 	
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_ZSM_Test_05", "Verify that user Click On Approval button", () ->{
-		Liabrary_Havmor.custom_click(app.getBtnApproval(), "Click On Approval button");      
-		});
-		Thread.sleep(1000);
+	Liabrary_Havmor.custom_click(app.getBtnApproval(), "Click On Approval button");      
+	});
+	Thread.sleep(1000);
 		
 		
 		
