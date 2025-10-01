@@ -298,19 +298,24 @@ WebDriver driver;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_dtpFSSAIExpiry_dateInput']")
 	private WebElement FSSAI_ExpiryDate;
- 
+
+
 	public WebElement getFSSAI_ExpiryDate() {
 		return FSSAI_ExpiryDate;
 	}
 	
 	
-	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-link btn-block text-left label_default']")
+
+
+	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-link btn-block text-left label_default collapsed']")
+
 	private WebElement Godown_Address;
 	
 	
 	public WebElement getGodown_Address() {
 		return Godown_Address;
 	}
+
  
  
 	public WebElement getShippingAddressName() {
@@ -358,6 +363,7 @@ WebDriver driver;
 	}
  
  
+
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtGD1ShippingAddressName1']")
 	private WebElement ShippingAddressName;
 	
