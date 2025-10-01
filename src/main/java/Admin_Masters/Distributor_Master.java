@@ -293,9 +293,107 @@ WebDriver driver;
 	private WebElement GSTState_dropdown;
 	
 	
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGSTState_DropDown']//ul//li[normalize-space()='Maharashtra']")
 	private WebElement GSTState_dropdown_values;
 	
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_dtpFSSAIExpiry_dateInput']")
+	private WebElement FSSAI_ExpiryDate;
+
+	public WebElement getFSSAI_ExpiryDate() {
+		return FSSAI_ExpiryDate;
+	}
+	
+	
+	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-link btn-block text-left label_default collapsed']")
+	private WebElement Godown_Address;
+	
+	
+	public WebElement getGodown_Address() {
+		return Godown_Address;
+	}
+
+
+	public WebElement getShippingAddressName() {
+		return ShippingAddressName;
+	}
+
+
+	public WebElement getShippingAddress() {
+		return ShippingAddress;
+	}
+
+
+	public WebElement getGodown_state() {
+		return Godown_state;
+	}
+
+
+	public WebElement getGodown_state_value() {
+		return Godown_state_value;
+	}
+
+
+	public WebElement getGodown_City() {
+		return Godown_City;
+	}
+
+
+	public WebElement getGodown_City_Value() {
+		return Godown_City_Value;
+	}
+
+
+	public WebElement getPinCode() {
+		return PinCode;
+	}
+
+
+	public WebElement getSave_btn() {
+		return Save_btn;
+	}
+
+
+	public WebElement getClose_btn() {
+		return Close_btn;
+	}
+
+
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtGD1ShippingAddressName1']")
+	private WebElement ShippingAddressName;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtGD1ShippingAddLine1']")
+	private WebElement ShippingAddress;
+	
+	
+	@FindBy(how = How.XPATH, using = "//div[@class='input-box mb-3']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGD1State']")
+	private WebElement Godown_state;
+	
+	
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGD1State_DropDown']//ul//li[normalize-space()='Maharashtra']")
+	private WebElement Godown_state_value;
+	
+	
+	@FindBy(how = How.XPATH, using = "//div[@class='input-box mb-3']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGD1City']")
+	private WebElement Godown_City;
+	
+	
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlGD1City_DropDown']//ul//li[normalize-space()='Achalpur']")
+	private WebElement Godown_City_Value;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtGD1PinCode']")
+	private WebElement PinCode;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnSave']")
+	private WebElement Save_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")
+	private WebElement Close_btn;
 	
 	
 	
