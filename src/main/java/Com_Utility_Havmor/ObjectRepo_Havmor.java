@@ -99,7 +99,9 @@ public class ObjectRepo_Havmor {
                 "success otp",
                 "otp dispatched",
                 "okay",
-                "yes"
+                "yes",
+                "Added",
+                "New"
             );
 
             for (WebElement msg : flashMessages) {

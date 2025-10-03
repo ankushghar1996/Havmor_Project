@@ -20,7 +20,7 @@ import org.testng.annotations.BeforeSuite;
 import Com_LoginPage_POM.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
  
-public class BaseClass_HOHR {
+public class BaseClass_ASM {
  
     public static WebDriver driver;
     public static Excel_Data_Provider_Havmor excel;
@@ -65,9 +65,9 @@ public class BaseClass_HOHR {
         LoginPage loginelements = PageFactory.initElements(driver, LoginPage.class);
  
         // Enter username & password using excel (adjust indexes if needed)
-        Liabrary_Havmor.custom_Sendkeys(loginelements.getUsername(), excel.getStringdata2("Sheet1", 8, 0), "UserName Field");
+        Liabrary_Havmor.custom_Sendkeys(loginelements.getUsername(), excel.getStringdata2("Sheet1", 9, 0), "UserName Field");
         Thread.sleep(800);
-        Liabrary_Havmor.custom_Sendkeys(loginelements.getPassword(), excel.getStringdata2("Sheet1", 8, 1), "Password Field");
+        Liabrary_Havmor.custom_Sendkeys(loginelements.getPassword(), excel.getStringdata2("Sheet1", 9, 1), "Password Field");
         Thread.sleep(1500);
  
         // Click Continue to trigger OTP generation
