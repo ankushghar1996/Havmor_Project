@@ -7,8 +7,13 @@ import org.openqa.selenium.support.How;
 public class Route_Master_Add_BTN_Main {
 
 	
-	   @FindBy(how = How.XPATH, using = "//div[@id='mainDiv']//ul//li//p[text()='Retailer Creation']")
+	   @FindBy(how = How.XPATH, using = "//div[@id='mainDiv']//ul//li//p[text()='Route Creation']")
 	   private WebElement Route_Master;
+	   
+	   @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtERPCode']")
+	   private WebElement Erp_Code_Textbox_Excel;
+	   
+	   
 	   
 	   public WebElement getRoute_Name_Excel() {
 		return Route_Name_Excel;
@@ -32,7 +37,7 @@ public class Route_Master_Add_BTN_Main {
 	   @FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_Arrow']")
 	   private WebElement Distributor_Name;
 	   
-	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_DropDown']//ul//li)[5]")
+	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_DropDown']//ul//li)[4]")
 	   private WebElement Distributor_Name_Value;
 	   
 	   @FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsalesman_Arrow']")
@@ -113,6 +118,10 @@ public class Route_Master_Add_BTN_Main {
 
 	public WebElement getSave_Button() {
 		return Save_Button;
+	}
+
+	public WebElement getErp_Code_Textbox_Excel() {
+		return Erp_Code_Textbox_Excel;
 	}	
 	
 	

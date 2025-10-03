@@ -78,7 +78,7 @@ public class Attribute_Master_Main {
 		return Cancel_LinkBtn;
 	}
 
-	@FindBy(how = How.XPATH, using = "(//p[normalize-space()='Attribute Master'])[2]")
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Attribute Creation']")
 	private WebElement Attribute_Master_submenu;
 	
 	

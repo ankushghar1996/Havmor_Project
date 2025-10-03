@@ -94,10 +94,21 @@ public class Route_Master_Add_BTN_Test  extends BaseClass{
         });
         Thread.sleep(1000);
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_11", "Verify that user Click on Salesman Name Dropdown Value", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_12", "Verify that user Click on Salesman Name Dropdown Value", () ->{
         Liabrary_Havmor.custom_Sendkeys(RMADD.getRoute_Name_Excel(), excel.getStringdata2("Route_Add", 1, 0), "Route Name");
         });
         Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_13", "Verify that user Enter ERP Code", () ->{
+        Liabrary_Havmor.custom_Sendkeys(RMADD.getErp_Code_Textbox_Excel(), excel.getStringdata2("Route_Add", 1, 1), "ERP Code");
+          });
+       Thread.sleep(1000);
+          
+       ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_14", "Verify that user Click on Save Button", () ->{
+          Liabrary_Havmor.custom_click(RMADD.getSave_Button(),"Save Button");
+            });
+       Thread.sleep(1000);
+                
 
 }
 
