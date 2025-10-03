@@ -67,7 +67,7 @@ public class ObjectRepo_Havmor {
    
     public static void startTestAndLog_1_SS(String testNumber, String testDescription, Runnable action) {
         test = extent.createTest(testNumber, testDescription); // ✅ Create test
- 
+
         try {  // ✅ Outer try for everything
 
             // --- Wait for old toast to disappear
@@ -84,11 +84,10 @@ public class ObjectRepo_Havmor {
             // --- Run the actual step
             action.run();
 
-
             // 2️⃣ Now look for new flash messages
             List<WebElement> flashMessages = driver.findElements(By.xpath("//div[@id='toast-container']"));
             boolean flashErrorFound = false;
- 
+
             // ✅ Safe flash keywords (including OTP success cases)
             List<String> safeFlashKeywords = Arrays.asList(
                 "successfully",
@@ -102,44 +101,53 @@ public class ObjectRepo_Havmor {
                 "okay",
                 "yes"
             );
- 
+
             for (WebElement msg : flashMessages) {
                 if (msg.isDisplayed()) {
                     String messageText = msg.getText().trim().toLowerCase();
                     boolean isSafe = safeFlashKeywords.stream().anyMatch(messageText::contains);
- 
+
                     if (isSafe) {
                         test.pass("✅ Flash Message: " + messageText);
                         captureScreenshot("Screenshot - Flash Success");
-                    } else {
+                    } 
+                    // 🆕 Added: Critical error messages check
+                    else if (messageText.contains("error saving scheme: unauthorized") 
+                          || messageText.contains("error duplicate data"))
+                    	{
+                        test.fail("❌ Critical Flash Message: " + messageText);
+                        captureScreenshot("Screenshot - Critical Flash Message");
+                        flashErrorFound = true;
+                        // ⛔ Stop execution immediately
+                        throw new RuntimeException("Critical flash message found: " + messageText);
+                    }
+                    // 🔴 Old hardcoded handling continues untouched
+                    else {
                         test.fail("❌ Flash Message Detected: " + messageText);
                         flashErrorFound = true;
                         captureScreenshot("Screenshot - Flash Error");
                     }
                 }
             }
- 
+
             // ✅ Final decision
             if (!flashErrorFound) {
                 test.pass("✅ " + testDescription);
                 captureScreenshot("Screenshot - Passed");
             } else {
                 // ❌ Fail only for error messages, NOT for safe ones
-               // throw new RuntimeException("Flash error found — test failed.");
-            	 // Mark fail but do NOT throw, so execution continues
+                // throw new RuntimeException("Flash error found — test failed.");
+                // Mark fail but do NOT throw, so execution continues
                 test.fail("❌ Flash error found in step: " + testDescription);
-            	
             }
- 
+
         } catch (Exception e) {
-//            test.fail("❌ Exception in step: " + testDescription + " | " + e.getMessage());
-//            captureScreenshot("Screenshot - Exception");
-//            throw new RuntimeException(e);       
             test.fail("❌ Exception in step: " + testDescription + " | " + e.getMessage());
             captureScreenshot("Screenshot - Exception");
             // No throw here either
         }
     }
+
 /*
 // 🔁 NEW METHOD: Flash message support version
     public static void startTestAndLog_1_SS(String testNumber, String testDescription, Runnable action) {

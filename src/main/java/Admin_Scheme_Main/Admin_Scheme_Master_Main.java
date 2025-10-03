@@ -6,10 +6,26 @@ import org.openqa.selenium.support.How;
 
 public class Admin_Scheme_Master_Main {
 	
+	public WebElement getCategory_Checkbox1() {
+		return Category_Checkbox1;
+	}
+
 	//Basic Info Tab Button	
 	@FindBy(how=How.XPATH,using = "//div[@id='mainDiv']//ul//li//p[text()='Scheme Creation']")
 	private WebElement Scheme_Creation;
 	
+	@FindBy(how=How.XPATH,using = "(//div[@id='ParentMasterContentPlaceHolder1_rptCategoriesPanel']//child::input[@type='checkbox'])[1]")
+	private WebElement Category_Checkbox1;
+	
+	@FindBy(how=How.XPATH,using = "")
+	private WebElement Mininum_QTY;
+	
+	//(//div[@id='ParentMasterContentPlaceHolder1_rptCategoriesPanel']//child::input[@type='number'])[1]
+	
+	public WebElement getMininum_QTY() {
+		return Mininum_QTY;
+	}
+
 	@FindBy(how=How.XPATH,using = "//div[@id='ParentMasterContentPlaceHolder1_SchemeMasterdiv']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSearch']")
 	private WebElement Search_Button;
 	
@@ -206,9 +222,7 @@ public class Admin_Scheme_Master_Main {
 		return Slab_Calculation_On_Dropdown;
 	}
 
-	public WebElement getSlab_Calculation_On_Value_Textbox_EXCEL() {
-		return Slab_Calculation_On_Value_Textbox_EXCEL;
-	}
+	
 
 	public WebElement getBasis_for_Scheme_Bifurcation_Dropdown() {
 		return Basis_for_Scheme_Bifurcation_Dropdown;
@@ -358,6 +372,7 @@ public class Admin_Scheme_Master_Main {
 	public WebElement getMinimum_or_Skus_Dropdown_Value() {
 		return Minimum_or_Skus_Dropdown_Value;
 	}
+	
 
 	@FindBy(how=How.XPATH,using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlMinLinesOrSkus_DropDown']//ul//li)[3]")
 	private WebElement Minimum_or_Skus_Dropdown_Value;
@@ -377,6 +392,13 @@ public class Admin_Scheme_Master_Main {
 	@FindBy(how=How.XPATH,using = "//div[@class='Custom-Footer fixed-bottom']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSaveDetails']")
 	private WebElement Save_And_ContinueBTN; 
 	
+	@FindBy(how=How.XPATH,using = "//div[@class='Custom-Footer fixed-bottom']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSaveProduct']")
+	private WebElement Save_And_ContinueProductInfo_BTN; 
+	
+	public WebElement getSave_And_ContinueProductInfo_BTN() {
+		return Save_And_ContinueProductInfo_BTN;
+	}
+
 	@FindBy(how=How.XPATH,using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlClaimableScheme_Input']")
 	private WebElement  Claimable_Dropdown; 
 	
@@ -411,34 +433,48 @@ public class Admin_Scheme_Master_Main {
 	private WebElement  Upload_Button_Product_Info;
 
 	//Slab Tab Button		
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3 mr-4']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSlabType_Input']")
 	private WebElement  Slab_Type_Dropdown;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSlabType_DropDown']//ul//li[text()='Unit']")
 	private WebElement  Slab_Type_Dropdown_Value;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3 mr-4']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSlabCalculationOn_Input']")
 	private WebElement  Slab_Calculation_On_Dropdown;
 	
-	@FindBy(how=How.XPATH,using = "")
-	private WebElement  Slab_Calculation_On_Value_Textbox_EXCEL;
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSlabCalculationOn_DropDown']//ul//li[text()='Sale rate without GST']")
+	private WebElement  Slab_Calculation_On_Value_Dropdown;
 	
-	@FindBy(how=How.XPATH,using = "")
+	//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSlabCalculationOn_DropDown']//ul//li[text()='Sale rate without GST']
+	
+	public WebElement getSlab_Calculation_On_Value_Dropdown() {
+		return Slab_Calculation_On_Value_Dropdown;
+	}
+
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3 mr-4']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSchemeBifurcation_Input']")
 	private WebElement Basis_for_Scheme_Bifurcation_Dropdown;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSchemeBifurcation_DropDown']//ul//li[text()='Value']")
 	private WebElement Basis_for_Scheme_Bifurcation_Dropdown_Value;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3 mr-4']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_txtCAPDiscountAmt']")
+	private WebElement CAP_on_Discount_Amt_Textbox_Excel ;
+ 
+	
+	//div[@class='row ml-3 mr-4']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_txtCAPDiscountAmt']
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3 mr-4']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlPurchaseLimit_Input']")
 	private WebElement  Is_purchase_limit_applicable_Dropdown;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlPurchaseLimit_DropDown']//ul//li[text()='No']")
 	private WebElement  Is_purchase_limit_applicable_Dropdown_Value;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3 mr-4']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSchemeDiscountCalc_Input']")
 	private WebElement  Discount_Calculated_on_Dropdown;
 	
-	@FindBy(how=How.XPATH,using = "")
+	
+
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSchemeDiscountCalc_DropDown']//ul//li[text()='MRP']")
 	private WebElement  Discount_Calculated_On_Dropdown_Value;
 	
 	
@@ -447,23 +483,26 @@ public class Admin_Scheme_Master_Main {
 	@FindBy(how=How.XPATH,using = "")
 	private WebElement Slab_Add_Link1_BTN;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ctl00_ParentMasterContentPlaceHolder1_txtOnAmt']")
 	private WebElement  On_QTY__Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ctl00_ParentMasterContentPlaceHolder1_txtDiscountPercent']")
 	private WebElement  From_Discount__Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ctl00_ParentMasterContentPlaceHolder1_txtDiscountTo']")
 	private WebElement  To_Discount__Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ctl00_ParentMasterContentPlaceHolder1_txtDiscountAmt']")
 	private WebElement  Flat_Discount__Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ctl00_ParentMasterContentPlaceHolder1_txtDiscountPerUnit']")
 	private WebElement Discount_Per_Unit__Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ParentMasterContentPlaceHolder1_btnValidateSKU']")
 	private WebElement Add_Slab_Button;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='Custom-Footer fixed-bottom']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSlabInfo']")
+	private WebElement Save_And_Continue_Slab_BTN;
 	
 	
 	
@@ -503,6 +542,14 @@ public class Admin_Scheme_Master_Main {
 	
 	@FindBy(how=How.XPATH,using = "")
 	private WebElement  Final_Close_Button_Budget_INFO;
+
+	public WebElement getSave_And_Continue_Slab_BTN() {
+		return Save_And_Continue_Slab_BTN;
+	}
+
+	public WebElement getCAP_on_Discount_Amt_Textbox_Excel() {
+		return CAP_on_Discount_Amt_Textbox_Excel;
+	}
 	
 
 	
