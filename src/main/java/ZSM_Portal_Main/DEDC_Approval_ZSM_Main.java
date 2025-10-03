@@ -4,25 +4,26 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class Asset_Master_Main {
+public class DEDC_Approval_ZSM_Main {
+
 	
 	
-	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Asset']")
-	private WebElement Asset_Menu;
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Scheme']")
+	private WebElement Scheme_Menu;
 	
 	
-	public WebElement getAsset_Menu() {
-		return Asset_Menu;
+	public WebElement getScheme_Menu() {
+		return Scheme_Menu;
 	}
 
 
-	public WebElement getAsset_Master_SubMenu() {
-		return Asset_Master_SubMenu;
+	public WebElement getDEDC_SubMenu() {
+		return DEDC_SubMenu;
 	}
 
 
-	public WebElement getAsset_Approval() {
-		return Asset_Approval;
+	public WebElement getDEDC_Approval() {
+		return DEDC_Approval;
 	}
 
 
@@ -36,12 +37,12 @@ public class Asset_Master_Main {
 	}
 
 
-	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Asset Master']")
-	private WebElement Asset_Master_SubMenu;
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='DEDC']")
+	private WebElement DEDC_SubMenu;
 	
 	
-	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Asset Approval']")
-	private WebElement Asset_Approval;
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='DEDC Approval']")
+	private WebElement DEDC_Approval;
 	
 	
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData']//table//tbody//tr)[1]")
@@ -58,5 +59,14 @@ public class Asset_Master_Main {
 	
 	
 	
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

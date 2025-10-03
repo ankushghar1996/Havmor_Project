@@ -134,10 +134,16 @@ public class Vendor_Master_Add_Test extends BaseClass{
 		Thread.sleep(1000);
 		
 		
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Vendor_Master_Test_Add_TC_13", "Verify that user click on save btn", () ->{
+		Liabrary_Havmor.custom_click(Add.getSave_btn(), "click on save btn");  
+		});
+		Thread.sleep(1000);
 		
 		
-		
-		
+//		ObjectRepo_Havmor.startTestAndLog_1_SS("Vendor_Master_Test_Add_TC_12", "Verify that user close btn", () ->{
+//		Liabrary_Havmor.custom_click(Add.getClose_btn(), "Click on close btne");      
+//		});
+//		Thread.sleep(1000);
 		
 		
 		
