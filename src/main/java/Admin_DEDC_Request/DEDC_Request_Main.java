@@ -1,5 +1,7 @@
 package Admin_DEDC_Request;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -305,18 +307,44 @@ public class DEDC_Request_Main {
 	
 	
 	
+	// Distributor options (NEW) — saare <li>
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_DropDown']//li[normalize-space()!='' and not(contains(.,'Select'))]")
+	private List<WebElement> Distributor_options;
+	
+	
+	public List<WebElement> getDistributor_options() {
+		return Distributor_options;
+	}
+
+
+	public List<WebElement> getOutlet_options() {
+		return Outlet_options;
+	}
+
+
+	// Retailer options (NEW) — saare <li>
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlOutlet_DropDown']//li[normalize-space()!='' and not(contains(.,'Select'))]")
+	private List<WebElement> Outlet_options;
 	
 	
 	
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_RadComboBox1_DropDown']//ul//li)[1]")
+	private WebElement SchemeApplicable_dropdown_Value;
+
+
+	public WebElement getSchemeApplicable_dropdown_Value() {
+		return SchemeApplicable_dropdown_Value;
+	}
 	
 	
 	
-	
-	
-	
-	
-	
-	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnModalClose']")
+	private WebElement close_btn;
+
+
+	public WebElement getClose_btn() {
+		return close_btn;
+	}
 	
 	
 	
