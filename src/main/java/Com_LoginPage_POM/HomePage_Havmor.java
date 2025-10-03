@@ -32,10 +32,10 @@ public WebElement getTarget_Menu() {
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Master']")
 	private WebElement Master_Menu;
 	
-	@FindBy(how = How.XPATH, using = "(//p[text()='User Master'])[1]")
+	@FindBy(how = How.XPATH, using = "//div[@id='mainDiv']//child::ul//p[normalize-space()='User Master']")
 	private WebElement User_Master_Menu;
 	
-	@FindBy(how = How.XPATH, using = "(//p[text()='User Master'])[2]")
+	@FindBy(how = How.XPATH, using = "//div[@id='mainDiv']//child::ul//p[normalize-space()='User Creation']")
 	private WebElement User_Master_Submenu;
 	
 	

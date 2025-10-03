@@ -67,9 +67,9 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
         //From Date
         	
      // Define expected values
-        String expectedMonth = "September";
+        String expectedMonth = "October";
         String expectedYear = "2025";
-        String expectedDate = "29";
+        String expectedDate = "20";
          
         // Step 1: Click on calendar icon to open the calendar
 
@@ -136,7 +136,7 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
 
         String toYear  = "2025";
 
-        String toDay   = "10";
+        String toDay   = "30";
          
         // Open the To Date calendar
 
@@ -302,12 +302,136 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
         });
         Thread.sleep(1000);
         
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_29", "Click on Save AND Continue basic info", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getSave_And_ContinueBTN(), "Save AND Continue basic info"); 
+        });
+        Thread.sleep(1000);
+        
         
      //Page 2 Product Info
         
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_30", "Click on Product Hierarchy Dropdown", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getProduct_Hierarchy_Dropdown(), "Product Hierarchy Dropdown"); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_31", "Click on Product Hierarchy Dropdown Value", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getProduct_Hierarchy_Dropdown_Value1(), "Product Hierarchy Dropdown Value"); 
+        });
+        Thread.sleep(1000);
+        
+
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_32", "Click on Category Checkbox", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getCategory_Checkbox1(), "Category Checkbox"); 
+        });
+        Thread.sleep(1000);
+        
+
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_33", "Increase Quantity by 5", () -> {
+            WebElement qtyBox = driver.findElement(By.xpath("//input[@class='txtQty form-control text-center']"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].stepUp(5);", qtyBox);
+        });
+        Thread.sleep(1000);
+
+        
+
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_34", "Click on Product Hierarchy Dropdown", () ->{
+            // Locate the toggle element using an appropriate selector
+            WebElement toggle = driver.findElement(By.xpath("//label[@class='switch ml-3']//span[@class='slider round']"));
+            
+            // First click on the toggle
+            toggle.click();
+            
+            // Second click on the toggle
+            toggle.click();
+        });
+
+
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_35", "Click on Save AND Continue Product info", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getSave_And_ContinueProductInfo_BTN(), "Save AND Continue Product info"); 
+        });
+        Thread.sleep(1000);
+        
+// Page 3 Slab Details
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_36", "Click on Slab Type Dropdown", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getSlab_Type_Dropdown(), "Slab Type Dropdown"); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_37", "Click on Slab Type Dropdown Value", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getSlab_Type_Dropdown_Value(), "Slab Type Dropdown Value"); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_38", "Enter To CAP on Discount ",() ->{
+            Liabrary_Havmor.custom_Sendkeys(ASMM.getCAP_on_Discount_Amt_Textbox_Excel(), excel.getStringdata2("Scheme_Add", 1, 8), "CAP on Discount");
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_39", "Click on Is purchase limit applicable ", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getIs_purchase_limit_applicable_Dropdown(), "Is purchase limit applicable "); 
+        });
+        Thread.sleep(1000);  
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_40", "Click on Is purchase limit applicable Value ", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getIs_purchase_limit_applicable_Dropdown_Value(), "Is purchase limit applicable Value "); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_41", "Click on Discount Calculated On Dropdown", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getDiscount_Calculated_on_Dropdown(), "Is purchase limit applicable "); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_42", "Click on Discount Calculated On Dropdown Value", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getDiscount_Calculated_On_Dropdown_Value(), "Discount Calculated On Dropdown Value "); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_43", "Click on Slab Calculation On Dropdown", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getSlab_Calculation_On_Dropdown(), "Slab Calculation On Dropdown"); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_44", "Click on Slab Calculation On Dropdown Value", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getDiscount_Calculated_On_Dropdown_Value(), "Slab Calculation On Dropdown Value "); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_45", "Click on Basis for Scheme Bifurcation Dropdown", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getBasis_for_Scheme_Bifurcation_Dropdown(), "Basis for Scheme Bifurcation Dropdown"); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_46", "Click on Basis for Scheme Bifurcation Dropdown Value", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getBasis_for_Scheme_Bifurcation_Dropdown_Value(), "Basis for Scheme Bifurcation Dropdown Value "); 
+        });
+        Thread.sleep(1000);
+        
+        //Add Slab Link1
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_47", "Click on Add Slab Link1", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getSlab_Add_Link1_BTN(), "Click on Add Slab Link1"); 
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_48", "Enter On QTY Textbox value", () ->{
+            Liabrary_Havmor.custom_Sendkeys(ASMM.getOn_QTY__Textbox_EXCEL(), excel.getStringdata2("Scheme_Add", 1, 9), "On QTY Value");
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_49", "Enter Flat Discount value", () ->{
+            Liabrary_Havmor.custom_Sendkeys(ASMM.getOn_QTY__Textbox_EXCEL(), excel.getStringdata2("Scheme_Add", 1, 10), "On QTY Value");
+        });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_50", "Click on Add Slab Button", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getAdd_Slab_Button(), "Add Slab Button"); 
+        });
+        Thread.sleep(1000);
         
         
-    
-   
     }
 }

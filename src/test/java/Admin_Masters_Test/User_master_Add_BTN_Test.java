@@ -17,6 +17,12 @@ public class User_master_Add_BTN_Test extends BaseClass {
 		 
    	User_master_Add_BTN_Main UMADD = PageFactory.initElements(driver, User_master_Add_BTN_Main.class);
     HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
+    
+    
+    ObjectRepo_Havmor.startTestAndLog_1_SS("Vendor_Master_Test_Add_TC_", "Verify that user Click On Master Menu ", () ->{
+		Liabrary_Havmor.custom_click(home.getMaster_Menu(), "Click On Master Menu");      
+		});
+		Thread.sleep(1000); 
 
  	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_User_Master_Add_TC_01", "Verify that user Click On User Master Menu ", () ->{
  	Liabrary_Havmor.custom_click(home.getUser_Master_Menu(), "User Master Menu");      
