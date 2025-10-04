@@ -480,7 +480,7 @@ public class Admin_Scheme_Master_Main {
 	
 	
 	//Add slab link/button
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='d-flex justify-content-between align-items-center']//a[@id='ParentMasterContentPlaceHolder1_addVolumnSlabLink']")
 	private WebElement Slab_Add_Link1_BTN;
 	
 	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ctl00_ParentMasterContentPlaceHolder1_txtOnAmt']")
@@ -498,7 +498,7 @@ public class Admin_Scheme_Master_Main {
 	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ctl00_ParentMasterContentPlaceHolder1_txtDiscountPerUnit']")
 	private WebElement Discount_Per_Unit__Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//Input[@id='ParentMasterContentPlaceHolder1_btnValidateSKU']")
+	@FindBy(how=How.XPATH,using = "//div[@class='modal-content']//child::div//input[@id='ParentMasterContentPlaceHolder1_btnValidateSKU']")
 	private WebElement Add_Slab_Button;
 	
 	@FindBy(how=How.XPATH,using = "//div[@class='Custom-Footer fixed-bottom']//child::div/input[@id='ParentMasterContentPlaceHolder1_btnSlabInfo']")
@@ -506,7 +506,109 @@ public class Admin_Scheme_Master_Main {
 	
 	
 	
-	//Applicable For Tab Button	
+	//Applicable For Tab Button
+	
+	//Distributor Selection
+
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_Input']")
+	private WebElement Distributor_Selection_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_DropDown']//ul//li[normalize-space()='Attribute']")
+	private WebElement Distributor_Selection_Dropdown_Value;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlRDType_Input']")
+	private WebElement Distributor_Type_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlRDType_DropDown']//ul//li)[1]")
+	private WebElement Distributor_Type_Dropdown_Value1;
+	
+	@FindBy(how=How.XPATH,using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlRDType_DropDown']//ul//li)[2]")
+	private WebElement Distributor_Type_Dropdown_Value2;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlRDType_DropDown']//input[@type='checkbox' and following-sibling::text()[normalize-space()='Check All']]")
+	private WebElement Distributor_Type_Dropdown_ValueCheck_All;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_Input']")
+	private WebElement State_Applicable_For_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_DropDown']//ul//li[normalize-space()='Maharashtra']")
+	private WebElement State_Applicable_For_Dropdown_Value;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlTown_Input']")
+	private WebElement Town_Applicable_For_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlTown_DropDown']//ul//li[normalize-space()='Achalpur']")
+	private WebElement Town_Applicable_For_Dropdown_Value;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSalesHierarchy_Input']")
+	private WebElement Sales_Heirarchy_Applicable_For_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='rcbScroll rcbWidth']//ul//li[normalize-space()='SE']")
+	private WebElement Sales_Heirarchy_Applicable_For_Dropdown_Value;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlAreaName_Input']")
+	private WebElement Select_Sales_Hierarchy_Name_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='rcbScroll rcbWidth']//ul//li[normalize-space()='Botanical Garden']")
+	private WebElement Select_Sales_Hierarchy_Name_Dropdown_Value;
+	
+	
+	//Applicable For Tab Button
+	//Retailer Selection
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlOutlet_Input']")
+	private WebElement Retailer_Selection_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlOutlet_DropDown']//ul//li[normalize-space()='Attribute']")
+	private WebElement Retailer_Selection_Dropdown_Value;
+	
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ddl_BrandingStatus_0_Input']")
+	private WebElement Branding_Status_ApplicableFor_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='rcbScroll rcbWidth']//ul//li[normalize-space()='Branded']")
+	private WebElement Branding_Status_ApplicableFor_Dropdown_Value;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ddl_DFStatus_1_Input']")
+	private WebElement DF_Status_ApplicableFor_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ddl_DFStatus_1_DropDown']//input[@type='checkbox' and following-sibling::text()[normalize-space()='Check All']]")
+	private WebElement DF_Status_ApplicableFor_Dropdown_ValuechckALL;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='rcbScroll rcbWidth']//ul//li[normalize-space()='DF']")
+	private WebElement DF_Status_ApplicableFor_Dropdown_ValueDF;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='rcbScroll rcbWidth']//ul//li[normalize-space()='Non DF']")
+	private WebElement DF_Status_ApplicableFor_Dropdown_ValueNonDF;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ddl_Type2_2_Input']")
+	private WebElement Type2_ApplicableFor_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ddl_Type2_2_DropDown']//ul//li[normalize-space()='Parlour']")
+	private WebElement Type2_ApplicableFor_Dropdown_Value;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ddl_UrbanRetailer_3_Input']")
+	private WebElement Urban_Retailer_ApplicableFor_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ddl_UrbanRetailer_3_DropDown']//ul//li[normalize-space()='Citybased outlets']")
+	private WebElement Urban_Retailer_ApplicableFor_Dropdown_Value1;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ddl_UrbanRetailer_3_DropDown']//ul//li[normalize-space()='Higher footfall']")
+	private WebElement Urban_Retailer_ApplicableFor_Dropdown_Value2;
+	
+	
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::div//input[@id='ddl_VicinityName_4_Input']")
+	private WebElement Vicinity_Name_ApplicableFor_Dropdown;
+	
+	@FindBy(how=How.XPATH,using = "//div[@id='ddl_VicinityName_4_DropDown']//ul//li[normalize-space()='Bus Station']")
+	private WebElement Vicinity_Name_ApplicableFor_Dropdown_Value;
+	
+	
+	//=================================
+	
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_btnApplicableForInfo']")
+	private WebElement Save_And_Continue_Applicable_For_BTN;
+
 	@FindBy(how=How.XPATH,using = "")
 	private WebElement National_Budget__Textbox_EXCEL;
 	
@@ -549,6 +651,126 @@ public class Admin_Scheme_Master_Main {
 
 	public WebElement getCAP_on_Discount_Amt_Textbox_Excel() {
 		return CAP_on_Discount_Amt_Textbox_Excel;
+	}
+
+	public WebElement getDistributor_Selection_Dropdown() {
+		return Distributor_Selection_Dropdown;
+	}
+
+	public WebElement getDistributor_Selection_Dropdown_Value() {
+		return Distributor_Selection_Dropdown_Value;
+	}
+
+	public WebElement getDistributor_Type_Dropdown() {
+		return Distributor_Type_Dropdown;
+	}
+
+	public WebElement getDistributor_Type_Dropdown_Value1() {
+		return Distributor_Type_Dropdown_Value1;
+	}
+
+	public WebElement getDistributor_Type_Dropdown_Value2() {
+		return Distributor_Type_Dropdown_Value2;
+	}
+
+	public WebElement getDistributor_Type_Dropdown_ValueCheck_All() {
+		return Distributor_Type_Dropdown_ValueCheck_All;
+	}
+
+	public WebElement getState_Applicable_For_Dropdown() {
+		return State_Applicable_For_Dropdown;
+	}
+
+	public WebElement getState_Applicable_For_Dropdown_Value() {
+		return State_Applicable_For_Dropdown_Value;
+	}
+
+	public WebElement getTown_Applicable_For_Dropdown() {
+		return Town_Applicable_For_Dropdown;
+	}
+
+	public WebElement getTown_Applicable_For_Dropdown_Value() {
+		return Town_Applicable_For_Dropdown_Value;
+	}
+
+	public WebElement getSales_Heirarchy_Applicable_For_Dropdown() {
+		return Sales_Heirarchy_Applicable_For_Dropdown;
+	}
+
+	public WebElement getSales_Heirarchy_Applicable_For_Dropdown_Value() {
+		return Sales_Heirarchy_Applicable_For_Dropdown_Value;
+	}
+
+	public WebElement getSelect_Sales_Hierarchy_Name_Dropdown() {
+		return Select_Sales_Hierarchy_Name_Dropdown;
+	}
+
+	public WebElement getSelect_Sales_Hierarchy_Name_Dropdown_Value() {
+		return Select_Sales_Hierarchy_Name_Dropdown_Value;
+	}
+
+	public WebElement getRetailer_Selection_Dropdown() {
+		return Retailer_Selection_Dropdown;
+	}
+
+	public WebElement getRetailer_Selection_Dropdown_Value() {
+		return Retailer_Selection_Dropdown_Value;
+	}
+
+	public WebElement getBranding_Status_ApplicableFor_Dropdown() {
+		return Branding_Status_ApplicableFor_Dropdown;
+	}
+
+	public WebElement getBranding_Status_ApplicableFor_Dropdown_Value() {
+		return Branding_Status_ApplicableFor_Dropdown_Value;
+	}
+
+	public WebElement getDF_Status_ApplicableFor_Dropdown() {
+		return DF_Status_ApplicableFor_Dropdown;
+	}
+
+	public WebElement getDF_Status_ApplicableFor_Dropdown_ValuechckALL() {
+		return DF_Status_ApplicableFor_Dropdown_ValuechckALL;
+	}
+
+	public WebElement getDF_Status_ApplicableFor_Dropdown_ValueDF() {
+		return DF_Status_ApplicableFor_Dropdown_ValueDF;
+	}
+
+	public WebElement getDF_Status_ApplicableFor_Dropdown_ValueNonDF() {
+		return DF_Status_ApplicableFor_Dropdown_ValueNonDF;
+	}
+
+	public WebElement getType2_ApplicableFor_Dropdown() {
+		return Type2_ApplicableFor_Dropdown;
+	}
+
+	public WebElement getType2_ApplicableFor_Dropdown_Value() {
+		return Type2_ApplicableFor_Dropdown_Value;
+	}
+
+	public WebElement getUrban_Retailer_ApplicableFor_Dropdown() {
+		return Urban_Retailer_ApplicableFor_Dropdown;
+	}
+
+	public WebElement getUrban_Retailer_ApplicableFor_Dropdown_Value1() {
+		return Urban_Retailer_ApplicableFor_Dropdown_Value1;
+	}
+
+	public WebElement getUrban_Retailer_ApplicableFor_Dropdown_Value2() {
+		return Urban_Retailer_ApplicableFor_Dropdown_Value2;
+	}
+
+	public WebElement getVicinity_Name_ApplicableFor_Dropdown() {
+		return Vicinity_Name_ApplicableFor_Dropdown;
+	}
+
+	public WebElement getVicinity_Name_ApplicableFor_Dropdown_Value() {
+		return Vicinity_Name_ApplicableFor_Dropdown_Value;
+	}
+
+	public WebElement getSave_And_Continue_Applicable_For_BTN() {
+		return Save_And_Continue_Applicable_For_BTN;
 	}
 	
 

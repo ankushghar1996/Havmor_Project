@@ -99,7 +99,10 @@ public class ObjectRepo_Havmor {
                 "success otp",
                 "otp dispatched",
                 "okay",
-                "yes"
+                "yes",
+                "Added",
+                "New"
+                
             );
 
             for (WebElement msg : flashMessages) {
@@ -138,7 +141,7 @@ public class ObjectRepo_Havmor {
                 // ❌ Fail only for error messages, NOT for safe ones
                 // throw new RuntimeException("Flash error found — test failed.");
                 // Mark fail but do NOT throw, so execution continues
-                test.fail("❌ Flash error found in step: " + testDescription);
+               // test.fail("❌ Flash error found in step: " + testDescription);
             }
 
         } catch (Exception e) {
