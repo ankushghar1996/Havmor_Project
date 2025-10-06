@@ -526,13 +526,12 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
         Thread.sleep(1000);
         
         
-        //Retailer Selection ATTRIBUTE
+        //Retailer Selection ATTRIBUTE 
         
        
-            WebElement qtyBox = driver.findElement(By.xpath("//div[@class='RadAjaxPanel']//child::span[@id='ParentMasterContentPlaceHolder1_lbl_ddl_BrandingStatus_0']"));
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].stepUp(5);", qtyBox);
-      
+        WebElement qtyBox = driver.findElement(By.xpath("//input[@id='ddl_VicinityName_4_Input']"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", qtyBox);
         Thread.sleep(1000);
 
         
@@ -612,10 +611,91 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
         Thread.sleep(1000);
         
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_79", "Enter Allocated Budget Per Distributor", () ->{
-            Liabrary_Havmor.custom_Sendkeys(ASMM.getNational_Budget__Textbox_EXCEL(), excel.getStringdata2("Scheme_Add", 1, 14 ), "Enter Allocated Budget Per Distributor");
+            Liabrary_Havmor.custom_Sendkeys(ASMM.getAllocated_Budget_Per_Distributor_Textbox_EXCEL(), excel.getStringdata2("Scheme_Add", 1, 14 ), "Enter Allocated Budget Per Distributor");
         });
         Thread.sleep(1000);
         
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_80", "Enter Allocated Budget Per Retailer", () ->{
+            Liabrary_Havmor.custom_Sendkeys(ASMM.getAllocated_Budget_Per_Retailer_Textbox_EXCEL(), excel.getStringdata2("Scheme_Add", 1, 15 ), "Enter Allocated Budget Per Retailer");
+        });
+        Thread.sleep(1000);
         
-    }
+      //Retailer Upload
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_81", "Click on Retailer Toggle switch Budget Info", () ->{
+            // Locate the toggle element using an appropriate selector
+            WebElement toggle = driver.findElement(By.xpath("//input[@id='chkToggleOutlet']/following-sibling::span[@class='slider round']"));
+            
+            // First click on the toggle
+            toggle.click(); });
+        Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_82", "Verify that user Click on Select File to upload Retailer", () ->{
+       		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        // Wait for the file input to be present in the DOM
+	        WebElement uploadInput = wait.until(
+	            ExpectedConditions.presenceOfElementLocated(
+	                By.id("ParentMasterContentPlaceHolder1_FileUpload7"))
+	        );
+	        // Build an absolute path to your file
+	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\Retailer_List_Scheme_Budget_Upload.csv";
+	        System.out.println("Uploading file: " + filePath);
+	        
+	        // Send the file path directly to the hidden file input
+	        uploadInput.sendKeys(filePath);
+       	});
+       	Thread.sleep(5000);
+        
+       	
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Program_Target_Upload_TC_83", "Verify that user Click on Upload Button Retailer", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getUpload_Button_Retailer_Budget_Info(), "Upload_Button Retailer");
+            });
+            Thread.sleep(1000);
+            
+            //Distributor Upload
+        
+            ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_84", "Click on Distributor Toggle switch Budget Info", () ->{
+                // Locate the toggle element using an appropriate selector
+                WebElement toggle = driver.findElement(By.xpath("//input[@id='chkSpecificDistributor']/following-sibling::span[@class='slider round']"));    
+                // First click on the toggle
+                toggle.click();  });
+            
+            Thread.sleep(1000);
+            
+            ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_85", "Verify that user Click on Select File to upload Distributor", () ->{
+           		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	        // Wait for the file input to be present in the DOM
+    	        WebElement uploadInput = wait.until(
+    	            ExpectedConditions.presenceOfElementLocated(
+    	                By.id("ParentMasterContentPlaceHolder1_FileUpload9"))
+    	        );
+    	        // Build an absolute path to your file
+    	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\Distributor_List_Scheme_Budget_Upload.csv";
+    	        System.out.println("Uploading file: " + filePath);
+    	        
+    	        // Send the file path directly to the hidden file input
+    	        uploadInput.sendKeys(filePath);
+           	});
+           	Thread.sleep(5000);
+            
+           	
+           	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Program_Target_Upload_TC_86", "Verify that user Click on Upload Button Distributor", () ->{
+                Liabrary_Havmor.custom_click(ASMM.getUpload_Button_Distributor_Budget_Info(), "Upload_Button Distributor");
+                });
+                Thread.sleep(1000);
+        
+       
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_87", "Click on Save Button For Budget Upload Page", () ->{
+            Liabrary_Havmor.custom_click(ASMM.getSave_And_Continue_Budget_Upload_Page(), "Save Button For Budget Upload Page"); 
+       });
+        Thread.sleep(1000);
+        
+//        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_85", "Click on Final Close Button Budget Upload", () ->{
+//            Liabrary_Havmor.custom_click(ASMM.getFinal_Close_Button_Budget_INFO(), "Final Close Button Budget Upload"); 
+//       });
+//        Thread.sleep(1000);
+        
+        
+    
+}
 }

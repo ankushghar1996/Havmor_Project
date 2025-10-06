@@ -608,20 +608,22 @@ public class Admin_Scheme_Master_Main {
 	
 	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_btnApplicableForInfo']")
 	private WebElement Save_And_Continue_Applicable_For_BTN;
+	
+	
 
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3']//child::input[@id='ctl00_ParentMasterContentPlaceHolder1_txtNationalBudget']")
 	private WebElement National_Budget__Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3']//child::input[@id='ctl00_ParentMasterContentPlaceHolder1_txtDistributorBudget']")
 	private WebElement Allocated_Budget_Per_Distributor_Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='row ml-3']//child::input[@id='ctl00_ParentMasterContentPlaceHolder1_txtOutletBudget']")
 	private WebElement Allocated_Budget_Per_Retailer_Textbox_EXCEL;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::input[@id='chkToggleOutlet']")
 	private WebElement Upload_Retailer_Specific_Budget_Switch_Button;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-12']//child::input[@id='chkSpecificDistributor']")
 	private WebElement Upload_Distributor_Specific_Budget_Switch_Button;
 	
 	@FindBy(how=How.XPATH,using = "")
@@ -630,20 +632,23 @@ public class Admin_Scheme_Master_Main {
 	@FindBy(how=How.XPATH,using = "")
 	private WebElement Download_Template_Distributor;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_FileUpload7']")
 	private WebElement  Select_File_to_upload_Retailer_CSV_Budget_Upload;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_btnuploadRetailerbuget']")
 	private WebElement  Upload_Button_Retailer_Budget_Info;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_FileUpload9']")
 	private WebElement  Select_File_to_upload_Distributor_CSV_Budget_Upload;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_BtnUploadDistributorbuget']")
 	private WebElement  Upload_Button_Distributor_Budget_Info;
 	
-	@FindBy(how=How.XPATH,using = "")
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_Button1']")
 	private WebElement  Final_Close_Button_Budget_INFO;
+	
+	@FindBy(how=How.XPATH,using = "//input[@id='ParentMasterContentPlaceHolder1_btnBugetUpload']")
+	private WebElement Save_And_Continue_Budget_Upload_Page;
 
 	public WebElement getSave_And_Continue_Slab_BTN() {
 		return Save_And_Continue_Slab_BTN;
@@ -772,6 +777,34 @@ public class Admin_Scheme_Master_Main {
 	public WebElement getSave_And_Continue_Applicable_For_BTN() {
 		return Save_And_Continue_Applicable_For_BTN;
 	}
+
+	public WebElement getSave_And_Continue_Budget_Upload_Page() {
+		return Save_And_Continue_Budget_Upload_Page;
+	}
+	
+	
+	
+	
+	///////////////////////////////////////
+	
+	//Scheme Edit Xpath
+	
+	@FindBy(how=How.XPATH,using = "(//table[@class='rgMasterTable rgClipCells']//child::tr//td//a)[2]")
+	private WebElement Action_Edit_Scheme;
+	
+	@FindBy(how=How.XPATH,using = "//div[@class='col-md-6']//a[@id='ParentMasterContentPlaceHolder1_lnkEdit']")
+	private WebElement Edit_Scheme_Icon_Basic_Info;
+
+	public WebElement getAction_Edit_Scheme() {
+		return Action_Edit_Scheme;
+	}
+
+	public WebElement getEdit_Scheme_Icon_Basic_Info() {
+		return Edit_Scheme_Icon_Basic_Info;
+	}
+	
+	
+	
 	
 
 	
