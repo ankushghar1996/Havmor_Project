@@ -65,9 +65,9 @@ public class BaseClass_NSM {
         LoginPage loginelements = PageFactory.initElements(driver, LoginPage.class);
  
         // Enter username & password using excel (adjust indexes if needed)
-        Liabrary_Havmor.custom_Sendkeys(loginelements.getUsername(), excel.getStringdata2("Sheet1", 4, 0), "UserName Field");
+        Liabrary_Havmor.custom_Sendkeys(loginelements.getUsername(), excel.getStringdata2("Sheet1", 5, 0), "UserName Field");
         Thread.sleep(800);
-        Liabrary_Havmor.custom_Sendkeys(loginelements.getPassword(), excel.getStringdata2("Sheet1", 4, 1), "Password Field");
+        Liabrary_Havmor.custom_Sendkeys(loginelements.getPassword(), excel.getStringdata2("Sheet1", 5, 1), "Password Field");
         Thread.sleep(1500);
  
         // Click Continue to trigger OTP generation

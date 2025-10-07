@@ -60,10 +60,10 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlTown_DropDown']//ul//li)[36]")
 	private WebElement Town_Value ;
 	
-	@FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlBankName_Arrow']")
+	@FindBy(how = How.XPATH, using = "//div[@class='input-box mb-3']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlBankName']")
 	private WebElement Bank_Name ;
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlBankName_DropDown']//ul//li)[49]")
+	@FindBy(how = How.XPATH, using = "//div[contains(@id,'ddlBankName_DropDown')]//li[contains(text(),'ABHYUDAYA CO-OP BANK LTD')]")
 	private WebElement Bank_Name_Value;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")
@@ -241,8 +241,179 @@ public class Salesman_Master_AddBTN_Main {
 
 	
 	
+
+	
+	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData')]//table//tr//td//a)[5]")
+	private WebElement Action_transfer_btn;
+	
+	
+	public WebElement getAction_transfer_btn() {
+		return Action_transfer_btn;
+	}
+
+	public WebElement getAction_reset_btn() {
+		return Action_reset_btn;
+	}
+
+	public WebElement getAction_deactivate_btn() {
+		return Action_deactivate_btn;
+	}
+
+	public WebElement getAction_Edit_btn() {
+		return Action_Edit_btn;
+	}
+
+	public WebElement getAction_View_btn() {
+		return Action_View_btn;
+	}
+
+	public WebElement getAction_Close_btn() {
+		return Action_Close_btn;
+	}
+
+	public WebElement getTransfer_Approve_btn() {
+		return Transfer_Approve_btn;
+	}
+
+	public WebElement getTransfer_Rejection_btn() {
+		return Transfer_Rejection_btn;
+	}
+
+	public WebElement getTransfer_Close_btn() {
+		return Transfer_Close_btn;
+	}
+
+	public WebElement getTransfer_ApproveYes_btn() {
+		return Transfer_ApproveYes_btn;
+	}
+
+	public WebElement getTransfer_ApproveNo_btn() {
+		return Transfer_ApproveNo_btn;
+	}
+
+	public WebElement getRejectReason_dropdown() {
+		return RejectReason_dropdown;
+	}
+
+	public WebElement getRejectReasonValue_DropDown() {
+		return RejectReasonValue_DropDown;
+	}
+
+	public WebElement getTransfer_RejectYes_btn() {
+		return Transfer_RejectYes_btn;
+	}
+
+	public WebElement getTransfer_RejectNo_btn() {
+		return Transfer_RejectNo_btn;
+	}
+
+	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData')]//table//tr//td//a)[4]")
+	private WebElement Action_reset_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData')]//table//tr//td//a)[3]")
+	private WebElement Action_deactivate_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData')]//table//tr//td//a)[2]")
+	private WebElement Action_Edit_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData')]//table//tr//td//a)[1]")
+	private WebElement Action_View_btn;
+	
+	//input[@id='ParentMasterContentPlaceHolder1_btnClose']
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")
+	private WebElement Action_Close_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnApproval']")
+	private WebElement Transfer_Approve_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnRejection']")
+	private WebElement Transfer_Rejection_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")
+	private WebElement Transfer_Close_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnApproveYes']")
+	private WebElement Transfer_ApproveYes_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnNo']")
+	private WebElement Transfer_ApproveNo_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//div[@class='form-group row']//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlRejectReason']")
+	private WebElement RejectReason_dropdown;
+	
+	
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlRejectReason_DropDown']//ul//li)[1]")
+	private WebElement RejectReasonValue_DropDown;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnRejectYes']")
+	private WebElement Transfer_RejectYes_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnRejectNo']")
+	private WebElement Transfer_RejectNo_btn;
+	
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnExport']")
+	private WebElement download_btn;
+
+	public WebElement getDownload_btn() {
+		return download_btn;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//Employee Code/UserId 
 
+
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtUserId']")
+	private WebElement txtUserId;
+
+	public WebElement getTxtUserId() {
+		return txtUserId;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

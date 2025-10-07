@@ -125,10 +125,54 @@ public class Route_Master_Add_BTN_Main {
 	}	
 	
 	
+	 public WebElement getAction_View_btn() {
+		return Action_View_btn;
+	}
+
+	public WebElement getAction_Edit_btn() {
+		return Action_Edit_btn;
+	}
+
+	public WebElement getAction_Close_btn() {
+		return Action_Close_btn;
+	}
+
+	public WebElement getEdit_Save_btn() {
+		return Edit_Save_btn;
+	}
+
+	public WebElement getEdit_Close_btn() {
+		return Edit_Close_btn;
+	}
+
+	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//td//a)[1]")
+	   private WebElement Action_View_btn;
 	
+	 @FindBy(how = How.XPATH, using = "(//div[contains(@id,'radGridRouteMaster_GridData')]//table//tr//td//a)[2]")
+	   private WebElement Action_Edit_btn;
 	
-	
-	
+	 
+	 @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")
+	   private WebElement Action_Close_btn;
+	 
+	 
+	 @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnUpdate']")
+	   private WebElement Edit_Save_btn;
+	 
+	 
+	 @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnClose']")
+	   private WebElement Edit_Close_btn;
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	
 	
 }

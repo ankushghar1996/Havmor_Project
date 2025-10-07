@@ -16,7 +16,7 @@ import Com_Utility_Havmor.BaseClass;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
-public class Retailer_Master_AddPage_Test extends BaseClass{
+public class Retailer_Master_AddPage_Test extends BaseClass {
 
 	
 	@Test

@@ -167,10 +167,16 @@ public class Depot_Master_Addpage_Test extends BaseClass{
 		Thread.sleep(1000);
 		
 		
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Depot_Master_Test_Add_TC_24", "Verify that user click on Save btn", () ->{
+		Liabrary_Havmor.custom_click(Add.getSave_btn(), "click on Save btn");       
+		});
+		Thread.sleep(1000);
 		
 		
-		
-		
+//		ObjectRepo_Havmor.startTestAndLog_1_SS("Depot_Master_Test_Add_TC_24", "Verify that user click on Close btn", () ->{
+//		Liabrary_Havmor.custom_click(Add.getClose_btn(), "click on Close btn");       
+//		});
+//		Thread.sleep(1000);
 		
 		
 		
