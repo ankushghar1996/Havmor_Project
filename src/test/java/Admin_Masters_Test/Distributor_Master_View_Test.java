@@ -11,12 +11,12 @@ import Com_Utility_Havmor.ObjectRepo_Havmor;
 
 
 
-public class Distributor_Master_Test extends BaseClass{
+public class Distributor_Master_View_Test extends BaseClass{
 
 	
 	@Test
 
-	public void Distributor_Homepage() throws Exception {
+	public void Distributor_View() throws Exception {
 
 
 	
@@ -31,15 +31,43 @@ public class Distributor_Master_Test extends BaseClass{
 	
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_02", "Verify that user Click On Distributor Master Sub Menu ", () ->{
-		Liabrary_Havmor.custom_click(home.getDistributorMaster_SubMenu(), "Click On Distributor Master Menu");      
-		});
-		Thread.sleep(1000);
+	Liabrary_Havmor.custom_click(home.getDistributorMaster_SubMenu(), "Click On Distributor Master Menu");      
+	});
+	Thread.sleep(1000);
 	
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_02", "Verify that user Click On Distributor Master Menu ", () ->{
 	Liabrary_Havmor.custom_click(DM.getDistributor_Master(), "Click On Distributor Master Menu");
 	});
 	Thread.sleep(1000);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

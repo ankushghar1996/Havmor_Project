@@ -196,6 +196,51 @@ public class Vendor_Master_Main {
 	
 	
 	
+	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'radGridServiceProvider_GridData')]//table//tr//td//a)[2]")
+	private WebElement Action_View_btn;
+	
+	
+	public WebElement getAction_View_btn() {
+		return Action_View_btn;
+	}
+
+
+	public WebElement getAction_Close_btn() {
+		return Action_Close_btn;
+	}
+
+
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnModalClose']")
+	private WebElement Action_Close_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'radGridServiceProvider_GridData')]//table//tr//td//a)[3]")
+	private WebElement Action_Edit_btn;
+	
+	
+	public WebElement getAction_Edit_btn() {
+		return Action_Edit_btn;
+	}
+
+
+	public WebElement getEdit_Save_btn() {
+		return Edit_Save_btn;
+	}
+
+
+	public WebElement getEdit_Close_btn() {
+		return Edit_Close_btn;
+	}
+
+
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnVendorSave']")
+	private WebElement Edit_Save_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnModalClose']")
+	private WebElement Edit_Close_btn;
+	
+	
 	
 	
 	
