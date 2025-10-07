@@ -9,7 +9,7 @@ import Com_Utility_Havmor.BaseClass;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
-public class Vendor_Master_Add_Test extends BaseClass{
+public class Vendor_Master_Add_Test extends BaseClass {
 
 	
 	@Test

@@ -558,6 +558,39 @@ public class Retailer_Master_AddPage {
 		return BankIfscCode;
 	}
 	
+	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'ctl00_ParentMasterContentPlaceHolder1_radGridRetailerMaster_GridData')]//table//tr//td//a)[1]")
+	private WebElement Action_View_btn;
+	
+	public WebElement getAction_View_btn() {
+		return Action_View_btn;
+	}
+
+
+	public WebElement getAction_Close_btn() {
+		return Action_Close_btn;
+	}
+
+
+	public WebElement getView_Attributes() {
+		return View_Attributes;
+	}
+
+
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")
+	private WebElement Action_Close_btn;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@value='View Attributes']")
+	private WebElement View_Attributes;
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -14,7 +14,7 @@ import Com_Utility_Havmor.BaseClass;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
-public class Route_Master_Add_BTN_Test  extends BaseClass{
+public class Route_Master_Add_BTN_Test  extends BaseClass {
 	
 	@Test
     public void RM_Add_Page() throws Exception {

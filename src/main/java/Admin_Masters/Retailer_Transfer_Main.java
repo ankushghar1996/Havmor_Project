@@ -108,7 +108,7 @@ public class Retailer_Transfer_Main {
 	private WebElement FromDistributor_dropdown;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromDistributor_DropDown']//ul//li[normalize-space()='MAI ENTERPRISES (PUNE) DIST [10008399]'])[1]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromDistributor_DropDown']//ul//li[normalize-space()='Prime Distributors [DB11]'])[1]")
 	private WebElement FromDistributor_dropdown_value;
 	
 	
@@ -117,7 +117,7 @@ public class Retailer_Transfer_Main {
 	
 	
 	  //        (//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromRoute_DropDown']//ul//li)[1]
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromRoute_DropDown']//ul//li[normalize-space()='Shivane']")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromRoute_DropDown']//ul//li[normalize-space()='Near Vasant theater']")
 	private WebElement FromRoute_dropdown_value;
 	
 	
@@ -129,7 +129,7 @@ public class Retailer_Transfer_Main {
 	private WebElement ToDistributor_dropdown;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlToDistributor_DropDown']//ul//li[normalize-space()='Aniket Jadhav [DM1]'])[1]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlToDistributor_DropDown']//ul//li[normalize-space()='Horizon Distributors [DB13]'])[1]")
 	private WebElement ToDistributor_dropdown_value;
 	
 	
@@ -138,11 +138,11 @@ public class Retailer_Transfer_Main {
 	
 	
 	//  (//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlToRoute_DropDown']//ul//li)[1]
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlToRoute_DropDown']//ul//li[normalize-space()='Chattar Manzil']")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlToRoute_DropDown']//ul//li[normalize-space()='Baruch bus depo']")
 	private WebElement ToRoute_dropdown_value;
 	
 	
-	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnRightRatailer']")
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnRightRetailer']")
 	private WebElement RightRatailer_btn;
 	
 	
