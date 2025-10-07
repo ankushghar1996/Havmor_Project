@@ -26,13 +26,16 @@ public WebElement getTarget_Menu() {
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Target']")
 	private WebElement Target_Menu;
 	
+	@FindBy(how = How.XPATH, using = "(//div[@id='mainDiv']//child::ul//li//p[text()='Depot Master'])[1]")
+	private WebElement Depot_Master;
+	
 	
 
 
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Master']")
 	private WebElement Master_Menu;
 	
-	@FindBy(how = How.XPATH, using = "//ul[@class='nav nav-pills nav-sidebar flex-column']/li//p[normalize-space()='Vendor Master']")
+	@FindBy(how = How.XPATH, using = "(//div[@id='mainDiv']//child::ul//li//p[text()='Vendor Master'])[1]")
 	private WebElement Vendor_Master_Menu;
 	
 	@FindBy(how = How.XPATH, using = "//div[@id='mainDiv']//child::ul//p[normalize-space()='User Master']")
@@ -195,6 +198,10 @@ public WebElement getTarget_Menu() {
 
 	public WebElement getVendor_Master_Menu() {
 		return Vendor_Master_Menu;
+	}
+
+	public WebElement getDepot_Master() {
+		return Depot_Master;
 	}
 	
 	

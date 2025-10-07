@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class Vendor_DeactivationPage_Main {
+public class User_DeactivationPage_Main {
 
 	
 	@FindBy(how = How.XPATH, using = "(//ul[@class='nav nav-treeview']/li[@class='nav-item menu-is-opening menu-open']//p[normalize-space()='Deactivation Approval'])")
@@ -19,14 +19,14 @@ public class Vendor_DeactivationPage_Main {
 	@FindBy(how = How.XPATH, using = "//div[@class='modal-footer']//button[text()='No']")
 	private WebElement No_Button;
 	
-	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//td//a)[4]")
+	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//td//a)[3]")
 	private WebElement Deactivate_BTN;
 	
 	@FindBy(how = How.XPATH, using = "//div[@class='modal-footer']//input[@id='ParentMasterContentPlaceHolder1_btnYes']")
 	private WebElement Yes_Button;
 	
-	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Vendor Creation']")
-	private WebElement Vendor_Creation;
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='User Creation']")
+	private WebElement User_Creation;
 	
 	public WebElement getDeactivation_Approval() {
 		return Deactivation_Approval;
@@ -69,12 +69,15 @@ public class Vendor_DeactivationPage_Main {
 	}
 
 
-
-
-
-	public WebElement getVendor_Creation() {
-		return Vendor_Creation;
+	public WebElement getUser_Creation() {
+		return User_Creation;
 	}
+
+
+
+
+
+	
 	
 	
 	
@@ -83,3 +86,24 @@ public class Vendor_DeactivationPage_Main {
 	
 	
 }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

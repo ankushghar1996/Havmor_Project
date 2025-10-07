@@ -14,7 +14,6 @@ public class Vendor_DeactivationPage_Test {
 
 
 public class Vendor_Deactivation extends BaseClass {
-
 	
 	@Test
 	public void Vendor_Deactivate() throws Exception {
