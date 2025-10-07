@@ -60,10 +60,10 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlTown_DropDown']//ul//li)[36]")
 	private WebElement Town_Value ;
 	
-	@FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlBankName_Arrow']")
+	@FindBy(how = How.XPATH, using = "//div[@class='input-box mb-3']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlBankName']")
 	private WebElement Bank_Name ;
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlBankName_DropDown']//ul//li)[49]")
+	@FindBy(how = How.XPATH, using = "//div[contains(@id,'ddlBankName_DropDown')]//li[contains(text(),'ABHYUDAYA CO-OP BANK LTD')]")
 	private WebElement Bank_Name_Value;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")
@@ -241,8 +241,23 @@ public class Salesman_Master_AddBTN_Main {
 
 	
 	
-	//Employee Code/UserId 
+	//Employee Code/UserId //input[@id='ParentMasterContentPlaceHolder1_txtUserId']
 
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtUserId']")
+	private WebElement txtUserId;
+
+	public WebElement getTxtUserId() {
+		return txtUserId;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
