@@ -5,7 +5,6 @@
 /test-output/
 /bin/
 
-
 # =========================
 # Eclipse Specific Files
 # =========================
@@ -38,12 +37,11 @@ Thumbs.db
 *.xlsx
 *.xls
 
- 
 # BUT allow Excel files inside Excel_TestData folder
 !Excel_TestData/*.xlsx
 !Excel_TestData/*.xls
- 
-# Ignore temporary Excel backup files
-~$*
- 
 
+# Ignore Excel temporary/backup files created by MS Office
+~$*
+~$*.xlsx
+~$*.xls
