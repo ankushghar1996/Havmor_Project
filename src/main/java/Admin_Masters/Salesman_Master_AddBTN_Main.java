@@ -240,7 +240,7 @@ public class Salesman_Master_AddBTN_Main {
 	
 
 	
-	
+	// Transfer btn xpath
 
 	
 	@FindBy(how = How.XPATH, using = "(//div[contains(@id,'ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData')]//table//tr//td//a)[5]")
