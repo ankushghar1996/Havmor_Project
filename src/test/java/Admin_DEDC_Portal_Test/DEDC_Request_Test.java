@@ -444,9 +444,9 @@ public class DEDC_Request_Test extends BaseClass_otp{
 //	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_30", "Verify that user click on Close btn", () ->{
 //	  Liabrary_Havmor.custom_click(ass.getBtnModalClose(), "click on Close btn");
 //	  });
-//	  Thread.sleep(1000);
+	  Thread.sleep(1000);
 	
-	
+//	
 	
 	
 	
