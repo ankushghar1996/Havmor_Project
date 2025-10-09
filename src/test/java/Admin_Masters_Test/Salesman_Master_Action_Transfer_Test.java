@@ -9,7 +9,7 @@ import Com_Utility_Havmor.BaseClass;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
-public class Salesman_Master_Transfer_Test extends BaseClass {
+public class Salesman_Master_Action_Transfer_Test extends BaseClass {
 	
 	
 	 @Test
