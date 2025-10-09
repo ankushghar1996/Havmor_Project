@@ -37,7 +37,7 @@ public class Route_Master_Add_BTN_Main {
 	   @FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_Arrow']")
 	   private WebElement Distributor_Name;
 	   
-	   @FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_DropDown']//ul//li)[4]")
+	   @FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor_DropDown']//ul//li[normalize-space()='Prime Distributors [DB11]']")
 	   private WebElement Distributor_Name_Value;
 	   
 	   @FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsalesman_Arrow']")

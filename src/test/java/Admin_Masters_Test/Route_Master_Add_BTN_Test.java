@@ -1,7 +1,10 @@
 package Admin_Masters_Test;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -93,6 +96,124 @@ public class Route_Master_Add_BTN_Test  extends BaseClass {
         Liabrary_Havmor.custom_click(RMADD.getSalesman_Name_Dropdown_Value(),"Salesman Name Dropdown Value");
         });
         Thread.sleep(1000);
+        
+        
+     /*   
+     // --- start inline flow (paste inside your test / @Test body) ---
+     // --- start inline flow (paste inside your test / @Test body) ---
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12));
+        boolean salesmanSelected = false;
+
+        // 1) Open Distributor dropdown
+        ObjectRepo_Havmor.startTestAndLog_1_SS("Route_Master_SelectSalesman_01", "Open Distributor dropdown", () -> {
+            Liabrary_Havmor.custom_click(RMADD.getDistributor_Name(), "Click Distributor dropdown");
+        });
+        Thread.sleep(700);
+
+        // 2) Get all distributors into a stable list
+        List<String> distributors = new ArrayList<>();
+        List<WebElement> distributorOptions = driver.findElements(By.xpath("//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor']//ul/li"));
+        for (WebElement li : distributorOptions) {
+            String txt = li.getText().trim();
+            if (!txt.isEmpty() && !txt.toLowerCase().contains("select")) {
+                distributors.add(txt);
+            }
+        }
+        if (distributors.isEmpty()) {
+            throw new RuntimeException("No distributors found in dropdown.");
+        }
+
+        // 3) Try each distributor until a salesman is selectable
+        for (String distToSelect : distributors) {
+
+            // Re-open Distributor dropdown
+            ObjectRepo_Havmor.startTestAndLog_1_SS("Route_Master_SelectSalesman_02",
+                    "Re-open Distributor dropdown", () -> {
+                Liabrary_Havmor.custom_click(RMADD.getDistributor_Name(), "Re-open Distributor dropdown");
+            });
+
+            wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(
+            	    By.xpath("//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor']//ul/li"),
+            	    0));
+
+            // Re-fetch and match distributor element by text
+            List<WebElement> currentOptions = driver.findElements(By.xpath("//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddldistributor']//ul/li"));
+            WebElement currentDist = currentOptions.stream()
+                    .filter(op -> op.getText().trim().equals(distToSelect))
+                    .findFirst()
+                    .orElse(null);
+
+            if (currentDist == null) {
+                System.out.println("Distributor not visible right now: " + distToSelect + " — skipping.");
+                Thread.sleep(300);
+                continue;
+            }
+
+            // Select current distributor
+            ObjectRepo_Havmor.startTestAndLog_1_SS("Route_Master_SelectSalesman_03",
+                    "Select Distributor → " + distToSelect, () -> {
+                Liabrary_Havmor.custom_click(currentDist, "Distributor -> " + distToSelect);
+            });
+
+            Thread.sleep(800); // wait for salesman dropdown to load
+
+            // 4) Open Salesman dropdown
+            ObjectRepo_Havmor.startTestAndLog_1_SS("Route_Master_SelectSalesman_04",
+                    "Open Salesman dropdown", () -> {
+                Liabrary_Havmor.custom_click(RMADD.getSalesman_Name_Dropdown(), "Click Salesman dropdown");
+            });
+
+            try {
+                // Wait until salesman options appear
+                wait.until(d -> driver.findElements(By.xpath("//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsalesman']//ul/li")).size() > 0);
+
+                List<WebElement> salesmanOptions = driver.findElements(By.xpath("//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsalesman']//ul/li"));
+                List<WebElement> validSalesmen = new ArrayList<>();
+
+                for (WebElement li : salesmanOptions) {
+                    String t = li.getText().trim();
+                    if (!t.isEmpty()
+                            && !t.toLowerCase().contains("select")
+                            && !t.toLowerCase().contains("no record")
+                            && !t.toLowerCase().contains("no data")) {
+                        validSalesmen.add(li);
+                    }
+                }
+
+                if (!validSalesmen.isEmpty()) {
+                    WebElement firstSalesman = validSalesmen.get(0);
+                    String salesmanName = firstSalesman.getText().trim();
+
+                    ObjectRepo_Havmor.startTestAndLog_1_SS("Route_Master_SelectSalesman_05",
+                            "Select Salesman → " + salesmanName, () -> {
+                        Liabrary_Havmor.custom_click(firstSalesman, "Salesman -> " + salesmanName);
+                    });
+
+                    salesmanSelected = true;
+                    break;
+                } else {
+                    System.out.println("No salesman for distributor: " + distToSelect + " — trying next distributor…");
+                }
+
+            } catch (Exception e) {
+                System.out.println("Salesman list not loaded for distributor: " + distToSelect + " — " + e.getMessage());
+            }
+
+            Thread.sleep(600); // short pause before next distributor
+        }
+
+        // 5) Final check
+        if (!salesmanSelected) {
+            throw new RuntimeException("No salesman available for any distributor tried.");
+        }
+        // --- end inline flow ---
+
+*/
+        
+        
+        
+        
+        
         
         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_12", "Verify that user Click on Salesman Name Dropdown Value", () ->{
         Liabrary_Havmor.custom_Sendkeys(RMADD.getRoute_Name_Excel(), excel.getStringdata2("Route_Add", 1, 0), "Route Name");
