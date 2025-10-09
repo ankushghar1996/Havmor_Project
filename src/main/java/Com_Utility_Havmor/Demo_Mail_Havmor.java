@@ -64,11 +64,11 @@ public class Demo_Mail_Havmor {
             email.addTo("aniket.jadhav@heerasoftware.com");
             email.addTo("ankush.gharsele@heerasoftware.com");
             email.addTo("roopali.kulkarni@heerasoftware.com");
-         			email.addTo("mahesh.kulkarni@heerasoftware.com");
-         			email.addTo("santosh.dhoot@heerasoftware.com");
-         			email.addTo("snehalata.patil@heerasoftware.com");
-	           email.addTo("jidnyesh.borse@heerasoftware.com");
-//            // email.addTo("rohit.deshpande@heerasoftware.com");
+//         			email.addTo("mahesh.kulkarni@heerasoftware.com");
+//         			email.addTo("santosh.dhoot@heerasoftware.com");
+//         			email.addTo("snehalata.patil@heerasoftware.com");
+//	           email.addTo("jidnyesh.borse@heerasoftware.com");
+////            // email.addTo("rohit.deshpande@heerasoftware.com");
 
  
             // Attach the ZIP report

@@ -583,17 +583,92 @@ public class Retailer_Master_AddPage {
 	@FindBy(how = How.XPATH, using = "//input[@value='View Attributes']")
 	private WebElement View_Attributes;
 	
+	//===================================================
+	//Retailer Attributes
 	
 	
 	
+	@FindBy(how = How.XPATH, using = "//input[@type='button' and @value='Select Attributes']")
+	private WebElement Select_Attributes;
 	
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsVicinityName_0']//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsVicinityName_0_Input']")
+	private WebElement Vicinity_Name_Dropdown;
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='rcbScroll rcbWidth']//ul//li[text()='Airport']")
+	private WebElement Vicinity_Name_Dropdown_Value;
 	
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsUrbanRetailer_1']//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsUrbanRetailer_1_Input']")
+	private WebElement Urban_Retailer_Dropdown;
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='rcbScroll rcbWidth']//ul//li[text()='Citybased outlets']")
+	private WebElement Urban_Retailer_Dropdown_Value;
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='col-md-12 mb-3']//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsDFStatus_2_Input']")
+	private WebElement DF_Status_Dropdown;
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='rcbScroll rcbWidth']//ul//li[text()='DF']")
+	private WebElement DF_Status_Dropdown_Value;
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='col-md-12 mb-3']//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlsBrandingStatus_3_Input']")
+	private WebElement Branding_Status_Dropdown;
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='rcbScroll rcbWidth']//ul//li[text()='Branded']")
+	private WebElement Branding_Status_Dropdown_Value;
+	
+	@FindBy(how = How.XPATH, using = "//button[@type='button' and text()='Close']")
+	private WebElement Close_Button_Select_Attribute;
+
+
+
+
+	public WebElement getSelect_Attributes() {
+		return Select_Attributes;
+	}
+
+
+	public WebElement getVicinity_Name_Dropdown() {
+		return Vicinity_Name_Dropdown;
+	}
+
+
+	public WebElement getVicinity_Name_Dropdown_Value() {
+		return Vicinity_Name_Dropdown_Value;
+	}
+
+
+	public WebElement getUrban_Retailer_Dropdown() {
+		return Urban_Retailer_Dropdown;
+	}
+
+
+	public WebElement getUrban_Retailer_Dropdown_Value() {
+		return Urban_Retailer_Dropdown_Value;
+	}
+
+
+	public WebElement getDF_Status_Dropdown() {
+		return DF_Status_Dropdown;
+	}
+
+
+	public WebElement getDF_Status_Dropdown_Value() {
+		return DF_Status_Dropdown_Value;
+	}
+
+
+	public WebElement getBranding_Status_Dropdown() {
+		return Branding_Status_Dropdown;
+	}
+
+
+	public WebElement getBranding_Status_Dropdown_Value() {
+		return Branding_Status_Dropdown_Value;
+	}
+
+
+	public WebElement getClose_Button_Select_Attribute() {
+		return Close_Button_Select_Attribute;
+	}
 	
 	
 	
