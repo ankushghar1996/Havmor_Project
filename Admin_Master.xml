@@ -6,23 +6,53 @@
      
       <!-- Admin Master Credential Master -->
       <class name="Admin_Masters_Test.Depot_Master_Addpage_Test"/>
+      <class name="Admin_Masters_Test.Depot_Master_ViewPage_Test"/>
+      <class name="Admin_Masters_Test.Depot_Select_Sales_Hierarchy_Test"/>
+      <class name="Admin_Masters_Test.DM_Select_Product_Hierarchy_Test"/>
       
-      <class name="Admin_Masters_Test.Distributor_DeactivationPage_Test"/>
-      <class name="Admin_Masters_Test.Distributor_Master_Add"/>
-      <class name="Admin_Masters_Test.Distributor_Master_Test"/>
+      <class name="Admin_Masters_Test.Distributor_Master_AddPage"/>
+      <class name="Admin_Masters_Test.Distributor_Master_View_Test"/>
+      
       <class name="Admin_Masters_Test.HSN_Master_Test"/>
+      <class name="Admin_Masters_Test.Invoice_Upload_Test"/>
       <class name="Admin_Masters_Test.PJP_Master_Page_Test"/>
       <class name="Admin_Masters_Test.Product_Image_Uplod_Test"/>
-      <class name="Admin_Masters_Test.Retailer_Beat_Alignment_Test"/>
+      
       <class name="Admin_Masters_Test.Retailer_Master_AddPage_Test"/>
       <class name="Admin_Masters_Test.Retailer_Master_EditPage_Test"/>
+      <class name="Admin_Masters_Test.Retailer_Master_ViewPage_Test"/>
       <class name="Admin_Masters_Test.Retailer_Transfer_Test"/>
+      
       <class name="Admin_Masters_Test.Route_Master_Add_BTN_Test"/>
-      <class name="Admin_Masters_Test.Salesman_Extension_Test"/>
+      <class name="Admin_Masters_Test.Route_Master_Edit_Test"/>
+      <class name="Admin_Masters_Test.Route_Master_ViewPage_Test"/>
+
       <class name="Admin_Masters_Test.Salesman_Master_AddBTN_Test"/>
-      <class name="Admin_Masters_Test.Salesman_Transfer_Test"/>
-      <class name="Admin_Masters_Test.User_master_Add_BTN_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Deactivate_Icon_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Edit_Icon_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Extension_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Master_Download_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Master_View_Test"/>
+      <class name="Admin_Masters_Test.Salesman_Reset_Icon_Test"/>
+      <class name="Admin_Masters_Test.Salesman_TransferMaster_Test"/>
+    
       <class name="Admin_Masters_Test.Vendor_Master_Add_Test"/>
+      <class name="Admin_Masters_Test.Vendor_Master_EditPage_Test"/>
+      <class name="Admin_Masters_Test.Vendor_Master_ViewPage_Test"/>
+       
+      <class name="Admin_Masters_Test.User_master_Add_BTN_Test"/>
+       <class name="Admin_Masters_Test.User_master_Add_BTN_Test"/>
+       <class name="Admin_Masters_Test.User_master_Add_BTN_Test"/>
+      
+      <class name="Admin_Settings_Test.Attribute_Maste_Test"/>
+      <class name="Admin_Settings_Test.Attribute_Master_DeactivationPage"/>
+      <class name="Admin_Settings_Test.Sales_Hierarchy_Creation_Test"/>
+      
+      <class name="Admin_Activity_Test.Media_Upload_Test"/>
+      <class name="Admin_Activity_Test.PJP_Upload_Test"/>
+      
+      
+      
      
             
       </classes>
