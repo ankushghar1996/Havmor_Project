@@ -93,11 +93,11 @@ public class Retailer_Beat_Alignment_Main {
 	private WebElement FromDistributor_dropdown;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromDistributor_DropDown']//ul//li[normalize-space()='MAI ENTERPRISES (PUNE) DIST [10008399]'])[1]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromDistributor_DropDown']//ul//li)[1]")
 	private WebElement FromDistributor_dropdown_value;
 	
 	
-	@FindBy(how = How.XPATH, using = "//div[@class='col-md-12 ml-0']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromRoute']")
+	@FindBy(how = How.XPATH, using = "//div[@class='col-md-5']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFromRoute']")
 	private WebElement FromRoute_dropdown;
 	
 	
