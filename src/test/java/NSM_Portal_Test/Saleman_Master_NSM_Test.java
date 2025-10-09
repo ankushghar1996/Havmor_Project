@@ -10,8 +10,7 @@ import NSM_Portal_Main.Saleman_Master_NSM_Main;
 
 public class Saleman_Master_NSM_Test extends BaseClass_NSM{
 
-	
-	
+
 	@Test
 	public void SalesMan_Approval() throws Exception {
 	

@@ -6,7 +6,6 @@ import java.util.Properties;
 
 public class Confiq_Data_Provider_Havmor {
 
-	
 	private Properties pro;
 	public  Confiq_Data_Provider_Havmor() throws Exception {
 		String confiqpath=System.getProperty("user.dir")+"\\Confiq_TestData\\Confiq.properties";

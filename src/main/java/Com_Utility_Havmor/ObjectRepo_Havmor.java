@@ -7,8 +7,6 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 import org.openqa.selenium.TimeoutException;   // ✅ This one
-
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;

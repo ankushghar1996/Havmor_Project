@@ -15,8 +15,7 @@ public class ReportGenrator_Havmor {
 		reporter.config().setDocumentTitle("Test Execution Report");
 		reporter.config().setReportName("Automation Test Report For Online DMS");
 		reporter.config().setTheme(Theme.DARK);
-		
-		
+				
 		 extent=new ExtentReports();
 		 extent.attachReporter(reporter);
 		 extent.setSystemInfo("Browser Name", "Chrome");
