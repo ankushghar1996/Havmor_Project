@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.*;
+import java.time.Instant;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -22,112 +23,122 @@ public class Demo_Mail_Havmor {
     }
 
     /**
-     * Sends the report email. Accepts the exact path to the HTML report (ensures it was flushed).
+     * Sends the report email. This version attaches ONLY the ZIP (no HTML).
+     * It creates a lock file after successful send to avoid duplicate emails.
      */
     public static void sendReportEmail(String reportHtmlPath) {
-        System.out.println("======= Sending Email with Latest Extent Report and OneDrive Link =======");
+        System.out.println("======= Sending Email (ZIP only) with OneDrive Link =======");
 
-        // 1) Workspace fallback
+        // Workspace fallback
         String workspace = System.getenv("WORKSPACE");
         if (workspace == null || workspace.trim().isEmpty()) {
             workspace = System.getProperty("user.dir");
         }
 
+        // Lock file to avoid duplicate sends across processes
+        Path lockFile = Paths.get(workspace, "test-output", "report_sent.lock");
+        try {
+            if (Files.exists(lockFile)) {
+                System.out.println("Report already sent (lock found at " + lockFile + "). Skipping email.");
+                return;
+            }
+        } catch (Exception e) {
+            System.err.println("Warning: could not check lock file: " + e.getMessage());
+        }
+
+        // Resolve HTML report file
         File reportFile = new File(reportHtmlPath);
         if (!reportFile.exists()) {
-            // Try default workspace path
             reportFile = new File(workspace + File.separator + "test-output" + File.separator + "Extent_Reports" + File.separator + "TestReport.html");
         }
 
         if (!reportFile.exists()) {
-            System.err.println("❌ Report HTML not found. Tried path(s): ");
-            System.err.println(" - provided: " + reportHtmlPath);
-            System.err.println(" - workspace default: " + workspace + File.separator + "test-output" + File.separator + "Extent_Reports" + File.separator + "TestReport.html");
+            System.err.println("❌ Report HTML not found. Aborting email. Tried: " + reportHtmlPath);
             return;
         }
 
-        // Quick sanity: ensure file has some content
         if (reportFile.length() < 1024) {
             System.err.println("❌ Report HTML seems too small/empty: " + reportFile.getAbsolutePath() + " (size=" + reportFile.length() + ")");
             return;
         }
 
-        // 2) Zip the HTML file (backup)
-        String zipPath = null;
+        // Zip the HTML file (we will attach only the ZIP)
+        String zipPath;
         try {
             zipPath = zipReportSingleFile(reportFile.getAbsolutePath());
         } catch (IOException e) {
-            System.err.println("❌ Failed to zip report: " + e.getMessage());
-            zipPath = null;
+            System.err.println("❌ Failed to zip report. Aborting email: " + e.getMessage());
+            e.printStackTrace(System.err);
+            return;
         }
 
-        // 3) Optional: Copy ZIP to shared OneDrive folder (local OneDrive sync)
-        String oneDriveLink = "https://heerasoftware0.sharepoint.com/..."; // keep your actual link
+        // Copy ZIP to shared OneDrive folder (optional)
+        String oneDriveLink = "https://heerasoftware0.sharepoint.com/..."; // your real link
         String sharedDrivePath = "C:\\Users\\10277\\OneDrive - Heera Software Private Limited (HSPL)\\Automation_Report";
         String copiedPath = "Not copied";
-        if (zipPath != null) {
-            try {
-                copiedPath = copyToSharedFolder(zipPath, sharedDrivePath);
-            } catch (IOException e) {
-                System.err.println("❌ Failed to copy ZIP to shared folder: " + e.getMessage());
-                copiedPath = "Copy failed. Check logs.";
-            }
-        } else {
-            copiedPath = "ZIP creation failed";
+        try {
+            copiedPath = copyToSharedFolder(zipPath, sharedDrivePath);
+        } catch (IOException e) {
+            System.err.println("❌ Failed to copy ZIP to shared folder (continuing to email): " + e.getMessage());
+            copiedPath = "Copy failed. Check logs.";
         }
 
-        // 4) Prepare and send email
+        // Prepare and send email (attach only ZIP)
         try {
             MultiPartEmail email = new MultiPartEmail();
             email.setHostName("smtp.office365.com");
             email.setSmtpPort(587);
 
-            // IMPORTANT: don't hardcode credentials in production. Use Jenkins credential store / vault.
+            // IMPORTANT: use secure credential retrieval in production
             String smtpUser = "qaautomation@heerasoftware.com";
-            String smtpPass = "F.922060763339uy"; // <<< replace with secure retrieval method
+            String smtpPass = "REPLACE_WITH_SECURE_PASS"; // retrieve from Jenkins / vault
 
             email.setAuthenticator(new DefaultAuthenticator(smtpUser, smtpPass));
             email.setStartTLSEnabled(true);
             email.setStartTLSRequired(true);
             email.setSSLOnConnect(false);
+
             email.setFrom(smtpUser);
-            email.setSubject("Automation Test Execution Report - Latest OneDrive Link + Backup Attachment");
+            email.setSubject("Automation Test Execution Report - ZIP Backup");
 
             StringBuilder body = new StringBuilder();
             body.append("Hi Team,\n\n");
-            body.append("The latest Automation Test Report is attached for quick viewing (HTML). If your mail client blocks HTML attachments, please extract the attached ZIP (backup).\n\n");
-            body.append("🔗 OneDrive Link: ").append(oneDriveLink).append("\n");
-            body.append("📂 Copied To: ").append(copiedPath).append("\n\n");
+            body.append("The latest Automation Test Report is attached as a ZIP file. Please download and extract before opening the TestReport.html.\n\n");
+            body.append("🔗 OneDrive Link (backup): ").append(oneDriveLink).append("\n");
+            body.append("📂 Copied To (if copy succeeded): ").append(copiedPath).append("\n\n");
             body.append("Regards,\nAutomation Team");
 
             email.setMsg(body.toString());
 
-            // Add recipients - keep as your list
+            // Add recipients
             email.addTo("aniket.jadhav@heerasoftware.com");
             email.addTo("ankush.gharsele@heerasoftware.com");
             email.addTo("roopali.kulkarni@heerasoftware.com");
 
-            // Attach the HTML (preferred for quick view)
-            EmailAttachment htmlAttach = new EmailAttachment();
-            htmlAttach.setPath(reportFile.getAbsolutePath());
-            htmlAttach.setDisposition(EmailAttachment.ATTACHMENT);
-            htmlAttach.setName(reportFile.getName());
-            email.attach(htmlAttach);
+            // Attach only the ZIP (preferred for corporate clients)
+            EmailAttachment zipAttach = new EmailAttachment();
+            zipAttach.setPath(zipPath);
+            zipAttach.setDisposition(EmailAttachment.ATTACHMENT);
+            zipAttach.setName(new File(zipPath).getName());
+            email.attach(zipAttach);
 
-            // Attach ZIP backup if available
-            if (zipPath != null) {
-                EmailAttachment zipAttach = new EmailAttachment();
-                zipAttach.setPath(zipPath);
-                zipAttach.setDisposition(EmailAttachment.ATTACHMENT);
-                zipAttach.setName(new File(zipPath).getName());
-                email.attach(zipAttach);
+            System.out.println("📨 Attempting to send email with ZIP only...");
+            email.send();
+            System.out.println("✅ Email sent successfully (ZIP only).");
+
+            // Create lock file to prevent duplicates (contains timestamp)
+            try {
+                Files.createDirectories(lockFile.getParent());
+                String content = "sent at " + Instant.now().toString();
+                Files.write(lockFile, content.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+                System.out.println("✅ Created lock file: " + lockFile.toString());
+            } catch (Exception ex) {
+                System.err.println("⚠️ Could not create lock file: " + ex.getMessage());
             }
 
-            email.send();
-            System.out.println("✅ Email sent successfully with HTML and ZIP backup!");
         } catch (Exception e) {
-            System.err.println("❌ Failed to send email: " + e.getMessage());
-            e.printStackTrace();
+            System.err.println("❌ Failed to send email: " + e.getClass().getName() + " - " + e.getMessage());
+            e.printStackTrace(System.err);
         }
     }
 
