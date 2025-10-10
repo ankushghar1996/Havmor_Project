@@ -6,11 +6,12 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
-import org.openqa.selenium.TimeoutException;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -226,27 +227,41 @@ public class ObjectRepo_Havmor {
             System.out.println("⚠️ Extent was null at finalize time.");
         }
 
-        System.out.println("✅ Extent Report flushed successfully...");
+        System.out.println("✅ Extent.flush() called...");
 
         try {
             String reportPath = System.getProperty("user.dir") + File.separator
                     + "test-output" + File.separator + "Extent_Reports" + File.separator + "TestReport.html";
             File reportFile = new File(reportPath);
-            if (!reportFile.exists()) {
-                System.out.println("❌ Report file not found at: " + reportPath);
+
+            // Wait until file exists and has reasonable size (guard against partial write)
+            int waitSeconds = 10;
+            while (waitSeconds-- > 0 && (!reportFile.exists() || reportFile.length() < 1024)) {
+                System.out.println("Waiting for report to be ready... exists=" + reportFile.exists()
+                        + " size=" + (reportFile.exists() ? reportFile.length() : 0));
+                Thread.sleep(500);
+            }
+
+            if (!reportFile.exists() || reportFile.length() < 1024) {
+                System.out.println("❌ Report file not ready at: " + reportPath);
                 return;
             }
 
-            // Auto-open report after execution
-            if (java.awt.Desktop.isDesktopSupported()) {
-                java.awt.Desktop.getDesktop().browse(reportFile.toURI());
+            // Auto-open report after execution (only on desktops)
+            try {
+                if (java.awt.Desktop.isDesktopSupported()) {
+                    java.awt.Desktop.getDesktop().browse(reportFile.toURI());
+                }
+            } catch (Exception ex) {
+                System.out.println("⚠️ Could not auto-open report: " + ex.getMessage());
             }
 
-            Thread.sleep(2000);
-            Demo_Mail_Havmor.sendReportEmail();
+            // Trigger mail sender with the exact flushed file path
+            Demo_Mail_Havmor.sendReportEmail(reportFile.getAbsolutePath());
 
         } catch (Exception e) {
             System.out.println("❌ Failed to open or email report: " + e.getMessage());
+            e.printStackTrace();
         }
 
         System.out.println("🟢 finalizeReport() END at: " + java.time.LocalTime.now());
