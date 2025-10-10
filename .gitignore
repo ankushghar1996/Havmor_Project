@@ -2,8 +2,18 @@
 # Build & Output Folders
 # =========================
 /target/
-/test-output/
 /bin/
+
+# =========================
+# Test Output — Keep Only Extent Reports & Image Upload
+# =========================
+/test-output/*
+!/test-output/Extent_Reports/
+!/test-output/Extent_Reports/**
+!/test-output/Image_Upload/
+!/test-output/Image_Upload/**
+
+# (✅ Keeps Extent Reports and Image Upload visible in Git)
 
 # =========================
 # Eclipse Specific Files

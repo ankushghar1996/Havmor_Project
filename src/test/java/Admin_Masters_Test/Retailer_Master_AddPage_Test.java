@@ -63,19 +63,94 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		Thread.sleep(1000);
 		
 		
+//		boolean salesmanFound = false;
+//
+//		// Step 1: Open Distributor dropdown
+//		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__07",
+//		    "Click on Distributor dropdown",
+//		    () -> Liabrary_Havmor.custom_click(Add.getDistributor(), "Open Distributor dropdown")
+//		);
+//		Thread.sleep(800);
+//
+//		// Step 2: Fetch all distributor values
+//		List<WebElement> distributors = ObjectRepo_Havmor.driver.findElements(
+//		    By.xpath("//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_DropDown']//ul/li")
+//		);
+//
+//		if (distributors.isEmpty()) {
+//		    throw new RuntimeException("❌ No distributor values found in dropdown!");
+//		}
+//
+//		// Step 3: Loop through each distributor until Salesman found
+//		for (WebElement distributor : distributors) {
+//
+//		    String distributorName = distributor.getText().trim();
+//		    if (distributorName.isEmpty()) continue;
+//
+//		    ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__08",
+//		        "Select Distributor: " + distributorName,
+//		        () -> {
+//		            WebDriverWait wait = new WebDriverWait(ObjectRepo_Havmor.driver, Duration.ofSeconds(5));
+//		            wait.until(ExpectedConditions.elementToBeClickable(distributor));
+//		            Liabrary_Havmor.custom_click(distributor, "Select Distributor value");
+//		        }
+//		    );
+//		    Thread.sleep(1500);
+//
+//		    // Step 4: Open SalesMan dropdown
+//		    ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__09",
+//		        "Click on SalesMan dropdown",
+//		        () -> Liabrary_Havmor.custom_click(Add.getFSG(), "Open SalesMan dropdown")
+//		    );
+//		    Thread.sleep(1200);
+//
+//		    // Step 5: Get SalesMan dropdown options
+//		    List<WebElement> salesManOptions = ObjectRepo_Havmor.driver.findElements(
+//		        By.xpath("//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFSG_DropDown']//ul/li")
+//		    );
+//
+//		    if (!salesManOptions.isEmpty()) {
+//		        // Step 6: Select the first available SalesMan
+//		        WebElement firstSalesman = salesManOptions.get(0);
+//		        String salesmanName = firstSalesman.getText().trim();
+//
+//		        ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__10",
+//		            "Select SalesMan: " + salesmanName,
+//		            () -> Liabrary_Havmor.custom_click(firstSalesman, "Select SalesMan value")
+//		        );
+//
+//		        salesmanFound = true;
+//		        break; // ✅ Exit loop if SalesMan found
+//		    } else {
+//		        System.out.println("⚠ No SalesMan found for Distributor: " + distributorName + " — trying next...");
+//		        
+//		        // Step 7: Reopen Distributor dropdown for next iteration
+//		        Liabrary_Havmor.custom_click(Add.getDistributor(), "Reopen Distributor dropdown");
+//		        Thread.sleep(800);
+//		    }
+//		}
+//
+//		// Step 8: Final validation
+//		if (!salesmanFound) {
+//		    throw new RuntimeException("❌ No SalesMan found for any Distributor!");
+//		}
+
 		
-		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__07", "Verify that user click on Distributor dropdown", () ->{
-		Liabrary_Havmor.custom_click(Add.getDistributor(), "click on Distributor dropdown");      
+		
+		
+		
+  ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__07", "Verify that user click on Distributor dropdown", () ->{
+  Liabrary_Havmor.custom_click(Add.getDistributor(), "click on Distributor dropdown");      
 		});
-		Thread.sleep(1000);
+	Thread.sleep(1000);
 		
-		
-		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__08", "Verify that user click on Distributor dropdown value", () ->{
-		Liabrary_Havmor.custom_click(Add.getDistributor_value(), "click on Distributor dropdown value");      
+	
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__08", "Verify that user click on Distributor dropdown value", () ->{
+	Liabrary_Havmor.custom_click(Add.getDistributor_value(), "click on Distributor dropdown value");      
 		});
-		Thread.sleep(1000);
-		
-		
+	Thread.sleep(1000);
+	
+	
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__09", "Verify that user click on SalesMan dropdown", () ->{
 		Liabrary_Havmor.custom_click(Add.getFSG(), "click on SalesMan dropdown");      
 		});
@@ -86,6 +161,9 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		Liabrary_Havmor.custom_click(Add.getFSG_value(), "click on SalesMan dropdown value");      
 		});
 		Thread.sleep(1000);
+		
+		
+		
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__11", "Verify that user click on Route dropdown", () ->{

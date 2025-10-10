@@ -99,7 +99,8 @@ public class ObjectRepo_Havmor {
                 "okay",
                 "yes",
                 "Added",
-                "New"
+                "New",
+               " please enter 'to discount %' since 'from discount %' is filled."
 
             );
 
@@ -122,7 +123,7 @@ public class ObjectRepo_Havmor {
                         // ⛔ Stop execution immediately
                         throw new RuntimeException("Critical flash message found: " + messageText);
                     }
-                    // 🔴 Old hardcoded handling continues untouched
+                 // 🔴 Old hardcoded handling continues untouched
                     else {
                         test.fail("❌ Flash Message Detected: " + messageText);
                         flashErrorFound = true;
