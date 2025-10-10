@@ -2,8 +2,13 @@
 # Build & Output Folders
 # =========================
 /target/
-/test-output/
 /bin/
+
+# Ignore everything under test-output except Extent Reports
+/test-output/*
+!/test-output/Extent_Reports/
+!/test-output/Extent_Reports/**
+# (✅ Keeps only your Spark HTML report + resources visible in Git)
 
 # =========================
 # Eclipse Specific Files
