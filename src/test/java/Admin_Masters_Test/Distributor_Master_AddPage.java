@@ -235,7 +235,7 @@ public class Distributor_Master_AddPage extends BaseClass{
 	                By.id("ParentMasterContentPlaceHolder1_fileUpload1"))
 	        );
 	        // Build an absolute path to your file
-	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb Size.jpg";
+	        String filePath = System.getProperty("user.dir") + "\\Image_Upload\\havmor_80kb Size.jpg";
 	        System.out.println("Uploading file: " + filePath);
 	        // Send the file path directly to the hidden file input
 	        uploadInput.sendKeys(filePath);
@@ -251,7 +251,7 @@ public class Distributor_Master_AddPage extends BaseClass{
 	                By.id("ParentMasterContentPlaceHolder1_fileUpload2"))
 	        );
 	        // Build an absolute path to your file
-	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb Size.jpg";
+	        String filePath = System.getProperty("user.dir") + "\\Image_Upload\\havmor_80kb Size.jpg";
 	        System.out.println("Uploading file: " + filePath);
 	        // Send the file path directly to the hidden file input
 	        uploadInput.sendKeys(filePath);
@@ -267,7 +267,7 @@ public class Distributor_Master_AddPage extends BaseClass{
 	                By.id("ParentMasterContentPlaceHolder1_fileUpload3"))
 	        );
 	        // Build an absolute path to your file
-	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\havmor_80kb Size.jpg";
+	        String filePath = System.getProperty("user.dir") + "\\Image_Upload\\havmor_80kb Size.jpg";
 	        System.out.println("Uploading file: " + filePath);
 	        // Send the file path directly to the hidden file input
 	        uploadInput.sendKeys(filePath);
