@@ -6,12 +6,11 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-
+ 
 public class Demo_Mail_Havmor {
     public static void main(String[] args) {
         sendReportEmail();
     }
-    
     public static void sendReportEmail() {
         System.out.println("======= Sending Email with Latest Extent Report and OneDrive Link =======");
         // Step 1: Path to the HTML report (updated path from Jenkins workspace)
@@ -25,7 +24,7 @@ public class Demo_Mail_Havmor {
             System.err.println("❌ Failed to zip report: " + e.getMessage());
             return;
         }
-
+ 
         // OneDrive shared folder URL (update as per your OneDrive)
         String oneDriveLink = "https://heerasoftware0.sharepoint.com/sites/QATeam/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FQATeam%2FShared%20Documents%2FQA%20Shared%20Folder&viewid=efe5bcf8%2De44d%2D4de2%2Db0cd%2D8ac68543bb53&p=true&ga=1";
         // Local OneDrive folder path where ZIP will be copied
@@ -39,7 +38,6 @@ public class Demo_Mail_Havmor {
             System.out.println("📌 Please manually check OneDrive link: " + oneDriveLink);
             copiedPath = "❌ Copy failed. Refer logs.";
         }
- 
         // Step 4: Prepare and send email with attachment and OneDrive link
         try {
             MultiPartEmail email = new MultiPartEmail();
@@ -59,7 +57,6 @@ public class Demo_Mail_Havmor {
                     + "📂 Copied To: " + copiedPath + "\n\n"
                     + "Also attached as a backup.\n\n"
                     + "Regards,\nAutomation Team");
- 
             // Add recipients
             email.addTo("aniket.jadhav@heerasoftware.com");
             email.addTo("ankush.gharsele@heerasoftware.com");
@@ -69,15 +66,14 @@ public class Demo_Mail_Havmor {
 //         			email.addTo("snehalata.patil@heerasoftware.com");
 //	           email.addTo("jidnyesh.borse@heerasoftware.com");
 ////            // email.addTo("rohit.deshpande@heerasoftware.com");
-
  
+
             // Attach the ZIP report
             EmailAttachment attachment = new EmailAttachment();
             attachment.setPath(zipPath);
             attachment.setDisposition(EmailAttachment.ATTACHMENT);
             attachment.setName(new File(zipPath).getName());
             email.attach(attachment);
- 
             // Send the email
             email.send();
             System.out.println("✅ Email sent successfully with OneDrive link and attachment!");
@@ -85,7 +81,6 @@ public class Demo_Mail_Havmor {
             System.err.println("❌ Failed to send email: " + e.getMessage());
         }
     }
- 
     // Zip the HTML report file
     public static String zipReport(String filePath) throws IOException {
         String zipFilePath = filePath.replace(".html", ".zip");
@@ -103,13 +98,11 @@ public class Demo_Mail_Havmor {
         System.out.println("✅ Report zipped: " + zipFilePath);
         return zipFilePath;
     }
- 
     // Copy ZIP file to OneDrive folder (local folder synced with cloud)
     public static String copyToSharedFolder(String sourcePath, String sharedDrivePath) throws IOException {
         File sourceFile = new File(sourcePath);
         Path targetDir = Paths.get(sharedDrivePath);
         Path targetPath = targetDir.resolve(sourceFile.getName());
- 
         Files.createDirectories(targetDir); // Make sure folder exists
         Files.copy(sourceFile.toPath(), targetPath, StandardCopyOption.REPLACE_EXISTING);
         System.out.println("✅ Report copied to shared folder: " + targetPath);
