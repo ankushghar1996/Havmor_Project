@@ -159,9 +159,15 @@
  
 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 <dependency>
+<<<<<<< HEAD
+<groupId>com.aventstack</groupId>
+<artifactId>extentreports</artifactId>
+<version>5.1.1</version>
+=======
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
     <version>5.1.1</version>
+>>>>>>> 8c689127deeb4973e8bca2702dfbe81a5c457a65
 </dependency>
  
  
