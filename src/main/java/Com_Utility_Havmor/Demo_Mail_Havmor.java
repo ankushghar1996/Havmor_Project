@@ -25,12 +25,14 @@ public class Demo_Mail_Havmor {
             reportPath = Paths.get(reportFilePath);
         } else {
             String workspace = System.getenv("WORKSPACE");
-            if (workspace == null || workspace.trim().isEmpty()) workspace = System.getProperty("user.dir");
+            if (workspace == null || workspace.trim().isEmpty()) {
+                workspace = System.getProperty("user.dir");
+            }
             reportPath = Paths.get(workspace, "test-output", "Extent_Reports", "TestReport.html");
         }
 
         if (!Files.exists(reportPath)) {
-            System.err.println("❌ Report not found at: " + reportPath.toAbsolutePath());
+            System.err.println("Report not found at: " + reportPath.toAbsolutePath());
             return;
         }
 
@@ -39,7 +41,7 @@ public class Demo_Mail_Havmor {
         try {
             zipPath = zipReport(reportPath.toAbsolutePath().toString());
         } catch (IOException e) {
-            System.err.println("❌ Failed to zip report: " + e.getMessage());
+            System.err.println("Failed to zip report: " + e.getMessage());
             e.printStackTrace();
             return;
         }
@@ -63,22 +65,18 @@ public class Demo_Mail_Havmor {
             email.setSSLOnConnect(false);
             email.setFrom(smtpUser);
 
-            // Email Subject and Body
+            // Email Subject and Body (plain text for safe rendering)
             email.setSubject("Automation Test Execution Report - Jenkins Build");
-            String msg = """
-                    Hi Team,
 
-                    The latest Automation Test Report (zipped) has been attached with this email.
-                    Please extract and open 'TestReport.html' in a browser to view the detailed colorful report.
+            String msg = "Hi Team,\n\n"
+                    + "The latest Automation Test Report (zipped) has been attached with this email.\n"
+                    + "Please extract and open 'TestReport.html' in a browser to view the detailed colorful report.\n\n"
+                    + "Report Summary:\n"
+                    + "• Environment: QA\n"
+                    + "• Execution Type: Smoke Suite\n"
+                    + "• Triggered From: Jenkins\n\n"
+                    + "Regards,\nAutomation QA Team";
 
-                    ✅ Report Summary:
-                    • Environment: QA
-                    • Execution Type: Smoke Suite
-                    • Triggered From: Jenkins
-
-                    Regards,
-                    Automation QA Team
-                    """;
             email.setMsg(msg);
 
             // Recipients
@@ -94,13 +92,13 @@ public class Demo_Mail_Havmor {
             attachment.setName("TestReport.zip");
             email.attach(attachment);
 
-            System.out.println("📤 Sending mail via smtp.office365.com ...");
+            System.out.println("Sending mail via smtp.office365.com ...");
             email.send();
 
-            System.out.println("✅ Email sent successfully (ZIP only): " + zipPath);
+            System.out.println("Email sent successfully (ZIP only): " + zipPath);
 
         } catch (Exception e) {
-            System.err.println("❌ Email sending failed: " + e.getMessage());
+            System.err.println("Email sending failed: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -108,7 +106,9 @@ public class Demo_Mail_Havmor {
     // === Zips the HTML report into .zip ===
     public static String zipReport(String filePath) throws IOException {
         File inFile = new File(filePath);
-        if (!inFile.exists()) throw new FileNotFoundException("Report not found: " + filePath);
+        if (!inFile.exists()) {
+            throw new FileNotFoundException("Report not found: " + filePath);
+        }
 
         String zipFilePath = filePath.replaceAll("\\.html?$", ".zip");
         try (FileOutputStream fos = new FileOutputStream(zipFilePath);
@@ -126,7 +126,7 @@ public class Demo_Mail_Havmor {
             zipOut.closeEntry();
         }
 
-        System.out.println("📦 Report zipped successfully: " + zipFilePath);
+        System.out.println("Report zipped successfully: " + zipFilePath);
         return zipFilePath;
     }
 }
