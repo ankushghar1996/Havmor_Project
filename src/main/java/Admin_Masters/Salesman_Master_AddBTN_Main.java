@@ -401,9 +401,18 @@ public class Salesman_Master_AddBTN_Main {
 
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtUserId']")
 	private WebElement txtUserId;
+	
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_chkSFAApplicationDisable']")
+	private WebElement Mobile_Checkbox;
 
 	public WebElement getTxtUserId() {
 		return txtUserId;
+	}
+
+	public WebElement getMobile_Checkbox() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

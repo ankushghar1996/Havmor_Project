@@ -40,8 +40,8 @@ public class ObjectRepo_Havmor {
         }
         ExtentSparkReporter reporter = new ExtentSparkReporter(reportFolderPath + "TestReport.html");
         // ✅ this is the key line – embed all CSS/JS inside HTML
-        reporter.config().setOfflineMode(true); 
-        
+        reporter.config().setOfflineMode(true);
+       
         reporter.config().setDocumentTitle("Test Execution Report");
         reporter.config().setReportName("Automation Test Report For Fosroc_HO");
         reporter.config().setTheme(Theme.DARK);
@@ -99,7 +99,8 @@ public class ObjectRepo_Havmor {
                 "okay",
                 "yes",
                 "Added",
-                "New"
+                "New",
+               " please enter 'to discount %' since 'from discount %' is filled."
 
             );
 
@@ -111,18 +112,18 @@ public class ObjectRepo_Havmor {
                     if (isSafe) {
                         test.pass("✅ Flash Message: " + messageText);
                         captureScreenshot("Screenshot - Flash Success");
-                    } 
+                    }
                     // 🆕 Added: Critical error messages check
-                    else if (messageText.contains("error saving scheme: unauthorized") 
+                    else if (messageText.contains("error saving scheme: unauthorized")
                           || messageText.contains("error duplicate data"))
-                    	{
+                    {
                         test.fail("❌ Critical Flash Message: " + messageText);
                         captureScreenshot("Screenshot - Critical Flash Message");
                         flashErrorFound = true;
                         // ⛔ Stop execution immediately
                         throw new RuntimeException("Critical flash message found: " + messageText);
                     }
-                    // 🔴 Old hardcoded handling continues untouched
+                 // 🔴 Old hardcoded handling continues untouched
                     else {
                         test.fail("❌ Flash Message Detected: " + messageText);
                         flashErrorFound = true;
@@ -164,8 +165,8 @@ public class ObjectRepo_Havmor {
             boolean flashFound = false;
  
             List<String> safeFlashKeywords = Arrays.asList(
-                "successfully", "record saved", "submitted", "otp has been sent", 
-                "otp sent", "otp sent successfully", "success otp", 
+                "successfully", "record saved", "submitted", "otp has been sent",
+                "otp sent", "otp sent successfully", "success otp",
                 "otp dispatched", "okay", "yes"
             );
  
@@ -267,7 +268,7 @@ public class ObjectRepo_Havmor {
         }
     }
  
-    
+   
     public static String takeScreenshot() throws IOException {
         if (driver == null) {
             throw new IllegalStateException("Driver is not initialized.");
@@ -348,15 +349,15 @@ public class ObjectRepo_Havmor {
     public static ExtentReports extentreport() {
         return extent;
     }
-    
-    
+   
+   
     /*
     @AfterClass
     public static void finalizeReportAfterClass() {
         finalizeReport();
     }
     */
-    
-    
-    
+   
+   
+   
 }

@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -147,44 +148,35 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
 	    	jse3.executeScript("arguments[0].scrollIntoView(true);", scroll);
 	        Thread.sleep(1000);
          
+	      //ABHYUDAYA CO-OP BANK LTD
+	        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_25 and 26", "Verify that user Should click bank dropdown and select the bank", () ->{
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	     // Locate the dropdown input box
+	     WebElement bankDropdownInput = wait.until(ExpectedConditions.elementToBeClickable(
+	         By.xpath("//input[contains(@id,'ddlBankName_Input')]")));
+
+	     // Click to open the dropdown
+	     bankDropdownInput.click();
+	     try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} // small wait to let options load
+
+	     // Type part of the bank name (example: "HDFC")
+	     bankDropdownInput.sendKeys("ABHYUDAYA CO-OP BANK LTD");
+
+	     // Wait until the suggestion list appears
+	     WebElement option = wait.until(ExpectedConditions.visibilityOfElementLocated(
+	         By.xpath("//li[contains(text(),'ABHYUDAYA CO-OP BANK LTD')]")));
+
+	     // Click on the desired option
+	     option.click();
+
+	        });
           
-          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_25", "Verify that user click on Bank Name Dropdown ", () ->{
-           Liabrary_Havmor.custom_click(STMADD.getBank_Name(), " Bank Name Dropdown "); });  
-           Thread.sleep(1000);
-             	
-           ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_26",
-        		   "Verify that user selects Bank Name (RadComboBox)", () -> {
-
-        		   String comboId  = "ctl00_ParentMasterContentPlaceHolder1_ddlBankName"; // control ka ClientID
-        		   String bankName = excel.getStringdata2("Salesman_Add", 1, 11);          // e.g. "ABHYUDAYA CO-OP BANK LTD"
-
-        		   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        		   JavascriptExecutor js = (JavascriptExecutor) driver;
-
-        		   // 1) Wait until RadComboBox client object ready
-        		   wait.until((ExpectedCondition<Boolean>) d ->
-        		       (Boolean) js.executeScript("return !!window.$find && !!$find(arguments[0]);", comboId)
-        		   );
-
-        		   // 2) Select item via RadComboBox API (most reliable)
-        		   Boolean selected = (Boolean) js.executeScript(
-        		       "var id=arguments[0], txt=arguments[1];" +
-        		       "var c=$find(id); if(!c) return false;" +
-        		       "var it=c.findItemByText(txt) || c.findItemByValue(txt);" +
-        		       "if(it){ it.select(); return true; }" +
-        		       "c.set_text(txt); return false;",  // fallback: set text if exact item na mile
-        		       comboId, bankName
-        		   );
-
-        		   // 3) Verify selected text equals expected
-        		   String picked = (String) js.executeScript("var c=$find(arguments[0]); return c? c.get_text() : '';", comboId);
-        		   if (!bankName.equalsIgnoreCase(picked)) {
-        		     throw new RuntimeException("Bank select failed. Expected: " + bankName + " | Got: " + picked + " | API selected? " + selected);
-        		   }
-
-        		   System.out.println("✅ Selected Bank: " + picked);
-        		 });
-          Thread.sleep(1000);
           
           
        //   Account Holder Name         
