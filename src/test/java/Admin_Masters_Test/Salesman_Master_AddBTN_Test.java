@@ -75,69 +75,80 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
    	     ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_12", "Verify that user click on Distributor Dropdown Value", () ->{
   	     Liabrary_Havmor.custom_click(STMADD.getDistributor_Value(), " Distributor Dropdown Value"); });  
    	     Thread.sleep(1000);
+   	     
+   	     ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_13", "Verify that user click on Salesman for Replacement Dropdown", () ->{
+   	     Liabrary_Havmor.custom_click(STMADD.getSalesman_For_Replacement(), "Salesman for Replacement Dropdown"); });  
+    	  Thread.sleep(1000);
+    	     
+    	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_14", "Verify that user click on Salesman for Replacement Salesman for Replacement Dropdown Value", () ->{
+  	     Liabrary_Havmor.custom_click(STMADD.getSalesman_For_Replacement_Value(), "Salesman for Replacement Dropdown Value"); });  
+    	 Thread.sleep(1000);
+   	     
+   	     
+   	     
 	
-   	      ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_13", "Verify that user Should Enter Employee Code/UserId in Textbox", () ->{
+   	      ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_15", "Verify that user Should Enter Employee Code/UserId in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getEmployee_Code_UserId_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 0), "Employee Code/UserId");
           });
           Thread.sleep(1000);
           
 
           //useer id
-          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_14", "Verify that user Should Enter UserId in Textbox", () ->{
+          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_16", "Verify that user Should Enter UserId in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getTxtUserId(), excel.getStringdata2("Salesman_Add", 1, 1), "Employee Code/UserId");
            });
          Thread.sleep(1000);
           
           
     
-          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_14", "Verify that user Should Enter Salesman Name in Textbox", () ->{
+          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_17", "Verify that user Should Enter Salesman Name in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getSalesman_Name_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 2), "Salesman Name");
           });
           Thread.sleep(1000);
           
-          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_15", "Verify that user Should Enter Address 1 in Textbox", () ->{
+          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_18", "Verify that user Should Enter Address 1 in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getAddress1_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 3), "Address 1 ");
           });
           Thread.sleep(1000);
           
          
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_16", "Verify that user click on State Dropdown ", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_19", "Verify that user click on State Dropdown ", () ->{
          Liabrary_Havmor.custom_click(STMADD.getState(), " State Dropdown "); });  
          Thread.sleep(1000);
         	
-       	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_17", "Verify that user click on State Dropdown Value", () ->{
+       	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_20", "Verify that user click on State Dropdown Value", () ->{
       	 Liabrary_Havmor.custom_click(STMADD.getState_Value(), " State Dropdown Value"); });  
          Thread.sleep(1000);
          
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_18", "Verify that user click on Town Dropdown ", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_21", "Verify that user click on Town Dropdown ", () ->{
          Liabrary_Havmor.custom_click(STMADD.getTown(), " Town Dropdown "); });  
          Thread.sleep(1000);
             	
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_19", "Verify that user click on Town Dropdown Value", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_22", "Verify that user click on Town Dropdown Value", () ->{
          Liabrary_Havmor.custom_click(STMADD.getTown_Value(), " Town Dropdown Value"); });  
          Thread.sleep(1000);
          
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_20", "Verify that user Should Enter Pincode in Textbox", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_23", "Verify that user Should Enter Pincode in Textbox", () ->{
          Liabrary_Havmor.custom_Sendkeys(STMADD.getPincode_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 4), "Pincode");
          });
          Thread.sleep(1000);
          
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_21", "Verify that user Should Enter Email Id in Textbox", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_24", "Verify that user Should Enter Email Id in Textbox", () ->{
          Liabrary_Havmor.custom_Sendkeys(STMADD.getEmail_ID_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 5), "Email Id");
          });
          Thread.sleep(1000);
              
-          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_22", "Verify that user Should Enter Mobile  in Textbox", () ->{
+          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_25", "Verify that user Should Enter Mobile  in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getMobile_Number_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 6), "Mobile ");
           });
           Thread.sleep(1000);
                  
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_23", "Verify that user Should Enter Aadhaar No in Textbox", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_26", "Verify that user Should Enter Aadhaar No in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getAdhar_Number_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 7), "Aadhaar No");
             });
           Thread.sleep(1000);
                      
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_24", "Verify that user Should Enter Pan No in Textbox", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_27", "Verify that user Should Enter Pan No in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getPan_Number_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 8), "Pan No");
         });
           Thread.sleep(1000);
@@ -148,8 +159,9 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
 	    	jse3.executeScript("arguments[0].scrollIntoView(true);", scroll);
 	        Thread.sleep(1000);
 
+	      //ABHYUDAYA CO-OP BANK LTD
+	        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_28 and 29", "Verify that user Should click bank dropdown and select the bank", () ->{
 
-	        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_25 and 26", "Verify that user Should click bank dropdown and select the bank", () ->{
 	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	     // Locate the dropdown input box
@@ -178,44 +190,44 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
 	        });
 
        //   Account Holder Name         
-          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_27", "Verify that user Should Enter Account Holder Name in Textbox", () ->{
+          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_30", "Verify that user Should Enter Account Holder Name in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getAccount_Holder_Name_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 9), "Account Holder Name");
           });
           Thread.sleep(1000);
               
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_28", "Verify that user Should Enter Bank Account Number in Textbox", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_31", "Verify that user Should Enter Bank Account Number in Textbox", () ->{
        Liabrary_Havmor.custom_Sendkeys(STMADD.getBank_Account_Number_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 10), "Bank Account Number");
         });
        Thread.sleep(1000);
                   
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_29", "Verify that user Should Enter Bank IFSC Code in Textbox", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_32", "Verify that user Should Enter Bank IFSC Code in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getBank_IFSC_Code_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 11), "Bank IFSC Code");
         });
        Thread.sleep(1000);
        
        
-       ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_30", "Verify that user Should Enter Branch Name in Textbox", () ->{
+       ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_33", "Verify that user Should Enter Branch Name in Textbox", () ->{
        Liabrary_Havmor.custom_Sendkeys(STMADD.getBranch_Name_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 12), "Branch Name");
          });
         Thread.sleep(1000);
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_31", "Verify that user Should Enter Salary Contribution in Textbox", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_34", "Verify that user Should Enter Salary Contribution in Textbox", () ->{
         Liabrary_Havmor.custom_Sendkeys(STMADD.getSalary_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 13), "Salary Contribution");
          });
          Thread.sleep(1000);
                        
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_32", "Verify that user Should Enter Distributor Contribution in Textbox", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_35", "Verify that user Should Enter Distributor Contribution in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getDistributor_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 14), "Distributor Contribution");
          });
         Thread.sleep(1000);
             
             
-         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_33", "Verify that user Should Enter Company Contribution in Textbox", () ->{
+         ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_36", "Verify that user Should Enter Company Contribution in Textbox", () ->{
         Liabrary_Havmor.custom_Sendkeys(STMADD.getCompany_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 15), "Company Contribution");
          });
        Thread.sleep(1000);
              
-     ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_34", "Verify that user click on Save Button ", () ->{
+     ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_37", "Verify that user click on Save Button ", () ->{
        Liabrary_Havmor.custom_click(STMADD.getSave_Button(), " Save Button "); });  
       Thread.sleep(1000);
 	

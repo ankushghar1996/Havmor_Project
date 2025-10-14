@@ -43,9 +43,9 @@ public class Depot_Master_ViewPage_Test extends BaseClass {
 	
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Depot_Master_View_Test_06", "Verify that user Click On Depot Action View Close Button", () ->{
-		Liabrary_Havmor.custom_click(DM.getDepot_Creation_Close_Button(), "Depot Action View Close button");      
-		});
-		Thread.sleep(1000);
+    Liabrary_Havmor.custom_click(DM.getDepot_Creation_Close_Button(), "Depot Action View Close button");      
+	});
+	Thread.sleep(1000);
 	
 
 }

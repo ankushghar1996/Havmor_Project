@@ -51,6 +51,12 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_DropDown']//ul//li)[1]")
 	private WebElement Distributor_Value ;
 	
+	@FindBy(how = How.XPATH, using = "//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlFSG_Input']")
+	private WebElement Salesman_For_Replacement ;
+	
+	@FindBy(how = How.XPATH, using = "")
+	private WebElement Salesman_For_Replacement_Value ;
+	
 	@FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_Arrow']")
 	private WebElement State ;
 	
@@ -413,7 +419,18 @@ public class Salesman_Master_AddBTN_Main {
 
 	public WebElement getMobile_Checkbox() {
 
-		return Mobile_Checkbox;
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public WebElement getSalesman_For_Replacement() {
+		return Salesman_For_Replacement;
+	}
+
+	public WebElement getSalesman_For_Replacement_Value() {
+		return Salesman_For_Replacement_Value;
+	}
+	
 
 	
 	
@@ -427,4 +444,4 @@ public class Salesman_Master_AddBTN_Main {
 	
 	
 	
-}
+

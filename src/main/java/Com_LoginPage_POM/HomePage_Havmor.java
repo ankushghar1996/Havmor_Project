@@ -129,7 +129,7 @@ public WebElement getTarget_Menu() {
 	@FindBy(how=How.XPATH,using="//p[@class='menu-color'][normalize-space()='Salesman Master']")
     private WebElement Salesman_Master_Submenu;
 	
-	@FindBy(how=How.XPATH,using="//p[normalize-space()='Salesman Transfer']")
+	@FindBy(how=How.XPATH,using="//table[@class='rgMasterTable rgClipCells']//child::td//a[@id='ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_ctl00_ctl04_BtnSalesmanTransfer']")
     private WebElement Salesman_Transfer;
 	
 	public WebElement getRoute_Master_Submenu() {

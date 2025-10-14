@@ -28,19 +28,19 @@ public class Product_Image_Uplod_Test extends BaseClass {
 	});
 	Thread.sleep(1000);
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_02", "Verify that user click on Product Management Sub Menu ", () ->{
-   Liabrary_Havmor.custom_click(home.getProduct_Management_Submenu(), "Product Management Submenu");    });  
+	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_02", "Verify that user click on Product master Sub Menu ", () ->{
+   Liabrary_Havmor.custom_click(home.getProduct_Master_Submenu(), "Product master Submenu");  });  
 	Thread.sleep(1000);
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_03", "Verify that user click on Product Image Upload ", () ->{
    Liabrary_Havmor.custom_click(PIMGU.getProduct_Image_Upload(), " Product Image Upload "); });  
 	Thread.sleep(1000);
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_04", "Verify that user click on Product Hierarchy ", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_04", "Verify that user click on Product Hierarchy Dropdwon", () ->{
 	 Liabrary_Havmor.custom_click(PIMGU.getProduct_Hierarchy(), " Product Hierarchy "); });  
     Thread.sleep(1000);
 			
-	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_05", "Verify that user click on Product Hierarchy Value ", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_05", "Verify that user click on Product Hierarchy Dropdown Value ", () ->{
 	 Liabrary_Havmor.custom_click(PIMGU.getProduct_Hierarchy_Value(), " Product Hierarchy Value "); });  
 	Thread.sleep(1000);
 	
@@ -57,8 +57,8 @@ public class Product_Image_Uplod_Test extends BaseClass {
 	Thread.sleep(1000);
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_09", "Verify that user click on Upload_Product_Image Button", () ->{
-		Liabrary_Havmor.custom_click(PIMGU.getUpload_Product_Image_BTN(), " Upload Product Image Button "); });  
+	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Product_Image_Uplod_TC_09", "Verify that user click on Upload_Product_Image Grid Button", () ->{
+		Liabrary_Havmor.custom_click(PIMGU.getUpload_Product_Image_BTN(), " Upload Product Image Grid Button "); });  
 		Thread.sleep(1000);
 	
 		ObjectRepo_Havmor.startTestAndLog_1_SS(

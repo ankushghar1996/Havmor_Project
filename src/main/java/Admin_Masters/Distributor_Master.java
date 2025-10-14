@@ -307,7 +307,7 @@ WebDriver driver;
 	
 
 
-	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-link btn-block text-left label_default collapsed']")
+	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-link btn-block text-left label_default']")
 
 	private WebElement Godown_Address;
 	
