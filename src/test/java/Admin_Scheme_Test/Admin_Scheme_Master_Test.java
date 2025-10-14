@@ -638,7 +638,7 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
 	                By.id("ParentMasterContentPlaceHolder1_FileUpload7"))
 	        );
 	        // Build an absolute path to your file
-	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\Retailer_List_Scheme_Budget_Upload.csv";
+	        String filePath = System.getProperty("user.dir") + "\\Image_Upload\\Retailer_List_Scheme_Budget_Upload.csv";
 	        System.out.println("Uploading file: " + filePath);
 	        
 	        // Send the file path directly to the hidden file input
@@ -670,7 +670,7 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
     	                By.id("ParentMasterContentPlaceHolder1_FileUpload9"))
     	        );
     	        // Build an absolute path to your file
-    	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\Distributor_List_Scheme_Budget_Upload.csv";
+    	        String filePath = System.getProperty("user.dir") + "\\Image_Upload\\Distributor_List_Scheme_Budget_Upload.csv";
     	        System.out.println("Uploading file: " + filePath);
     	        
     	        // Send the file path directly to the hidden file input

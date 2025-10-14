@@ -46,6 +46,8 @@ public class SalesMan_Approval_ZSM_Main {
 	private WebElement Salesman_Approval;
 	
 	
+	////table[@id='salesmanTable']//tr[td[normalize-space(text())='User001']]//button
+
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData']//table//tbody//tr)[1]")
 	private WebElement Grid_Data;
 	

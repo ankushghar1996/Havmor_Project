@@ -10,8 +10,7 @@ import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
 public class Retailer_Master_ViewPage_Test extends BaseClass {
-	
-	
+    
 	@Test
 	public void Retailer_View() throws Exception {
 		
@@ -52,24 +51,6 @@ public class Retailer_Master_ViewPage_Test extends BaseClass {
 		
 		
 		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	}
 

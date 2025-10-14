@@ -13,6 +13,9 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnSave']")
 	private WebElement Save_Button;
 	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_chkSFAApplicationDisable']")
+	private WebElement Mobile_Checkbox;
+	
 	public WebElement getSave_Button() {
 		return Save_Button;
 	}
@@ -60,7 +63,7 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlTown_DropDown']//ul//li)[36]")
 	private WebElement Town_Value ;
 	
-	@FindBy(how = How.XPATH, using = "//div[@class='input-box mb-3']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlBankName']")
+	@FindBy(how = How.XPATH, using = "//button[@class='rcbActionButton']//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlBankName_Arrow']")
 	private WebElement Bank_Name ;
 	
 	@FindBy(how = How.XPATH, using = "//div[contains(@id,'ddlBankName_DropDown')]//li[contains(text(),'ABHYUDAYA CO-OP BANK LTD')]")
@@ -403,17 +406,15 @@ public class Salesman_Master_AddBTN_Main {
 	private WebElement txtUserId;
 	
 	
-	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_chkSFAApplicationDisable']")
-	private WebElement Mobile_Checkbox;
 
 	public WebElement getTxtUserId() {
 		return txtUserId;
 	}
 
 	public WebElement getMobile_Checkbox() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+		return Mobile_Checkbox;
+
 	
 	
 	
@@ -421,7 +422,7 @@ public class Salesman_Master_AddBTN_Main {
 	
 	
 	
-	
+	}	
 	
 	
 	
