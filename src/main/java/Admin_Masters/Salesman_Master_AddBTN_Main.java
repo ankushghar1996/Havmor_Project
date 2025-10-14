@@ -39,7 +39,7 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSalesmanType_Arrow']")
 	private WebElement Salesman_Type ;
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSalesmanType_DropDown']//ul//li)[1]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSalesmanType_DropDown']//ul//li)[2]")
 	private WebElement Salesman_Type_Value ;
 	
 	@FindBy(how = How.XPATH, using = "//span[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_Arrow']")
