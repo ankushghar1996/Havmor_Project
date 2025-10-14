@@ -36,7 +36,6 @@ public class Demo_Mail_Havmor {
 
         if (!Files.exists(reportPath)) {
             System.err.println("❌ Report not found at: " + reportPath.toAbsolutePath());
-            // optional: list directory
             try {
                 Path dir = reportPath.getParent();
                 if (dir != null && Files.exists(dir)) {
@@ -58,14 +57,15 @@ public class Demo_Mail_Havmor {
         }
 
         // Get SMTP creds from env (set in Jenkins credentials, don't hardcode)
-        String smtpUser = System.getenv("qaautomation@heerasoftware.com");
-        String smtpPass = System.getenv("F.922060763339uy");
+        String smtpUser = System.getenv("SMTP_USER");
+        String smtpPass = System.getenv("SMTP_PASS");
         if (smtpUser == null || smtpPass == null) {
-            System.err.println("❌ SMTP_USER or SMTP_PASS not found in environment. Configure in Jenkins.");
+            System.err.println("❌ SMTP_USER or SMTP_PASS not found in environment. Configure credential binding in Jenkins and use variable names SMTP_USER & SMTP_PASS.");
             return;
         }
 
         try {
+            System.out.println("SMTP user present: " + smtpUser);
             MultiPartEmail email = new MultiPartEmail();
             email.setHostName("smtp.office365.com");
             email.setSmtpPort(587);
@@ -91,6 +91,7 @@ public class Demo_Mail_Havmor {
             attachment.setName(Paths.get(zipPath).getFileName().toString());
             email.attach(attachment);
 
+            System.out.println("Attempting to send email via smtp.office365.com with user: " + smtpUser);
             email.send();
             System.out.println("✅ Email sent successfully with attachment: " + zipPath);
         } catch (Exception e) {
@@ -120,7 +121,4 @@ public class Demo_Mail_Havmor {
         System.out.println("✅ Report zipped: " + zipFilePath);
         return zipFilePath;
     }
-
-    // Optional: copy to OneDrive/local shared folder (disabled by default)
-    // public static String copyToSharedFolder(String sourcePath, String sharedDrivePath) throws IOException { ... }
 }
