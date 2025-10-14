@@ -404,14 +404,17 @@ public class Salesman_Master_AddBTN_Main {
 
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtUserId']")
 	private WebElement txtUserId;
+	
+	
 
 	public WebElement getTxtUserId() {
 		return txtUserId;
 	}
 
 	public WebElement getMobile_Checkbox() {
+
 		return Mobile_Checkbox;
-	}
+
 	
 	
 	
@@ -419,7 +422,7 @@ public class Salesman_Master_AddBTN_Main {
 	
 	
 	
-	
+	}	
 	
 	
 	

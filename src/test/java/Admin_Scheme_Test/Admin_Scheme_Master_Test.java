@@ -647,7 +647,7 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
        	Thread.sleep(5000);
         
        	
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Program_Target_Upload_TC_83", "Verify that user Click on Upload Button Retailer", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_83", "Verify that user Click on Upload Button Retailer", () ->{
             Liabrary_Havmor.custom_click(ASMM.getUpload_Button_Retailer_Budget_Info(), "Upload_Button Retailer");
             });
             Thread.sleep(1000);
@@ -679,7 +679,7 @@ public class Admin_Scheme_Master_Test extends BaseClass_otp {
            	Thread.sleep(5000);
             
            	
-           	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Program_Target_Upload_TC_86", "Verify that user Click on Upload Button Distributor", () ->{
+           	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_86", "Verify that user Click on Upload Button Distributor", () ->{
                 Liabrary_Havmor.custom_click(ASMM.getUpload_Button_Distributor_Budget_Info(), "Upload_Button Distributor");
                 });
                 Thread.sleep(1000);
