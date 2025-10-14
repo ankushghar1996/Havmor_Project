@@ -81,7 +81,7 @@ public class Media_Upload_Test extends BaseClass{
     			        );
 
     			        // Build an absolute path to your file
-    			        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\DMS-Media_Upload_IMG.jpg";
+    			        String filePath = System.getProperty("user.dir") + "\\Image_Upload\\DMS-Media_Upload_IMG.jpg";
     			        System.out.println("Uploading file: " + filePath);
 
     			        // Send the file path directly to the hidden file input

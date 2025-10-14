@@ -158,9 +158,10 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
 	    	JavascriptExecutor jse3= (JavascriptExecutor)driver;
 	    	jse3.executeScript("arguments[0].scrollIntoView(true);", scroll);
 	        Thread.sleep(1000);
-         
+
 	      //ABHYUDAYA CO-OP BANK LTD
 	        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_28 and 29", "Verify that user Should click bank dropdown and select the bank", () ->{
+
 	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	     // Locate the dropdown input box
@@ -187,9 +188,7 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
 	     option.click();
 
 	        });
-          
-          
-          
+
        //   Account Holder Name         
           ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_30", "Verify that user Should Enter Account Holder Name in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getAccount_Holder_Name_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 9), "Account Holder Name");

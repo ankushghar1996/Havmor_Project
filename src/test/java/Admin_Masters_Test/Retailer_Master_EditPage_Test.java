@@ -12,7 +12,6 @@ import Com_Utility_Havmor.ObjectRepo_Havmor;
 public class Retailer_Master_EditPage_Test extends BaseClass{
 	
 	
-	
 	@Test
 	public void Retailer_Edit() throws Exception {
 	
@@ -65,14 +64,7 @@ public class Retailer_Master_EditPage_Test extends BaseClass{
 		Thread.sleep(1000);	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	}
 

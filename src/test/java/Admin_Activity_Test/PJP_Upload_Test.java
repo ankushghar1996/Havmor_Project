@@ -54,7 +54,7 @@ public class PJP_Upload_Test  extends BaseClass{
 	                By.id("ParentMasterContentPlaceHolder1_FileUploadControl"))
 	        );
 	        // Build an absolute path to your file
-	        String filePath = System.getProperty("user.dir") + "\\test-output\\Image_Upload\\HSNMaster_1_20250912_110935.csv";
+	        String filePath = System.getProperty("user.dir") + "\\Image_Upload\\HSNMaster_1_20250912_110935.csv";
 	        System.out.println("Uploading file: " + filePath);
 	        
 	        // Send the file path directly to the hidden file input

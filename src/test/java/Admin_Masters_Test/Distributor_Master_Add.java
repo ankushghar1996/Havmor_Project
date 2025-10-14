@@ -236,10 +236,10 @@ public class Distributor_Master_Add extends BaseClass{
 	
 	WebElement fileUpload = driver.findElement(By.id("ParentMasterContentPlaceHolder1_fileUpload1"));
 	Thread.sleep(1000);
-	fileUpload.sendKeys("C:\\COde\\Havmor_Project\\test-output\\Upload_Files\\1_Aadhar_SECR-008_202504160337577650 (1).jpeg");
+	fileUpload.sendKeys("C:\\COde\\Havmor_Project\\1_Aadhar_SECR-008_202504160337577650 (1).jpeg");
 	Thread.sleep(1000);
 	
-	
+
 	
 	
 	
@@ -253,6 +253,7 @@ public class Distributor_Master_Add extends BaseClass{
 	
 	
 	}
+
 	
 	
 	
