@@ -185,13 +185,13 @@ public class Distributor_Master_AddPage extends BaseClass{
  
         
         ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_31", "Verify that user click on GST State Type dropdown", () ->{
-   		 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown(), "click on GST state Type dropdown");
+   		 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown(), "click on GST state dropdown");
    		  });
    	  	  Thread.sleep(1000);
  
    	  	  
    	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_32", "Verify that user click on GST State Type value dropdown", () ->{
-    	 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown_values(), "click on GST state Type value dropdown");
+    	 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown_values(), "click on GST state value dropdown");
     	  });
    	 	Thread.sleep(1000);
  
@@ -275,8 +275,10 @@ public class Distributor_Master_AddPage extends BaseClass{
        	Thread.sleep(5000);
        	
      // scroll to the bottom of the page
-        ((JavascriptExecutor)driver)
-            .executeScript("window.scrollTo(0, document.body.scrollHeight);");
+		WebElement scroll4 = driver.findElement(By.xpath("//button[contains(normalize-space(), 'Godown Address 1')]"));
+    	JavascriptExecutor jse4= (JavascriptExecutor)driver;
+    	jse4.executeScript("arguments[0].scrollIntoView(true);", scroll4);
+        Thread.sleep(1000);
  
        	
        	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_40", "Verify that user click on Godown Address", () ->{

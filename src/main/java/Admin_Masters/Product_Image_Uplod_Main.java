@@ -31,7 +31,7 @@ public class Product_Image_Uplod_Main {
 	@FindBy(how = How.XPATH, using = "(//div[@class=' pb-2 pt-1']//child::div[@id='ctl00_ParentMasterContentPlaceHolder1_RadGrid1_GridData']//tbody//tr)[1]")
 	   private WebElement Grid_Data;
 	
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_RadGrid1_GridData']//child::tr/td/a[@id='ctl00_ParentMasterContentPlaceHolder1_RadGrid1_ctl00_ctl04_LinkButton2']")
+	@FindBy(how = How.XPATH, using = "//table[@class='rgMasterTable rgClipCells']//child::tbody//td//a[@id='ctl00_ParentMasterContentPlaceHolder1_RadGrid1_ctl00_ctl04_BtnUpdate']")
 	   private WebElement Upload_Product_Image_BTN;
 	
 	@FindBy(how = How.XPATH, using = "//div[@class='container']//input[@id='ParentMasterContentPlaceHolder1_btnCloseModal']")

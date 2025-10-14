@@ -4,6 +4,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import Admin_Masters.Route_Master_Add_BTN_Main;
+import Admin_Masters.Salesman_Master_AddBTN_Main;
 import Admin_Masters.Salesman_Transfer_Main;
 import Com_LoginPage_POM.HomePage_Havmor;
 import Com_Utility_Havmor.BaseClass;
@@ -17,6 +18,7 @@ public class Salesman_TransferMaster_Test extends BaseClass {
 
         Salesman_Transfer_Main STM = PageFactory.initElements(driver, Salesman_Transfer_Main.class);
         HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
+        Salesman_Master_AddBTN_Main STMADD = PageFactory.initElements(driver, Salesman_Master_AddBTN_Main.class);
 
     	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_01", "Verify that user Click On Master Menu ", () ->{
     	Liabrary_Havmor.custom_click(home.getMaster_Menu(), "Click On Master Menu");      
@@ -27,41 +29,45 @@ public class Salesman_TransferMaster_Test extends BaseClass {
         Liabrary_Havmor.custom_click(home.getSalesman_Master_Submenu(), "Salesman Master Submenu");    });  
     	Thread.sleep(1000);
 	
-    	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_03", "Verify that user click on Salesman Transfer ", () ->{
-        Liabrary_Havmor.custom_click(STM.getSalesman_Transfer(), " Salesman Transfer "); });  
+    	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_03", "Verify that user click on Salesman master", () ->{
+        Liabrary_Havmor.custom_click(STMADD.getSalesman_Master(), " Salesman master"); });  
         Thread.sleep(1000);
-	
+      //table[@class='rgMasterTable rgClipCells']//child::td//a[@id='ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_ctl00_ctl04_BtnSalesmanTransfer']
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_04", "Verify that user click on From Distributor ", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_04", "Verify that user click on Salesman Transfer", () ->{
+            Liabrary_Havmor.custom_click(home.getSalesman_Transfer(), " Salesman Transfer"); });  
+            Thread.sleep(1000);
+        
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_05", "Verify that user click on From Distributor ", () ->{
         Liabrary_Havmor.custom_click(STM.getFrom_Distributor(), "From Distributor"); });  
         Thread.sleep(1000);
 	
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_05", "Verify that user click on From Distributor value", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_06", "Verify that user click on From Distributor value", () ->{
         Liabrary_Havmor.custom_click(STM.getFrom_Distributor_Value(), "From_Distributor Value"); });  
         Thread.sleep(1000);
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_06", "Verify that user click on Salesman_Transfer_1_Checkbox", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_07", "Verify that user click on Salesman_Transfer_1_Checkbox", () ->{
         Liabrary_Havmor.custom_click(STM.getSalesman_Transfer_1_Checkbox(), "Salesman_Transfer_1_Checkbox");});  
         Thread.sleep(1000);
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_07", "Verify that user click on Salesman_Transfer_1_Checkbox", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_08", "Verify that user click on Salesman_Transfer_1_Checkbox", () ->{
         Liabrary_Havmor.custom_click(STM.getSalesman_Transfer_Forward_button(), "Salesman_Transfer Forward Button");});  
         Thread.sleep(1000);
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_08", "Verify that user click on To Distributor ", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_09", "Verify that user click on To Distributor ", () ->{
         Liabrary_Havmor.custom_click(STM.getTo_Distributor(), "To Distributor");});  
         Thread.sleep(1000);
             
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_09", "Verify that user click on To Distributor_Value", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_010", "Verify that user click on To Distributor_Value", () ->{
         Liabrary_Havmor.custom_click(STM.getTo_Distributor_Value(), "To Distributor Value");});  
         Thread.sleep(1000);
         
 	
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_10", "Verify that user click on Salesman_Transfer_2_Checkbox", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_11", "Verify that user click on Salesman_Transfer_2_Checkbox", () ->{
         Liabrary_Havmor.custom_click(STM.getSalesman_Transfer_2_Checkbox(), "Salesman_Transfer_2_Checkbox");});  
         Thread.sleep(1000);
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_11", "Verify that user click on Close Button", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Transfer_TC_12", "Verify that user click on Close Button", () ->{
         Liabrary_Havmor.custom_click(STM.getClose_Button(), "Close Button");});  
         Thread.sleep(1000);
 	

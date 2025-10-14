@@ -15,8 +15,7 @@ public class Vendor_Master_Add_Test extends BaseClass {
 	@Test
 	public void Vendor_Add() throws Exception {
 	
-		
-		HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
+	HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
 		Vendor_Master_Main Add = PageFactory.initElements(driver , Vendor_Master_Main.class);
 		
 		

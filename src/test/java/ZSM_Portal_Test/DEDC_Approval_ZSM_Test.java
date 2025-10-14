@@ -15,7 +15,7 @@ public class DEDC_Approval_ZSM_Test extends BaseClass_ZSM {
 	public void Asser_master_Approval() throws Exception {
 	
 	
-		DEDC_Approval_ZSM_Main ass = PageFactory.initElements(driver , DEDC_Approval_ZSM_Main.class);
+    DEDC_Approval_ZSM_Main ass = PageFactory.initElements(driver , DEDC_Approval_ZSM_Main.class);
 	
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Asser_master_Approval_Test_01", "Verify that user Click On Scheme Menu", () ->{
@@ -46,37 +46,6 @@ public class DEDC_Approval_ZSM_Test extends BaseClass_ZSM {
 	Liabrary_Havmor.custom_click(ass.getBtnApproval(), "Click On Approval btn");      
 	});
 	Thread.sleep(1000);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
