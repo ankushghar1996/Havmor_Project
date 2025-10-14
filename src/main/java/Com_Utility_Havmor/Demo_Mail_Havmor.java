@@ -11,20 +11,15 @@ import java.util.zip.ZipOutputStream;
 
 public class Demo_Mail_Havmor {
 
-    // backward-compatible main if needed locally
     public static void main(String[] args) {
-        String argPath = (args != null && args.length > 0) ? args[0] : null;
-        sendReportEmail(argPath);
+        String reportPath = (args != null && args.length > 0) ? args[0] : null;
+        sendReportEmail(reportPath);
     }
 
-    /**
-     * Sends email with zipped HTML report.
-     * If reportFilePath is null, fallback to WORKSPACE or user.dir.
-     */
     public static void sendReportEmail(String reportFilePath) {
-        System.out.println("======= Preparing to send Email with Extent report =======");
+        System.out.println("=== Preparing to send Email with Extent report ===");
 
-        // Determine report path robustly
+        // Resolve report file path
         Path reportPath;
         if (reportFilePath != null && !reportFilePath.trim().isEmpty()) {
             reportPath = Paths.get(reportFilePath);
@@ -35,37 +30,34 @@ public class Demo_Mail_Havmor {
         }
 
         if (!Files.exists(reportPath)) {
-            System.err.println("❌ Report not found at: " + reportPath.toAbsolutePath());
-            try {
-                Path dir = reportPath.getParent();
-                if (dir != null && Files.exists(dir)) {
-                    System.out.println("Listing " + dir + ":");
-                    Files.list(dir).forEach(p -> System.out.println(" - " + p.getFileName()));
-                }
-            } catch (Exception ignored) {}
+            System.err.println("Report not found: " + reportPath.toAbsolutePath());
             return;
         }
 
-        // Zip the report
+        // Zip report
         String zipPath;
         try {
             zipPath = zipReport(reportPath.toAbsolutePath().toString());
         } catch (IOException e) {
-            System.err.println("❌ Failed to zip report: " + e.getMessage());
+            System.err.println("Failed to zip report: " + e.getMessage());
             e.printStackTrace();
             return;
         }
 
-        // Get SMTP creds from env (set in Jenkins credentials, don't hardcode)
+        // Fetch SMTP credentials from Jenkins (Bind these in Jenkins)
         String smtpUser = System.getenv("SMTP_USER");
         String smtpPass = System.getenv("SMTP_PASS");
+
         if (smtpUser == null || smtpPass == null) {
-            System.err.println("❌ SMTP_USER or SMTP_PASS not found in environment. Configure credential binding in Jenkins and use variable names SMTP_USER & SMTP_PASS.");
+            System.err.println("ERROR: SMTP_USER or SMTP_PASS not set in Jenkins environment.");
+            System.err.println("→ Go to 'Build Environment' → 'Use secret text(s) or file(s)' → Bind credentials as:");
+            System.err.println("   Username Variable: SMTP_USER");
+            System.err.println("   Password Variable: SMTP_PASS");
             return;
         }
 
         try {
-            System.out.println("SMTP user present: " + smtpUser);
+            System.out.println("Using SMTP user: " + smtpUser);
             MultiPartEmail email = new MultiPartEmail();
             email.setHostName("smtp.office365.com");
             email.setSmtpPort(587);
@@ -75,34 +67,33 @@ public class Demo_Mail_Havmor {
             email.setSSLOnConnect(false);
             email.setFrom(smtpUser);
 
-            email.setSubject("Automation Test Execution Report - Latest");
-            String body = "Hi Team,\n\nThe latest Automation Test Report is attached (zipped).\n\nFile: " +
-                    Paths.get(zipPath).getFileName().toString() + "\n\nRegards,\nAutomation Team";
-            email.setMsg(body);
+            email.setSubject("Automation Report - Jenkins Execution");
+            email.setMsg("Hi Team,\n\nPlease find the attached Automation Test Report.\n\nRegards,\nAutomation Jenkins Job");
 
-            // Add recipients - update if needed
-            email.addTo("aniket.jadhav@heerasoftware.com");
             email.addTo("ankush.gharsele@heerasoftware.com");
+            email.addTo("aniket.jadhav@heerasoftware.com");
             email.addTo("roopali.kulkarni@heerasoftware.com");
 
             EmailAttachment attachment = new EmailAttachment();
             attachment.setPath(zipPath);
             attachment.setDisposition(EmailAttachment.ATTACHMENT);
+            attachment.setDescription("Automation Test Report");
             attachment.setName(Paths.get(zipPath).getFileName().toString());
             email.attach(attachment);
 
-            System.out.println("Attempting to send email via smtp.office365.com with user: " + smtpUser);
+            System.out.println("Connecting to smtp.office365.com ...");
             email.send();
-            System.out.println("✅ Email sent successfully with attachment: " + zipPath);
+            System.out.println("=== Email sent successfully with attachment: " + zipPath + " ===");
+
         } catch (Exception e) {
-            System.err.println("❌ Failed to send email: " + e.getMessage());
+            System.err.println("Email sending failed: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
     public static String zipReport(String filePath) throws IOException {
         File inFile = new File(filePath);
-        if (!inFile.exists()) throw new FileNotFoundException("Report file not found: " + filePath);
+        if (!inFile.exists()) throw new FileNotFoundException("Report not found: " + filePath);
 
         String zipFilePath = filePath.replaceAll("\\.html?$", ".zip");
         try (FileOutputStream fos = new FileOutputStream(zipFilePath);
@@ -111,6 +102,7 @@ public class Demo_Mail_Havmor {
 
             ZipEntry zipEntry = new ZipEntry(inFile.getName());
             zipOut.putNextEntry(zipEntry);
+
             byte[] bytes = new byte[1024];
             int length;
             while ((length = fis.read(bytes)) >= 0) {
@@ -118,7 +110,7 @@ public class Demo_Mail_Havmor {
             }
             zipOut.closeEntry();
         }
-        System.out.println("✅ Report zipped: " + zipFilePath);
+        System.out.println("Report zipped successfully: " + zipFilePath);
         return zipFilePath;
     }
 }
