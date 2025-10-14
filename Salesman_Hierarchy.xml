@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+     
+            <!-- ASM Salesman Add -->
+      <class name="ASM_Portal_Test.Salesman_ASM_Add_BTN"/>
+    
+           <!-- ZSM 1st Approval -->
+      <class name="ZSM_Portal_Test.SalesMan_Approval_ZSM_Test"/>
+      
+      
+      
+     
+            
+      </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite --> 
