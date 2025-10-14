@@ -2,13 +2,12 @@ package Com_Utility_Havmor;
 
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
-import org.apache.commons.mail.HtmlEmail;
+import org.apache.commons.mail.MultiPartEmail;
+
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-import org.apache.commons.io.FileUtils;
 
 public class Demo_Mail_Havmor {
 
@@ -18,9 +17,9 @@ public class Demo_Mail_Havmor {
     }
 
     public static void sendReportEmail(String reportFilePath) {
-        System.out.println("=== Preparing to send Email with Extent report ===");
+        System.out.println("=== Preparing to send Jenkins Email with Zipped Report ===");
 
-        // Resolve report file path
+        // Resolve report path
         Path reportPath;
         if (reportFilePath != null && !reportFilePath.trim().isEmpty()) {
             reportPath = Paths.get(reportFilePath);
@@ -31,11 +30,11 @@ public class Demo_Mail_Havmor {
         }
 
         if (!Files.exists(reportPath)) {
-            System.err.println("❌ Report not found: " + reportPath.toAbsolutePath());
+            System.err.println("❌ Report not found at: " + reportPath.toAbsolutePath());
             return;
         }
 
-        // Zip report for backup
+        // Create ZIP
         String zipPath;
         try {
             zipPath = zipReport(reportPath.toAbsolutePath().toString());
@@ -45,32 +44,17 @@ public class Demo_Mail_Havmor {
             return;
         }
 
-        // Read HTML content to embed in email body
-        String htmlContent;
-        try {
-            htmlContent = FileUtils.readFileToString(reportPath.toFile(), StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            System.err.println("❌ Failed to read HTML report content: " + e.getMessage());
-            e.printStackTrace();
-            return;
-        }
-
-        // Fetch SMTP credentials (from Jenkins)
+        // Jenkins Credentials
         String smtpUser = System.getenv("SMTP_USER");
         String smtpPass = System.getenv("SMTP_PASS");
 
         if (smtpUser == null || smtpPass == null) {
             System.err.println("ERROR: SMTP_USER or SMTP_PASS not set in Jenkins environment.");
-            System.err.println("→ Go to Jenkins Job → Configure → Build Environment → Bind credentials as:");
-            System.err.println("   Username Variable: SMTP_USER");
-            System.err.println("   Password Variable: SMTP_PASS");
             return;
         }
 
         try {
-            System.out.println("Using SMTP user: " + smtpUser);
-
-            HtmlEmail email = new HtmlEmail();
+            MultiPartEmail email = new MultiPartEmail();
             email.setHostName("smtp.office365.com");
             email.setSmtpPort(587);
             email.setAuthenticator(new DefaultAuthenticator(smtpUser, smtpPass));
@@ -79,37 +63,41 @@ public class Demo_Mail_Havmor {
             email.setSSLOnConnect(false);
             email.setFrom(smtpUser);
 
+            // Email Subject and Body
             email.setSubject("Automation Test Execution Report - Jenkins Build");
+            String msg = """
+                    Hi Team,
 
-            // Set the HTML report as the message body (colorful if client allows)
-            email.setHtmlMsg(htmlContent);
+                    The latest Automation Test Report (zipped) has been attached with this email.
+                    Please extract and open 'TestReport.html' in a browser to view the detailed colorful report.
 
-            // Fallback plain text message
-            email.setTextMsg("Hi Team,\n\nThe latest automation report is attached.\nPlease open 'TestReport.html' in your browser to view full details.\n\nRegards,\nAutomation Jenkins Job");
+                    ✅ Report Summary:
+                    • Environment: QA
+                    • Execution Type: Smoke Suite
+                    • Triggered From: Jenkins
 
-            // Add recipients
+                    Regards,
+                    Automation QA Team
+                    """;
+            email.setMsg(msg);
+
+            // Recipients
             email.addTo("ankush.gharsele@heerasoftware.com");
             email.addTo("aniket.jadhav@heerasoftware.com");
             email.addTo("roopali.kulkarni@heerasoftware.com");
 
-            // Attach the full HTML report file
-            EmailAttachment htmlAttachment = new EmailAttachment();
-            htmlAttachment.setPath(reportPath.toAbsolutePath().toString());
-            htmlAttachment.setDisposition(EmailAttachment.ATTACHMENT);
-            htmlAttachment.setName("TestReport.html");
-            email.attach(htmlAttachment);
+            // Attach only ZIP
+            EmailAttachment attachment = new EmailAttachment();
+            attachment.setPath(zipPath);
+            attachment.setDisposition(EmailAttachment.ATTACHMENT);
+            attachment.setDescription("Automation Test Report (Zipped)");
+            attachment.setName("TestReport.zip");
+            email.attach(attachment);
 
-            // Also attach zipped report
-            EmailAttachment zipAttachment = new EmailAttachment();
-            zipAttachment.setPath(zipPath);
-            zipAttachment.setDisposition(EmailAttachment.ATTACHMENT);
-            zipAttachment.setName(Paths.get(zipPath).getFileName().toString());
-            email.attach(zipAttachment);
-
-            System.out.println("Connecting to smtp.office365.com ...");
+            System.out.println("📤 Sending mail via smtp.office365.com ...");
             email.send();
 
-            System.out.println("✅ Email sent successfully with HTML body + attachments: " + zipPath);
+            System.out.println("✅ Email sent successfully (ZIP only): " + zipPath);
 
         } catch (Exception e) {
             System.err.println("❌ Email sending failed: " + e.getMessage());
@@ -117,6 +105,7 @@ public class Demo_Mail_Havmor {
         }
     }
 
+    // === Zips the HTML report into .zip ===
     public static String zipReport(String filePath) throws IOException {
         File inFile = new File(filePath);
         if (!inFile.exists()) throw new FileNotFoundException("Report not found: " + filePath);
@@ -137,7 +126,7 @@ public class Demo_Mail_Havmor {
             zipOut.closeEntry();
         }
 
-        System.out.println("✅ Report zipped successfully: " + zipFilePath);
+        System.out.println("📦 Report zipped successfully: " + zipFilePath);
         return zipFilePath;
     }
 }
