@@ -6,9 +6,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.Duration;
- 
+
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,7 +18,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
- 
+
 import Com_LoginPage_POM.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
  
@@ -52,14 +54,62 @@ public class BaseClass_otp {
  
     @BeforeMethod
     public void openbrowser() throws Exception {
+    	
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.get("https://havmoruat.hspldms.com/");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        ObjectRepo_Havmor.driver = driver;
- 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        
+     // ✅ Set Chrome options for Jenkins or Local
+        ChromeOptions options = new ChromeOptions();
+
+     // ✅ If running in Jenkins or remote VM, you can enable headless mode
+     // options.addArguments("--headless=new");
+
+     // ✅ Always ensure a large viewport to prevent tiny UI/screenshot issues
+     options.addArguments("--window-size=1920,1080");
+
+     // ✅ Jenkins-safe settings to prevent crashes or "no display" issues
+     options.addArguments("--no-sandbox");
+     options.addArguments("--disable-dev-shm-usage");
+     options.addArguments("--disable-gpu");
+     options.addArguments("--disable-infobars");
+     options.addArguments("--disable-popup-blocking");
+     options.addArguments("--remote-allow-origins=*");
+
+     // ✅ Initialize Chrome driver with options
+     driver = new ChromeDriver(options);
+
+     // ✅ Try to maximize window first (best for local runs)
+     try {
+         driver.manage().window().maximize();
+         org.openqa.selenium.Dimension currentSize = driver.manage().window().getSize();
+
+         // ✅ If still small (likely Jenkins or headless), force resize
+         if (currentSize.getWidth() < 1500 || currentSize.getHeight() < 800) {
+             System.out.println("⚙️ Window too small (" + currentSize + "), resizing to 1920x1080...");
+             driver.manage().window().setSize(new org.openqa.selenium.Dimension(1920, 1080));
+         } else {
+             System.out.println("✅ Window size looks good: " + currentSize);
+         }
+     } catch (Exception e) {
+         System.out.println("⚠️ Unable to maximize window normally, forcing 1920x1080...");
+         try {
+             driver.manage().window().setSize(new org.openqa.selenium.Dimension(1920, 1080));
+         } catch (Exception ex) {
+             System.err.println("❌ Failed to set window size: " + ex.getMessage());
+         }
+     }
+
+     // ✅ Open Application Under Test (AUT)
+     driver.get("https://havmoruat.hspldms.com/");
+
+     // ✅ Implicit + Explicit wait setup
+     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+     wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+     // ✅ Assign driver reference to ObjectRepo (for reuse)
+     ObjectRepo_Havmor.driver = driver;
+
+     System.out.println("✅ Browser launched successfully with stable viewport (1920x1080).");
+
  
         // Initialize login page elements (assumes you have LoginPage POM)
         LoginPage loginelements = PageFactory.initElements(driver, LoginPage.class);
