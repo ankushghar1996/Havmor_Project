@@ -58,10 +58,7 @@
       <class name="Admin_Activity_Test.Media_Upload_Test"/>
       <class name="Admin_Activity_Test.PJP_Upload_Test"/>
       
-      
-      
-     
-            
+         
       </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite --> 
