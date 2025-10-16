@@ -22,7 +22,7 @@ public class Salesman_Deactivate_Icon_Test extends BaseClass {
 	    	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Deactivate_TC_01", "Verify that user Click On Master Menu ", () ->{
 	    	Liabrary_Havmor.custom_click(home.getMaster_Menu(), "Click On Master Menu");});
 	    	Thread.sleep(1000);
-		
+		  
 	    	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Deactivate_TC_02", "Verify that user click on Salesman Master Sub Menu ", () ->{
 	        Liabrary_Havmor.custom_click(home.getSalesman_Master_Submenu(), "Salesman Master Submenu");    });  
 	    	Thread.sleep(1000);
@@ -40,22 +40,7 @@ public class Salesman_Deactivate_Icon_Test extends BaseClass {
 		  	Thread.sleep(1000);
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	 }
 }
