@@ -129,4 +129,21 @@ public class Demo_Mail_Havmor {
         System.out.println("Report zipped successfully: " + zipFilePath);
         return zipFilePath;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

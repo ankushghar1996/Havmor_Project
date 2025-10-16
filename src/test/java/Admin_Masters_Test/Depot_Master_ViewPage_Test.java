@@ -2,14 +2,14 @@ package Admin_Masters_Test;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
+
 import Admin_Masters.Depot_Master_View_Page_Main;
-import Admin_Masters.Distributor_DeactivationPage;
 import Com_LoginPage_POM.HomePage_Havmor;
-import Com_Utility_Havmor.BaseClass;
+import Com_Utility_Havmor.BaseClass_otp;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
-public class Depot_Master_ViewPage_Test extends BaseClass {
+public class Depot_Master_ViewPage_Test extends BaseClass_otp {
 
 	@Test
 	public void Depot_View_Page() throws Exception {
