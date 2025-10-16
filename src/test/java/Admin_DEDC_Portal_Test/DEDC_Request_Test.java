@@ -179,37 +179,37 @@ public class DEDC_Request_Test extends BaseClass_otp{
 
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_10", "Verify that user send Etimated Sales", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_09", "Verify that user send Etimated Sales", () ->{
 	Liabrary_Havmor.custom_Sendkeys(ass.getEstimatedSales_TextBox(), excel.getStringdata2("DECD_Request_Add", 1, 0), "send Etimated Sales");
 	});
 	Thread.sleep(1000);	
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_11", "Verify that user click on CompitativeOutlet dropdown", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_10", "Verify that user click on CompitativeOutlet dropdown", () ->{
 	Liabrary_Havmor.custom_click(ass.getCompitativeOutlet_dropdown(), "click on CompitativeOutlet dropdown");
 	});
 	Thread.sleep(1000);	
 		
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_12", "Verify that user click on CompitativeOutlet dropdown value", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_11", "Verify that user click on CompitativeOutlet dropdown value", () ->{
 	Liabrary_Havmor.custom_click(ass.getCompitativeOutlet_dropdownValue(), "click on CompitativeOutlet dropdown value");
 	});
 	Thread.sleep(1000);
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_13", "Verify that user send value in Tentative Competition Sales TextBox", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_12", "Verify that user send value in Tentative Competition Sales TextBox", () ->{
 	Liabrary_Havmor.custom_Sendkeys(ass.getTCS_TextBox(), excel.getStringdata2("DECD_Request_Add", 1, 1), "send Tentative Competition Sales TextBox");
 	});
 	Thread.sleep(1000);
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_14", "Verify that user send value in DEDC % TextBox", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_13", "Verify that user send value in DEDC % TextBox", () ->{
 	Liabrary_Havmor.custom_Sendkeys(ass.getDEDC_TextBox(), excel.getStringdata2("DECD_Request_Add", 1, 2), "send DEDC % TextBox");
 	});
 	Thread.sleep(1000);
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_15", "Verify that user send value in Company Contribution TextBox", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_14", "Verify that user send value in Company Contribution TextBox", () ->{
 	Liabrary_Havmor.custom_Sendkeys(ass.getCompanyContribution_TextBox(), excel.getStringdata2("DECD_Request_Add", 1, 3), "send value in Company Contribution TextBox");
 	});
 	Thread.sleep(1000);
@@ -217,7 +217,7 @@ public class DEDC_Request_Test extends BaseClass_otp{
 	
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_16", "From Date To Date", () ->{     
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_15", "From Date To Date", () ->{     
 	        
 	        //From Date
 	        	
@@ -351,97 +351,97 @@ public class DEDC_Request_Test extends BaseClass_otp{
 	
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_17", "Verify that user click on Scheme Applicable dropdown", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_16", "Verify that user click on Scheme Applicable dropdown", () ->{
 	  Liabrary_Havmor.custom_click(ass.getSchemeApplicable_dropdown(), "click on Scheme Applicable dropdown");
 	  });
 	  Thread.sleep(1000);	
 				
 				
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_18", "Verify that user click on Scheme Applicable dropdown value", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_17", "Verify that user click on Scheme Applicable dropdown value", () ->{
 	  Liabrary_Havmor.custom_click(ass.getSchemeApplicable_dropdown_Value(), "click on Scheme Applicable dropdown value");
 	  });
 	  Thread.sleep(1000);
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_19", "Verify that user click on PayoutFrequency dropdown", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_18", "Verify that user click on PayoutFrequency dropdown", () ->{
 	  Liabrary_Havmor.custom_click(ass.getPayoutFrequency_dropdown(), "click on PayoutFrequency dropdown");
 	  });
 	  Thread.sleep(1000);	
 					
 					
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_20", "Verify that user click on PayoutFrequency dropdown value", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_19", "Verify that user click on PayoutFrequency dropdown value", () ->{
 	  Liabrary_Havmor.custom_click(ass.getPayoutFrequency_dropdownValue(), "click on PayoutFrequency dropdown value");
 	  });
 	  Thread.sleep(1000);
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_21", "Verify that user click on DiscountAppOn dropdown", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_20", "Verify that user click on DiscountAppOn dropdown", () ->{
 	  Liabrary_Havmor.custom_click(ass.getDiscountAppOn_dropdown(), "click on DiscountAppOn dropdown");
 	  });
 	  Thread.sleep(1000);	
 						
 						
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_22", "Verify that user click on DiscountAppOn dropdown value", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_21", "Verify that user click on DiscountAppOn dropdown value", () ->{
 	  Liabrary_Havmor.custom_click(ass.getDiscountAppOn_dropdownValue(), "click on DiscountAppOn dropdown value");
 	  });
 	  Thread.sleep(1000);
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_23", "Verify that user click on DiscountAppOn dropdown", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_22", "Verify that user click on DiscountAppOn dropdown", () ->{
 	  Liabrary_Havmor.custom_click(ass.getPayoutType_dropdown(), "click on DiscountAppOn dropdown");
 	  });
 	  Thread.sleep(1000);	
 							
 							
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_24", "Verify that user click on DiscountAppOn dropdown value", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_23", "Verify that user click on DiscountAppOn dropdown value", () ->{
 	  Liabrary_Havmor.custom_click(ass.getPayoutType_dropdownValue(), "click on DiscountAppOn dropdown value");
 	  });
 	  Thread.sleep(1000);
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_25", "Verify that user click on ProductWise dropdown", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_24", "Verify that user click on ProductWise dropdown", () ->{
 	  Liabrary_Havmor.custom_click(ass.getProductWise_dropdown(), "click on ProductWise dropdown");
 	  });
 	  Thread.sleep(1000);	
 								
 								
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_26", "Verify that user click on ProductWise dropdown value", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_25", "Verify that user click on ProductWise dropdown value", () ->{
 	  Liabrary_Havmor.custom_click(ass.getProductWise_dropdownValue(), "click on ProductWise dropdown value");
 	  });
 	  Thread.sleep(1000);
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_27", "Verify that user click on Product Hierarchy dropdown", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_26", "Verify that user click on Product Hierarchy dropdown", () ->{
 	  Liabrary_Havmor.custom_click(ass.getProductHierarchy_dropdown(), "click on Product Hierarchy dropdown");
 	  });
 	  Thread.sleep(1000);	
 									
 									
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_28", "Verify that user click on Product Hierarchy dropdown value", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_27", "Verify that user click on Product Hierarchy dropdown value", () ->{
 	  Liabrary_Havmor.custom_click(ass.getProductHierarchy_dropdownValue(), "click on Product Hierarchy dropdown value");
 	  });
 	  Thread.sleep(1000);
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_29", "Verify that user click on CategoryWise dropdown", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_28", "Verify that user click on CategoryWise dropdown", () ->{
 	  Liabrary_Havmor.custom_click(ass.getCategoryWise_dropdown(), "click on CategoryWise dropdown");
 	  });
 	  Thread.sleep(1000);	
 										
 										
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_30", "Verify that user click on ICECREAM_CheckBox", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_29", "Verify that user click on ICECREAM_CheckBox", () ->{
 	  Liabrary_Havmor.custom_click(ass.getICECREAM_CheckBox(), "click on ICECREAM_CheckBox");
 	  });
 	  Thread.sleep(1000);
 	
 	
-	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_31", "Verify that user click on Send Request btn", () ->{
+	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_30", "Verify that user click on Send Request btn", () ->{
 	  Liabrary_Havmor.custom_click(ass.getBtnSendRequest(), "click on Send Request btn");
 	  });
 	  Thread.sleep(1000);
 	
 	
-//	  ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_30", "Verify that user click on Close btn", () ->{
+//	  ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_30", "Verify that user click on Close btn", () ->{
 //	  Liabrary_Havmor.custom_click(ass.getBtnModalClose(), "click on Close btn");
 //	  });
 	  Thread.sleep(1000);
