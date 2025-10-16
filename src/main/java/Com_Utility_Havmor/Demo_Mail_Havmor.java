@@ -17,9 +17,9 @@ public class Demo_Mail_Havmor {
     }
 
     public static void sendReportEmail(String reportFilePath) {
-        System.out.println("=== Preparing to send Jenkins Email with Zipped Report ===");
+        System.out.println("=== Preparing to send Jenkins Email with Zipped Extent Report ===");
 
-        // Resolve report path
+        // Resolve path of main report file
         Path reportPath;
         if (reportFilePath != null && !reportFilePath.trim().isEmpty()) {
             reportPath = Paths.get(reportFilePath);
@@ -28,30 +28,30 @@ public class Demo_Mail_Havmor {
             if (workspace == null || workspace.trim().isEmpty()) {
                 workspace = System.getProperty("user.dir");
             }
-            reportPath = Paths.get(workspace, "test-output", "Extent_Reports", "TestReport.html");
+            reportPath = Paths.get(workspace, "test-output", "Extent_Reports");
         }
 
         if (!Files.exists(reportPath)) {
-            System.err.println("Report not found at: " + reportPath.toAbsolutePath());
+            System.err.println("❌ Report not found at: " + reportPath.toAbsolutePath());
             return;
         }
 
-        // Create ZIP
+        // === Zip the entire Extent_Reports folder ===
         String zipPath;
         try {
             zipPath = zipReport(reportPath.toAbsolutePath().toString());
         } catch (IOException e) {
-            System.err.println("Failed to zip report: " + e.getMessage());
+            System.err.println("⚠ Failed to zip report: " + e.getMessage());
             e.printStackTrace();
             return;
         }
 
-        // Jenkins Credentials
+        // Jenkins credentials (should be set in environment)
         String smtpUser = System.getenv("SMTP_USER");
         String smtpPass = System.getenv("SMTP_PASS");
 
         if (smtpUser == null || smtpPass == null) {
-            System.err.println("ERROR: SMTP_USER or SMTP_PASS not set in Jenkins environment.");
+            System.err.println("⚠ ERROR: SMTP_USER or SMTP_PASS not set in Jenkins environment.");
             return;
         }
 
@@ -65,13 +65,13 @@ public class Demo_Mail_Havmor {
             email.setSSLOnConnect(false);
             email.setFrom(smtpUser);
 
-            // Email Subject and Body (plain text for safe rendering)
+            // Subject & body
             email.setSubject("Automation Test Execution Report - Jenkins Build");
 
             String msg = "Hi Team,\n\n"
-                    + "The latest Automation Test Report (zipped) has been attached with this email.\n"
-                    + "Please extract and open 'TestReport.html' in a browser to view the detailed colorful report.\n\n"
-                    + "Report Summary:\n"
+                    + "The latest Automation Test Report (Zipped) has been attached with this email.\n"
+                    + "Please extract and open 'TestReport.html' in a browser to view the detailed clickable report.\n\n"
+                    + "📋 Report Summary:\n"
                     + "• Environment: QA\n"
                     + "• Execution Type: Smoke Suite\n"
                     + "• Triggered From: Jenkins\n\n"
@@ -84,66 +84,61 @@ public class Demo_Mail_Havmor {
             email.addTo("aniket.jadhav@heerasoftware.com");
             email.addTo("roopali.kulkarni@heerasoftware.com");
 
-            // Attach only ZIP
+            // Attach zipped report
             EmailAttachment attachment = new EmailAttachment();
             attachment.setPath(zipPath);
             attachment.setDisposition(EmailAttachment.ATTACHMENT);
-            attachment.setDescription("Automation Test Report (Zipped)");
-            attachment.setName("TestReport.zip");
+            attachment.setDescription("Extent Automation Report (Zipped)");
+            attachment.setName("Extent_Reports.zip");
             email.attach(attachment);
 
-            System.out.println("Sending mail via smtp.office365.com ...");
+            System.out.println("📨 Sending email via smtp.office365.com ...");
             email.send();
 
-            System.out.println("Email sent successfully (ZIP only): " + zipPath);
+            System.out.println("✅ Email sent successfully (ZIP attached): " + zipPath);
 
+            
         } catch (Exception e) {
-            System.err.println("Email sending failed: " + e.getMessage());
+            System.err.println("❌ Email sending failed: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
-    // === Zips the HTML report into .zip ===
-    public static String zipReport(String filePath) throws IOException {
-        File inFile = new File(filePath);
-        if (!inFile.exists()) {
-            throw new FileNotFoundException("Report not found: " + filePath);
-        }
+    // === Zips the entire Extent_Reports folder ===
+    public static String zipReport(String reportFilePath) throws IOException {
+        File reportFile = new File(reportFilePath);
+        File reportFolder = reportFile.getParentFile();  // e.g. Extent_Reports folder
+        String zipFilePath = reportFolder.getParent() + File.separator + "Extent_Reports.zip";
 
-        String zipFilePath = filePath.replaceAll("\\.html?$", ".zip");
         try (FileOutputStream fos = new FileOutputStream(zipFilePath);
-             ZipOutputStream zipOut = new ZipOutputStream(fos);
-             FileInputStream fis = new FileInputStream(inFile)) {
-
-            ZipEntry zipEntry = new ZipEntry(inFile.getName());
-            zipOut.putNextEntry(zipEntry);
-
-            byte[] bytes = new byte[1024];
-            int length;
-            while ((length = fis.read(bytes)) >= 0) {
-                zipOut.write(bytes, 0, length);
-            }
-            zipOut.closeEntry();
+             ZipOutputStream zos = new ZipOutputStream(fos)) {
+            zipDirectory(reportFolder, reportFolder.getName(), zos);
         }
 
-        System.out.println("Report zipped successfully: " + zipFilePath);
+        System.out.println("✅ Folder zipped successfully: " + zipFilePath);
         return zipFilePath;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    // Recursive helper for zipping folder contents
+    private static void zipDirectory(File folderToZip, String basePath, ZipOutputStream zos) throws IOException {
+        File[] files = folderToZip.listFiles();
+        if (files == null) return;
+
+        for (File file : files) {
+            if (file.isDirectory()) {
+                zipDirectory(file, basePath + "/" + file.getName(), zos);
+                continue;
+            }
+
+            try (FileInputStream fis = new FileInputStream(file)) {
+                ZipEntry zipEntry = new ZipEntry(basePath + "/" + file.getName());
+                zos.putNextEntry(zipEntry);
+                byte[] bytes = new byte[1024];
+                int length;
+                while ((length = fis.read(bytes)) >= 0) {
+                    zos.write(bytes, 0, length);
+                }
+            }
+        }
+    }
 }

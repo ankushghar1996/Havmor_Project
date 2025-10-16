@@ -184,17 +184,23 @@ public class Distributor_Master_AddPage extends BaseClass{
         Thread.sleep(1000);
  
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_31", "Verify that user click on GST State Type dropdown", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_31", "Verify that user click on GST State dropdown", () ->{
    		 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown(), "click on GST state dropdown");
    		  });
    	  	  Thread.sleep(1000);
  
    	  	  
-   	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_32", "Verify that user click on GST State Type value dropdown", () ->{
+   	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_32", "Verify that user click on GST State Type dropdown", () ->{
     	 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown_values(), "click on GST state value dropdown");
     	  });
    	 	Thread.sleep(1000);
  
+   	
+   	 WebElement scroll1 = driver.findElement(By.xpath("//div[@id='ParentMasterContentPlaceHolder1_FSSAIDetailsDiv']//label[text()='FSSAI Details']"));
+ 	JavascriptExecutor jse1= (JavascriptExecutor)driver;
+ 	jse1.executeScript("arguments[0].scrollIntoView(true);", scroll1);
+     Thread.sleep(1000);
+   	 	
    	 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_33", "Verify that user click on FSSAI dropdown", () ->{
 		Liabrary_Havmor.custom_click(DM.getFSSAIType_dropdown(), "click on FSSAI dropdown");
