@@ -9,7 +9,7 @@
   
     <classes>
       <!-- put all your test classes here -->
-      <class name="Admin_Masters_Test.Depot_Master_Addpage_Test"/>
+      <class name="Admin_Masters_Test.Demo_Depo"/>
       <!-- add other classes as needed -->
       
     </classes>
