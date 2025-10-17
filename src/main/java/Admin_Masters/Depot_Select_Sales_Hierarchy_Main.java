@@ -31,7 +31,7 @@ public class Depot_Select_Sales_Hierarchy_Main {
 	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//tr//td//a)[3]")
 	private WebElement Depot_Creation_View_Button;
 	
-	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//tr//td//a)[1]")
+	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//tr//td//a)[11]")
 	private WebElement Depot_Creation_Sales_Hirarchy;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")

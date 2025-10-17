@@ -183,6 +183,11 @@ public class Distributor_Master_AddPage extends BaseClass{
 		});
         Thread.sleep(1000);
  
+        WebElement scroll0 = driver.findElement(By.xpath("//div[@id='ctl00_ParentMasterContentPlaceHolder1_ctl00_ParentMasterContentPlaceHolder1_ddlGSTStatePanel']"));
+     	JavascriptExecutor jse0= (JavascriptExecutor)driver;
+     	jse0.executeScript("arguments[0].scrollIntoView(true);", scroll0);
+         Thread.sleep(1000);
+        
         
         ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_31", "Verify that user click on GST State dropdown", () ->{
    		 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown(), "click on GST state dropdown");
@@ -341,15 +346,7 @@ public class Distributor_Master_AddPage extends BaseClass{
 //           });
 //       	Thread.sleep(1000);
        	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
+	
        	
  
 	}

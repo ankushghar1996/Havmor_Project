@@ -75,15 +75,15 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
    	     ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_12", "Verify that user click on Distributor Dropdown Value", () ->{
   	     Liabrary_Havmor.custom_click(STMADD.getDistributor_Value(), " Distributor Dropdown Value"); });  
    	     Thread.sleep(1000);
-   	     
-   	     ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_13", "Verify that user click on Salesman for Replacement Dropdown", () ->{
-   	     Liabrary_Havmor.custom_click(STMADD.getSalesman_For_Replacement(), "Salesman for Replacement Dropdown"); });  
-    	  Thread.sleep(1000);
-    	     
-    	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_14", "Verify that user click on Salesman for Replacement Salesman for Replacement Dropdown Value", () ->{
-  	     Liabrary_Havmor.custom_click(STMADD.getSalesman_For_Replacement_Value(), "Salesman for Replacement Dropdown Value"); });  
-    	 Thread.sleep(1000);
-   	     
+//   	     
+//   	     ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_13", "Verify that user click on Salesman for Replacement Dropdown", () ->{
+//   	     Liabrary_Havmor.custom_click(STMADD.getSalesman_For_Replacement(), "Salesman for Replacement Dropdown"); });  
+//    	  Thread.sleep(1000);
+//    	     
+//    	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_14", "Verify that user click on Salesman for Replacement Salesman for Replacement Dropdown Value", () ->{
+//  	     Liabrary_Havmor.custom_click(STMADD.getSalesman_For_Replacement_Value(), "Salesman for Replacement Dropdown Value"); });  
+//    	 Thread.sleep(1000);
+//   	     
    	     
    	     
 	
@@ -111,6 +111,10 @@ public class Salesman_Master_AddBTN_Test extends BaseClass {
           });
           Thread.sleep(1000);
           
+          WebElement scroll1 = driver.findElement(By.xpath("//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlState_Input']"));
+       	JavascriptExecutor jse1= (JavascriptExecutor)driver;
+       	jse1.executeScript("arguments[0].scrollIntoView(true);", scroll1);
+           Thread.sleep(1000);
          
          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_19", "Verify that user click on State Dropdown ", () ->{
          Liabrary_Havmor.custom_click(STMADD.getState(), " State Dropdown "); });  

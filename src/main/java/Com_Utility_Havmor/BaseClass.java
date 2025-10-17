@@ -71,6 +71,10 @@ public class BaseClass {
 	        // Initialize the WebDriver for Chrome browser
 
 	        driver = new ChromeDriver();
+	        
+	        // ✅ Set window dimension BEFORE navigation — this ensures Jenkins/headless layout is proper
+	        driver.manage().window().setSize(new org.openqa.selenium.Dimension(1920, 1080));
+
 
 	        driver.get("https://havmoruat.hspldms.com/");
 

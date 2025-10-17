@@ -18,7 +18,7 @@ import Com_Utility_Havmor.ObjectRepo_Havmor;
 
 public class Admin_Scheme_Edit_Page extends BaseClass {
 
-	 @Test
+	    @Test
 	    public void Scheme_Edit() throws Exception {
 
 	        Admin_Scheme_Master_Main ASMM = PageFactory.initElements(driver, Admin_Scheme_Master_Main.class);
@@ -297,9 +297,9 @@ public class Admin_Scheme_Edit_Page extends BaseClass {
 	            
 	           	
 	           	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Program_Target_Upload_TC_86", "Verify that user Click on Upload Button Distributor", () ->{
-	                Liabrary_Havmor.custom_click(ASMM.getUpload_Button_Distributor_Budget_Info(), "Upload_Button Distributor");
-	                });
-	                Thread.sleep(1000);
+	            Liabrary_Havmor.custom_click(ASMM.getUpload_Button_Distributor_Budget_Info(), "Upload_Button Distributor");
+	            });
+	             Thread.sleep(1000);
 	        
 	       
 	        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Scheme_TC_87", "Click on Save Button For Budget Upload Page", () ->{
