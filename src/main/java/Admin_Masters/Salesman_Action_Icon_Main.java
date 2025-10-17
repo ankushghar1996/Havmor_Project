@@ -10,7 +10,7 @@ public class Salesman_Action_Icon_Main {
 	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//td//a)[4]")
 	private WebElement Reset_Button;
 	   
-	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//td//a)[3]")
+	@FindBy(how = How.XPATH, using = "//table[@class='rgMasterTable rgClipCells']//td//a[@id='ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_ctl00_ctl34_BtnDeactivate']")
 	private WebElement Deactivate_Button;
 	
 	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//td//a)[2]")

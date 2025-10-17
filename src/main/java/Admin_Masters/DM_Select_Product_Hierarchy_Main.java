@@ -10,7 +10,7 @@ public class DM_Select_Product_Hierarchy_Main {
 	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Depot Creation']")
 	private WebElement Depot_Creation;
 	
-	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//tr//td//a)[2]")
+	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//tr//td//a)[12]")
 	private WebElement Depot_Creation_Product_Hierarchy_Button;
 	
 	

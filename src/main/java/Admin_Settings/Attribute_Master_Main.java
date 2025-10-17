@@ -136,7 +136,7 @@ public class Attribute_Master_Main {
 	
 	
 	
-	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_radGridAreaCreation_GridData']//a[contains(@id,'BtnDeactivate')]")
+	@FindBy(how = How.XPATH, using = "//div[@id='ctl00_ParentMasterContentPlaceHolder1_radGridAttributeCreation_GridData']//a[contains(@id,'ctl00_ParentMasterContentPlaceHolder1_radGridAttributeCreation_ctl00_ctl04_BtnDeactivate')]")
 	private WebElement Deactivate_btn;
 	
 	

@@ -26,7 +26,7 @@ public class PJP_Master_Main {
 		return Route_Master_Submenu;
 	}
 
-	@FindBy(how=How.XPATH,using="(//div[@class='content-wrapper']//child::div//child::div/ul/li)[5]")
+	@FindBy(how=How.XPATH,using="(//div[@class='content-wrapper']//child::div//child::div/ul/li)[6]")
     private WebElement Distributor_Name_Value;
 	
 	@FindBy(how=How.XPATH,using="//input[@id='ctl00_ParentMasterContentPlaceHolder1_ddlSalesmanName_Input']")

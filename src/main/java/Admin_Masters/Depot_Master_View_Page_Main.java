@@ -28,7 +28,7 @@ public class Depot_Master_View_Page_Main {
 	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Depot Creation']")
 	private WebElement Depot_Creation;
 	
-	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//tr//td//a)[3]")
+	@FindBy(how = How.XPATH, using = "(//table[@class='rgMasterTable rgClipCells']//tr//td//a)[14]")
 	private WebElement Depot_Creation_View_Button;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnClose']")
