@@ -333,9 +333,15 @@ public class Distributor_Master_AddPage extends BaseClass{
        		Liabrary_Havmor.custom_click(DM.getGodown_City_Value(), "click on Godown city dropdown value");
            });
        	Thread.sleep(1000);
+       	
+       	
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_47", "Verify that user click on Godown pincode value", () ->{
+       		driver.findElement(By.xpath("//input[@id='ParentMasterContentPlaceHolder1_txtGD1PinCode']")).sendKeys("411041");
+           });
+       	Thread.sleep(1000);
 
  
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_47", "Verify that user click on Save btn", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_48", "Verify that user click on Save btn", () ->{
        		Liabrary_Havmor.custom_click(DM.getSave_btn(), "click on Save btn");
            });
        	Thread.sleep(1000);
