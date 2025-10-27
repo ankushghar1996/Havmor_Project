@@ -11,8 +11,7 @@ import Com_Utility_Havmor.ObjectRepo_Havmor;
 
 public class Sales_Hierarchy_Creation_Test extends BaseClass{
 
-	
-	
+
 	@Test
 	public void Sales_Hierarchy_Creation_Add() throws Exception {
 	
