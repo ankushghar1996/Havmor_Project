@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import Admin_Masters.Retailer_Master_AddPage;
 import Com_LoginPage_POM.HomePage_Havmor;
 import Com_Utility_Havmor.BaseClass;
@@ -51,14 +50,14 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		Thread.sleep(1000);
 		
 		
-		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__05", "Verify that user Click on Sales Hierarchy dropdown", () ->{
-		Liabrary_Havmor.custom_click(Add.getChannelType(), "Click On Sales Hierarchy dropdown");      
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__05", "Verify that user Click on Channel Type Dropdown", () ->{
+		Liabrary_Havmor.custom_click(Add.getChannelType(), "Click On Channel Type Dropdown");      
 		});
 		Thread.sleep(1000);
 		
 		
-		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__06", "Verify that user select on Sales Hierarchy value", () ->{
-		Liabrary_Havmor.custom_click(Add.getChannelType_value(), "select on Sales Hierarchy value");      
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__06", "Verify that user select on Channel Type Dropdown Value", () ->{
+		Liabrary_Havmor.custom_click(Add.getChannelType_value(), "select on Channel Type Dropdown Value");      
 		});
 		Thread.sleep(1000);
 		
@@ -135,8 +134,6 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 //		    throw new RuntimeException("❌ No SalesMan found for any Distributor!");
 //		}
 
-		
-		
 		
 		
   ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__07", "Verify that user click on Distributor dropdown", () ->{

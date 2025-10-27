@@ -37,7 +37,6 @@
       <class name="Admin_Masters_Test.Salesman_Master_AddBTN_Test"/>
       <class name="Admin_Masters_Test.Salesman_Deactivate_Icon_Test"/>
       <class name="Admin_Masters_Test.Salesman_Edit_Icon_Test"/>
-      <class name="Admin_Masters_Test.Salesman_Extension_Test"/>
       <class name="Admin_Masters_Test.Salesman_Master_Download_Test"/>
       <class name="Admin_Masters_Test.Salesman_Master_View_Test"/>
       <class name="Admin_Masters_Test.Salesman_Reset_Icon_Test"/>

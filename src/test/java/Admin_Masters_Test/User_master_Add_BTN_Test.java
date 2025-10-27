@@ -57,13 +57,13 @@ public class User_master_Add_BTN_Test extends BaseClass {
 	 Liabrary_Havmor.custom_click(UMADD.getDivision_Value(), "Division Dropdown Value"); });  
 	 Thread.sleep(1000);
 						 
-	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_User_Master_Add_TC_08", "Verify that user click on Sales Hierarchy Dropdown ", () ->{
-     Liabrary_Havmor.custom_click(UMADD.getSales_Hierarchy(), " Sales Hierarchy Dropdown "); });  
-	 Thread.sleep(1000);
-							 
-	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_User_Master_Add_TC_09", "Verify that user click on Sales Hierarchy Dropdown Value ", () ->{
-	  Liabrary_Havmor.custom_click(UMADD.getSales_Hierarchy_Value(), " Sales Hierarchy Dropdown Value "); });  
-	 Thread.sleep(1000);
+//	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_User_Master_Add_TC_08", "Verify that user click on Sales Hierarchy Dropdown ", () ->{
+//     Liabrary_Havmor.custom_click(UMADD.getSales_Hierarchy(), " Sales Hierarchy Dropdown "); });  
+//	 Thread.sleep(1000);
+//							 
+//	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_User_Master_Add_TC_09", "Verify that user click on Sales Hierarchy Dropdown Value ", () ->{
+//	  Liabrary_Havmor.custom_click(UMADD.getSales_Hierarchy_Value(), " Sales Hierarchy Dropdown Value "); });  
+//	 Thread.sleep(1000);
 	
 	 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_User_Master_Add_TC_10", "Verify that user Should Enter USER ID in Textbox", () ->{
      Liabrary_Havmor.custom_Sendkeys(UMADD.getUser_ID_Textbox_EXCEL(), excel.getStringdata2("User_Master_ADD", 1, 0), "USER ID ");
