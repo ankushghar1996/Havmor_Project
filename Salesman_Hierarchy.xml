@@ -18,8 +18,28 @@
       <class name="ZSM_Portal_Test.SalesMan_Approval_ZSM_Test"/>
 
       
-       <!-- ZSM 1st Approval -->
-      <class name="ZSM_Portal_Test.SalesMan_Approval_ZSM_Test"/>
+       <!-- RSM 1st Approval -->
+      <class name="RSM_Portal_Test.Saleman_Master_RSM_Test"/>
+      
+      
+       <!-- HOHR 1st Approval -->
+      <class name="HO_HR_Portal_Test.Saleman_App_HOHR_Test"/>
+      
+      
+       <!-- HO Sales 1st Approval -->
+      <class name="HO_Sales_Portal_Test.Saleman_App_HOSales_Test"/>
+      
+      
+       <!-- NSM 1st Approval -->
+      <class name="NSM_Portal_Test.Saleman_Master_NSM_Test"/>
+      
+      
+       <!-- HOVP 1st Approval -->
+      <class name="HO_VP_Portal_Test.Saleman_App_HOVP_Test"/>
+      
+      
+      
+      
       
      
             

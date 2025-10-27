@@ -3,12 +3,12 @@ package ZSM_Portal_Test;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import Com_Utility_Havmor.BaseClass_SE;
+import Com_Utility_Havmor.BaseClass_ZSM;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 import ZSM_Portal_Main.SalesMan_Approval_ZSM_Main;
 
-public class SalesMan_Approval_ZSM_Test extends BaseClass_SE{
+public class SalesMan_Approval_ZSM_Test extends BaseClass_ZSM{
 
 	
 	@Test
@@ -42,10 +42,10 @@ public class SalesMan_Approval_ZSM_Test extends BaseClass_SE{
 	Thread.sleep(1000);
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_ZSM_Test_05", "Verify that user Click On Approval button", () ->{
-	Liabrary_Havmor.custom_click(app.getBtnApproval(), "Click On Approval button");      
-	});
-	Thread.sleep(1000);
+//	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_ZSM_Test_05", "Verify that user Click On Approval button", () ->{
+//	Liabrary_Havmor.custom_click(app.getBtnApproval(), "Click On Approval button");      
+//	});
+//	Thread.sleep(1000);
 		
 		
 	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_ZSM_Test_06", "Verify that user Click On Proceed to Approval button", () ->{

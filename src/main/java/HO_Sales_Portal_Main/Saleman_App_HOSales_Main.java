@@ -95,7 +95,7 @@ public class Saleman_App_HOSales_Main {
 	private WebElement Salesman_Approval;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_GridData']//table//tbody//tr)[1]")
+	@FindBy(how = How.XPATH, using = "//table[@class='rgMasterTable rgClipCells']//child::td//a[@id='ctl00_ParentMasterContentPlaceHolder1_radGridSalesmanMaster_ctl00_ctl04_BtnApproval']")
 	private WebElement Grid_Data;
 	
 	
