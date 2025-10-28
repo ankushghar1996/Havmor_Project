@@ -43,14 +43,29 @@ public class Saleman_App_HOSales_Test extends BaseClass_HOSales{
 	Thread.sleep(1000);
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOSales_Test_05", "Verify that user Click On Approval button", () ->{
-	Liabrary_Havmor.custom_click(app.getBtnApproval(), "Click On Approval button");      
+//	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOSales_Test_05", "Verify that user Click On Approval button", () ->{
+//	Liabrary_Havmor.custom_click(app.getBtnApproval(), "Click On Approval button");      
+//	});
+//	Thread.sleep(1000);
+	
+	
+	
+	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOSales_Test_06", "Verify that user Click On Proceed for Approval button", () ->{
+	Liabrary_Havmor.custom_click(app.getBtnProceedForApproval(), "Click On Proceed for Approval button");      
 	});
 	Thread.sleep(1000);
-	
-	
-	
-	
+		
+		
+	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOSales_Test_07", "Verify that user Click On Proceed for Approval Yes Button", () ->{
+	Liabrary_Havmor.custom_click(app.getBtnProceedForApproval(), "Click On Proceed for Approval button");      
+		});
+	Thread.sleep(1000);
+				
+		
+	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOSales_Test_08", "Verify that user Click On Yes Button", () ->{
+	Liabrary_Havmor.custom_click(app.getBtnYes(), "Click On Yes button");      
+	});
+	Thread.sleep(1000);
 	
 	
 	

@@ -42,10 +42,10 @@ public class Saleman_Master_RSM_Test extends BaseClass_RSM{
 	Thread.sleep(1000);
 	
 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_RSM_Test_05", "Verify that user Click On Approval button", () ->{
-	Liabrary_Havmor.custom_click(app.getBtnApproval(), "Click On Approval button");      
-	});
-	Thread.sleep(1000);
+//	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_RSM_Test_05", "Verify that user Click On Approval button", () ->{
+//	Liabrary_Havmor.custom_click(app.getBtnApproval(), "Click On Approval button");      
+//	});
+//	Thread.sleep(1000);
 	
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_RSM_Test_06", "Verify that user Click On Proceed for Approval button", () ->{
