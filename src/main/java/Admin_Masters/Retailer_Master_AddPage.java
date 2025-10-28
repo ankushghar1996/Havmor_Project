@@ -298,7 +298,7 @@ public class Retailer_Master_AddPage {
 	private WebElement Distributor;
 	
 	
-	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_DropDown']//ul//li)[5]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='ctl00_ParentMasterContentPlaceHolder1_ddlDistributor_DropDown']//ul//li)[3]")
 	private WebElement Distributor_value;
 	
 	
