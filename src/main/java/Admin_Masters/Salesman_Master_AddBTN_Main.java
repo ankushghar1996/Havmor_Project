@@ -13,8 +13,7 @@ public class Salesman_Master_AddBTN_Main {
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnSave']")
 	private WebElement Save_Button;
 	
-	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_chkSFAApplicationDisable']")
-	private WebElement Mobile_Checkbox;
+	
 	
 	public WebElement getSave_Button() {
 		return Save_Button;
@@ -401,7 +400,8 @@ public class Salesman_Master_AddBTN_Main {
 	
 	
 	
-	
+	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_chkSFAApplicationDisable']")
+	private WebElement Mobile_Checkbox;
 	
 	
 	
@@ -418,9 +418,7 @@ public class Salesman_Master_AddBTN_Main {
 	}
 
 	public WebElement getMobile_Checkbox() {
-
-		// TODO Auto-generated method stub
-		return null;
+		return Mobile_Checkbox;
 	}
 
 	public WebElement getSalesman_For_Replacement() {

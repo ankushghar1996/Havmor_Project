@@ -148,7 +148,7 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
 	    	jse3.executeScript("arguments[0].scrollIntoView(true);", scroll);
 	        Thread.sleep(1000);
          
-	        
+	 /*       
 	        //ABHYUDAYA CO-OP BANK LTD
 	        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_25 and 26", "Verify that user Should click bank dropdown and select the bank", () ->{
 	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -177,7 +177,37 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
 	     option.click();
 
 	        });
-          
+        */  
+	        
+	        
+	        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_25 and 26",
+	        	    "Verify that user Should click bank dropdown and select the bank", () -> {
+
+	        	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+	        	    // click input to open dropdown
+	        	    WebElement bankDropdownInput = wait.until(
+	        	        ExpectedConditions.elementToBeClickable(By.xpath("//input[contains(@id,'ddlBankName_Input')]")));
+	        	    bankDropdownInput.click();
+
+	        	    // small pause to let options render
+	        	    try {
+						Thread.sleep(800);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+	        	    // improved xpath: look for the listbox then a li with exact normalized text
+	        	    By optionLocator = By.xpath("(//li[normalize-space()='ABHYUDAYA CO-OP BANK LTD'])[1]");
+
+	        	    WebElement option = wait.until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
+	        	    // scroll into view then click
+	        	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", option);
+	        	    option.click();
+	        	});
+
+	        
           
        //   Account Holder Name         
           ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_27", "Verify that user Should Enter Account Holder Name in Textbox", () ->{
