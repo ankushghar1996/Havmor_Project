@@ -14,9 +14,10 @@
             <!-- ASM Salesman Add -->
       <class name="ASM_Portal_Test.Salesman_ASM_Add_BTN"/>
     
+    
            <!-- ZSM 1st Approval -->
       <class name="ZSM_Portal_Test.SalesMan_Approval_ZSM_Test"/>
-
+	
       
        <!-- RSM 1st Approval -->
       <class name="RSM_Portal_Test.Saleman_Master_RSM_Test"/>
@@ -44,5 +45,7 @@
      
             
       </classes>
+      
+      
   </test> <!-- Test -->
 </suite> <!-- Suite --> 
