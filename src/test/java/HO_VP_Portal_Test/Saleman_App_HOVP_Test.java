@@ -56,13 +56,13 @@ public class Saleman_App_HOVP_Test extends BaseClass_HOVP{
 	Thread.sleep(1000);
 		
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOVP_Test_07", "Verify that user Click On Proceed for Approval Yes Button", () ->{
-	Liabrary_Havmor.custom_click(app.getBtnProceedForApproval(), "Click On Proceed for Approval button");      
-	});
-	Thread.sleep(1000);
+//	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOVP_Test_07", "Verify that user Click On Proceed for Approval Yes Button", () ->{
+//	Liabrary_Havmor.custom_click(app.getBtnProceedForApproval(), "Click On Proceed for Approval button");      
+//	});
+//	Thread.sleep(1000);
 				
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOVP_Test_08", "Verify that user Click On Yes Button", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_HOVP_Test_07", "Verify that user Click On Yes Button", () ->{
 	Liabrary_Havmor.custom_click(app.getBtnYes(), "Click On Yes button");      
 	});
 	Thread.sleep(1000);
