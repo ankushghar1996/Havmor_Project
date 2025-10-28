@@ -16,8 +16,7 @@ public class SalesMan_Approval_ZSM_Test extends BaseClass_ZSM{
 	
 	
 	SalesMan_Approval_ZSM_Main app = PageFactory.initElements(driver , SalesMan_Approval_ZSM_Main.class);
-	
-	
+		
 	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_ZSM_Test_01", "Verify that user Click On Master Menu", () ->{
 	Liabrary_Havmor.custom_click(app.getMaster_Menu(), "Click On Master Menu");      
 	});
