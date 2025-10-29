@@ -8,7 +8,6 @@
   </listeners>
 
 
-
   <test thread-count="5" name="Test">
     <classes>
      
@@ -30,13 +29,7 @@
      <class name="Admin_Masters_Test.Salesman_Master_AddBTN_Test"/>
       
      
-     
-     
-     
-     
-     
-     
-            
+   
       </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite --> 
