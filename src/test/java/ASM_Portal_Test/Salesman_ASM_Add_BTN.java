@@ -22,8 +22,8 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
 	  @Test
 	  public void Salesman_Master_AddBTN() throws Exception {
 		  
-	        Salesman_Master_AddBTN_Main STMADD = PageFactory.initElements(driver, Salesman_Master_AddBTN_Main.class);
-	        HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
+	  Salesman_Master_AddBTN_Main STMADD = PageFactory.initElements(driver, Salesman_Master_AddBTN_Main.class);
+	  HomePage_Havmor home = PageFactory.initElements(driver , HomePage_Havmor.class);
 
 	    	ObjectRepo_Havmor.startTestAndLog_1_SS("ASM_Salesman_Master_Add_TC_01", "Verify that user Click On Master Menu ", () ->{
 	    	Liabrary_Havmor.custom_click(home.getMaster_Menu(), "Click On Master Menu");});
@@ -56,7 +56,6 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
 		   ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_08", "Verify that user click on Channel Type Dropdown Value ", () ->{
 		   Liabrary_Havmor.custom_click(STMADD.getChannel_Type_Value(), " Channel Type Dropdown Value "); });  
 		   Thread.sleep(1000);
-	
 	
 		 ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_Add_TC_09", "Verify that user click on Channel Type Dropdown ", () ->{
 	     Liabrary_Havmor.custom_click(STMADD.getSalesman_Type(), " Salesman Type Dropdown "); });  
@@ -176,6 +175,9 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
 	     option.click();
 
 	        });
+<<<<<<< HEAD
+                   
+=======
         */  
 	        
 	        
@@ -207,7 +209,7 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
 	        	});
 
 	        
-          
+         
        //   Account Holder Name         
           ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_27", "Verify that user Should Enter Account Holder Name in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getAccount_Holder_Name_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 9), "Account Holder Name");
@@ -222,8 +224,7 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_29", "Verify that user Should Enter Bank IFSC Code in Textbox", () ->{
           Liabrary_Havmor.custom_Sendkeys(STMADD.getBank_IFSC_Code_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 11), "Bank IFSC Code");
         });
-       Thread.sleep(1000);
-       
+       Thread.sleep(1000);     
        
        ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_30", "Verify that user Should Enter Branch Name in Textbox", () ->{
        Liabrary_Havmor.custom_Sendkeys(STMADD.getBranch_Name_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 12), "Branch Name");
@@ -239,8 +240,7 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
           Liabrary_Havmor.custom_Sendkeys(STMADD.getDistributor_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 14), "Distributor Contribution");
          });
         Thread.sleep(1000);
-            
-            
+                  
          ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Salesman_Master_ADD_TC_33", "Verify that user Should Enter Company Contribution in Textbox", () ->{
         Liabrary_Havmor.custom_Sendkeys(STMADD.getCompany_Contribution_Textbox_EXCEL(), excel.getStringdata2("Salesman_Add", 1, 15), "Company Contribution");
          });
@@ -254,6 +254,9 @@ public class Salesman_ASM_Add_BTN extends BaseClass_ASM {
        Liabrary_Havmor.custom_click(STMADD.getSave_Button(), " Save Button "); });  
       Thread.sleep(1000);
 	
+
+      
+      
 	}
 	
 }

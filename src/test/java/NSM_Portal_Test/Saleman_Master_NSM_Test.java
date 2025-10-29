@@ -14,15 +14,13 @@ public class Saleman_Master_NSM_Test extends BaseClass_NSM{
 	@Test
 	public void SalesMan_Approval() throws Exception {
 	
-	
-	Saleman_Master_NSM_Main app = PageFactory.initElements(driver, Saleman_Master_NSM_Main.class);
-	
-	
+       Saleman_Master_NSM_Main app = PageFactory.initElements(driver , Saleman_Master_NSM_Main.class);
+		
+
 	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_NSM_Test_01", "Verify that user Click On Master Menu", () ->{
 	Liabrary_Havmor.custom_click(app.getMaster_Menu(), "Click On Master Menu");      
 	});
 	Thread.sleep(1000);
-	
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_NSM_Test_02", "Verify that user Click On Salesman Master SubMenu", () ->{
 	Liabrary_Havmor.custom_click(app.getSalesman_SubMenu(), "Click On Salesman Master SubMenu");      
@@ -47,6 +45,7 @@ public class Saleman_Master_NSM_Test extends BaseClass_NSM{
 //	});
 //	Thread.sleep(1000);
 	
+
 	
 	ObjectRepo_Havmor.startTestAndLog_1_SS("SalesMan_Approval_NSM_Test_06", "Verify that user Click On Proceed for Approval button", () ->{
 	Liabrary_Havmor.custom_click(app.getBtnProceedForApproval(), "Click On Proceed for Approval button");      
@@ -68,21 +67,7 @@ public class Saleman_Master_NSM_Test extends BaseClass_NSM{
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	}
 	
