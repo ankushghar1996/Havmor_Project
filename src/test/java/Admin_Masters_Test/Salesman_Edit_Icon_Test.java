@@ -43,9 +43,7 @@ public class Salesman_Edit_Icon_Test extends BaseClass {
 			Liabrary_Havmor.custom_click(STMADD.getEdit_Close(), " Salesman Edit Close"); });  
 		  	Thread.sleep(1000);
 	
-	 
 
-	
 	
 	 }	
 	

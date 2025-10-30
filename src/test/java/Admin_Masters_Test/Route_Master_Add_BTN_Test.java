@@ -221,8 +221,13 @@ public class Route_Master_Add_BTN_Test  extends BaseClass {
         Liabrary_Havmor.custom_Sendkeys(RMADD.getErp_Code_Textbox_Excel(), excel.getStringdata2("Route_Add", 1, 1), "ERP Code");
           });
        Thread.sleep(1000);
+       
+       ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_14", "Verify that user Enter SAP Code", () ->{
+           Liabrary_Havmor.custom_Sendkeys(RMADD.getSAP_Code_Textbox_Excel(), excel.getStringdata2("Route_Add", 1, 2), "SAP Code");
+             });
+          Thread.sleep(1000);
           
-       ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_14", "Verify that user Click on Save Button", () ->{
+       ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_Route_MasterADD_TC_15", "Verify that user Click on Save Button", () ->{
           Liabrary_Havmor.custom_click(RMADD.getSave_Button(),"Save Button");
             });
        Thread.sleep(1000);

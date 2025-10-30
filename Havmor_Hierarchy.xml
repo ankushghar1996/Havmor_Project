@@ -25,9 +25,7 @@
       <class name="Admin_Scheme_Test.Admin_Scheme_Master_Test"/> 
      
      
-     <!-- Admin Salesman approval hierarchy -->
-     <class name="Admin_Masters_Test.Salesman_Master_AddBTN_Test"/>
-      
+   
      
    
       </classes>

@@ -166,19 +166,19 @@ public class Distributor_Master_AddPage extends BaseClass{
 		Thread.sleep(1000);	
  
  
-	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_28", "Verify that user click on GST Type dropdown", () ->{
+	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_25", "Verify that user click on GST Type dropdown", () ->{
 		 Liabrary_Havmor.custom_click(DM.getGstType_dropdown(), "click on GST Type dropdown");
 		  });
 	  	  Thread.sleep(1000);
  
 	  	  
-	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_29", "Verify that user click on GST Type value dropdown", () ->{
+	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_26", "Verify that user click on GST Type value dropdown", () ->{
 		  Liabrary_Havmor.custom_click(DM.getGstType_dropdown_value(), "click on GST Type value dropdown");
 		  });
 		  Thread.sleep(1000);  
  
 		  
-     ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_30", "Verify that user send GST Number", () ->{
+     ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_27", "Verify that user send GST Number", () ->{
     	 Liabrary_Havmor.custom_Sendkeys(DM.getTxtGSTNumber(), excel.getStringdata2("Distributor_Add", 1, 10), "send GST Number");
 		});
         Thread.sleep(1000);
@@ -189,13 +189,13 @@ public class Distributor_Master_AddPage extends BaseClass{
          Thread.sleep(1000);
         
         
-        ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_31", "Verify that user click on GST State dropdown", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_28", "Verify that user click on GST State dropdown", () ->{
    		 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown(), "click on GST state dropdown");
    		  });
    	  	  Thread.sleep(1000);
  
    	  	  
-   	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_32", "Verify that user click on GST State Type dropdown", () ->{
+   	 ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_29", "Verify that user click on GST State Type dropdown", () ->{
     	 Liabrary_Havmor.custom_click(DM.getGSTState_dropdown_values(), "click on GST state value dropdown");
     	  });
    	 	Thread.sleep(1000);
@@ -207,25 +207,25 @@ public class Distributor_Master_AddPage extends BaseClass{
      Thread.sleep(1000);
    	 	
    	 	
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_33", "Verify that user click on FSSAI dropdown", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_30", "Verify that user click on FSSAI dropdown", () ->{
 		Liabrary_Havmor.custom_click(DM.getFSSAIType_dropdown(), "click on FSSAI dropdown");
 		});
 		Thread.sleep(1000);	
  
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_34", "Verify that user click on FSSAI value dropdown", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_31", "Verify that user click on FSSAI value dropdown", () ->{
 		Liabrary_Havmor.custom_click(DM.getFSSAIType_dropdown_Value(), "click on FSSAI value dropdown");
 		});
 		Thread.sleep(1000);	
  
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_35", "Verify that user send FSSAI licene number", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_32", "Verify that user send FSSAI licene number", () ->{
 		Liabrary_Havmor.custom_Sendkeys(DM.getTxtFSSAILicense(), excel.getStringdata2("Distributor_Add", 1, 11), "send FSSAI licene number");
 		});
 		Thread.sleep(1000);	
  
 		
-	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_36", "Verify that user send FSSAI Expiry Date", () ->{
+	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_33", "Verify that user send FSSAI Expiry Date", () ->{
 		Liabrary_Havmor.custom_Sendkeys(DM.getFSSAI_ExpiryDate(), excel.getStringdata2("Distributor_Add", 1, 12), "send FSSAI Expiry Date");
 		});
 		Thread.sleep(1000);
@@ -238,7 +238,7 @@ public class Distributor_Master_AddPage extends BaseClass{
 		        Thread.sleep(1000);
 
  
-		ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_37", "Verify that user Click on Select File to upload 1 ", () ->{
+		ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_34", "Verify that user Click on Select File to upload 1 ", () ->{
        		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        // Wait for the file input to be present in the DOM
 	        WebElement uploadInput = wait.until(
@@ -254,7 +254,7 @@ public class Distributor_Master_AddPage extends BaseClass{
        	Thread.sleep(5000);
        	
        	
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_38", "Verify that user Click on Select File to upload 2 ", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_35", "Verify that user Click on Select File to upload 2 ", () ->{
        		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        // Wait for the file input to be present in the DOM
 	        WebElement uploadInput = wait.until(
@@ -270,7 +270,7 @@ public class Distributor_Master_AddPage extends BaseClass{
        	Thread.sleep(5000);
        	
        	
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_39", "Verify that user Click on Select File to upload 3 ", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_36", "Verify that user Click on Select File to upload 3 ", () ->{
        		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        // Wait for the file input to be present in the DOM
 	        WebElement uploadInput = wait.until(
@@ -292,56 +292,56 @@ public class Distributor_Master_AddPage extends BaseClass{
         Thread.sleep(1000);
  
        	
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_40", "Verify that user click on Godown Address", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_37", "Verify that user click on Godown Address", () ->{
     		Liabrary_Havmor.custom_click(DM.getGodown_Address(), "click on Godown Address");
     		});
     		Thread.sleep(1000);
 
  
     	
-    	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_41", "Verify that user send Godown Address Name", () ->{
+    	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_38", "Verify that user send Godown Address Name", () ->{
     		Liabrary_Havmor.custom_Sendkeys(DM.getShippingAddressName(), excel.getStringdata2("Distributor_Add", 1, 13), "send Godown Address Name");
     		});
     		Thread.sleep(1000);
 
     		
-    	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_42", "Verify that user send Godown Address", () ->{
+    	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_39", "Verify that user send Godown Address", () ->{
     		Liabrary_Havmor.custom_Sendkeys(DM.getShippingAddress(), excel.getStringdata2("Distributor_Add", 1, 14), "send Godown Address");
     		});
     		Thread.sleep(1000);	
 
     		
-    	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_43", "Verify that user click on Godown State dropdown", () ->{
+    	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_40", "Verify that user click on Godown State dropdown", () ->{
        		 Liabrary_Havmor.custom_click(DM.getGodown_state(), "click on Godown State dropdown");
        		 });
        	  Thread.sleep(1000);
 
        	  
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_44", "Verify that user click on Godown State dropdown value", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_41", "Verify that user click on Godown State dropdown value", () ->{
     	   	 Liabrary_Havmor.custom_click(DM.getGodown_state_value(), "click on Godown State dropdown value");
         	  });
        	     Thread.sleep(1000);	
 
        	     
-        ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_45", "Verify that user click on Godown city dropdown", () ->{
+        ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_42", "Verify that user click on Godown city dropdown", () ->{
        		 Liabrary_Havmor.custom_click(DM.getGodown_City(), "click on Godown city dropdown");
        		 });
         	  Thread.sleep(1000);
 
         	  
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_46", "Verify that user click on Godown city dropdown value", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_43", "Verify that user click on Godown city dropdown value", () ->{
        		Liabrary_Havmor.custom_click(DM.getGodown_City_Value(), "click on Godown city dropdown value");
            });
        	Thread.sleep(1000);
        	
        	
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_47", "Verify that user click on Godown pincode value", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_44", "Verify that user click on Godown pincode value", () ->{
        		driver.findElement(By.xpath("//input[@id='ParentMasterContentPlaceHolder1_txtGD1PinCode']")).sendKeys("411041");
            });
        	Thread.sleep(1000);
 
  
-       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_48", "Verify that user click on Save btn", () ->{
+       	ObjectRepo_Havmor.startTestAndLog_1_SS("Distributor_Master_Test_45", "Verify that user click on Save btn", () ->{
        		Liabrary_Havmor.custom_click(DM.getSave_btn(), "click on Save btn");
            });
        	Thread.sleep(1000);
