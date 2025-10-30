@@ -5,6 +5,12 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -74,6 +80,138 @@ public static void dropdown(WebElement element, String name, WebDriver driver) {
 	        element.click();
 	        System.out.println(fieldName + " was clicked successfully!");
 	  //  });
+	}
+	
+	
+	
+	
+	public static void robustClick(WebDriver driver, Object locatorOrElement, String fieldName, int timeoutSeconds) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+	    int maxAttempts = 4;
+	    int attempts = 0;
+
+	    while (attempts < maxAttempts) {
+	        try {
+	            // --- Wait for common loaders/overlays to disappear (short tries) ---
+	            By[] overlays = new By[] {
+	                By.xpath("//*[contains(translate(text(),'LOADING','loading'),'loading')]"),
+	                By.cssSelector(".loading, .loader, .spinner, #loader, .overlay"),
+	                By.xpath("//div[contains(@class,'overlay') and (contains(.,'Loading') or contains(.,'loading'))]")
+	            };
+	            for (By ov : overlays) {
+	                try {
+	                    WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(3));
+	                    shortWait.until(ExpectedConditions.invisibilityOfElementLocated(ov));
+	                } catch (Exception ignore) { /* not present or didn't disappear quickly — continue */ }
+	            }
+
+	            // --- Identify WebElement to act on ---
+	            WebElement el = null;
+	            if (locatorOrElement instanceof By) {
+	                By by = (By) locatorOrElement;
+	                el = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	                wait.until(ExpectedConditions.elementToBeClickable(by));
+	            } else if (locatorOrElement instanceof WebElement) {
+	                el = (WebElement) locatorOrElement;
+	                wait.until(ExpectedConditions.visibilityOf(el));
+	                wait.until(ExpectedConditions.elementToBeClickable(el));
+	            } else {
+	                throw new IllegalArgumentException("locatorOrElement must be a By or WebElement");
+	            }
+
+	            // --- Highlight for debugging (non-fatal) ---
+	            try {
+	                ((JavascriptExecutor) driver).executeScript(
+	                    "arguments[0].setAttribute('data-old-style', arguments[0].getAttribute('style') || '');" +
+	                    "arguments[0].style.border='2px solid red';", el);
+	            } catch (Exception ignore) {}
+
+	            // --- Try normal click ---
+	            try {
+	                el.click();
+	                // restore style (best-effort)
+	                try {
+	                    ((JavascriptExecutor) driver).executeScript(
+	                        "var s = arguments[0].getAttribute('data-old-style');" +
+	                        "if(s!==null) arguments[0].setAttribute('style', s); else arguments[0].removeAttribute('style');" +
+	                        "arguments[0].removeAttribute('data-old-style');", el);
+	                } catch (Exception ignore) {}
+	                System.out.println(fieldName + " clicked successfully (normal click).");
+	                return;
+	            } catch (ElementClickInterceptedException intercepted) {
+	                // someone overlayed it — fall through to retry/backoff below
+	                Thread.sleep(300);
+	            }
+
+	        } catch (ElementClickInterceptedException e) {
+	            // overlay obstructed click — small backoff and retry
+	            try { Thread.sleep(300); } catch (InterruptedException ignored) {}
+	        } catch (StaleElementReferenceException e) {
+	            // element stale — retry after short wait
+	            try { Thread.sleep(250); } catch (InterruptedException ignored) {}
+	        } catch (TimeoutException e) {
+	            // element not visible/clickable in time — we'll attempt scroll+actions+js fallback below
+	            // do nothing here, fall through to fallback attempts
+	        } catch (InterruptedException e) {
+	            Thread.currentThread().interrupt();
+	        } catch (Exception e) {
+	            // unexpected; short backoff then retry
+	            try { Thread.sleep(300); } catch (InterruptedException ignored) {}
+	        }
+
+	        // --- Fallback attempts: find element again and try scroll -> Actions -> JS click ---
+	        try {
+	            WebElement elFallback = null;
+	            if (locatorOrElement instanceof By) {
+	                elFallback = driver.findElement((By) locatorOrElement);
+	            } else if (locatorOrElement instanceof WebElement) {
+	                elFallback = (WebElement) locatorOrElement;
+	            }
+
+	            if (elFallback != null) {
+	                // scroll into view
+	                try {
+	                    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", elFallback);
+	                } catch (Exception ignore) {}
+
+	                // try Actions click
+	                try {
+	                    new Actions(driver).moveToElement(elFallback).pause(Duration.ofMillis(150)).click().perform();
+	                    // restore style if present
+	                    try {
+	                        ((JavascriptExecutor) driver).executeScript(
+	                            "var s = arguments[0].getAttribute('data-old-style');" +
+	                            "if(s!==null) arguments[0].setAttribute('style', s); else arguments[0].removeAttribute('style');" +
+	                            "arguments[0].removeAttribute('data-old-style');", elFallback);
+	                    } catch (Exception ignore) {}
+	                    System.out.println(fieldName + " clicked successfully (Actions fallback).");
+	                    return;
+	                } catch (Exception actionsEx) {
+	                    // Actions failed -> try JS click
+	                    try {
+	                        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elFallback);
+	                        try {
+	                            ((JavascriptExecutor) driver).executeScript(
+	                                "var s = arguments[0].getAttribute('data-old-style');" +
+	                                "if(s!==null) arguments[0].setAttribute('style', s); else arguments[0].removeAttribute('style');" +
+	                                "arguments[0].removeAttribute('data-old-style');", elFallback);
+	                        } catch (Exception ignore) {}
+	                        System.out.println(fieldName + " clicked successfully (JS fallback).");
+	                        return;
+	                    } catch (Exception jsEx) {
+	                        // will retry in loop
+	                    }
+	                }
+	            }
+	        } catch (Exception ignore) {
+	            // ignore and let attempts++ happen
+	        }
+
+	        attempts++;
+	    }
+
+	    // After retries, throw meaningful exception
+	    throw new RuntimeException("Failed to click '" + fieldName + "' after " + maxAttempts + " attempts. Provided locator/element: " + locatorOrElement);
 	}
 
 /*
