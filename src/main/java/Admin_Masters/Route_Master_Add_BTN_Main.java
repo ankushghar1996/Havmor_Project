@@ -13,6 +13,9 @@ public class Route_Master_Add_BTN_Main {
 	   @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtERPCode']")
 	   private WebElement Erp_Code_Textbox_Excel;
 	   
+	   @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_txtSAPCode']")
+	   private WebElement SAP_Code_Textbox_Excel;
+	   
 	   
 	   
 	   public WebElement getRoute_Name_Excel() {
@@ -162,6 +165,12 @@ public class Route_Master_Add_BTN_Main {
 	 
 	 @FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_BtnClose']")
 	   private WebElement Edit_Close_btn;
+
+
+
+	public WebElement getSAP_Code_Textbox_Excel() {
+		return SAP_Code_Textbox_Excel;
+	}
 	 
 	 
 	 

@@ -1,4 +1,4 @@
-package Admin_Masters_Test;
+package SE_Portal_Test;
 
 import java.time.Duration;
 
@@ -12,10 +12,11 @@ import org.testng.annotations.Test;
 import Admin_Masters.Retailer_Master_AddPage;
 import Com_LoginPage_POM.HomePage_Havmor;
 import Com_Utility_Havmor.BaseClass;
+import Com_Utility_Havmor.BaseClass_SE;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
-public class Retailer_Master_AddPage_Test extends BaseClass {
+public class SE_Retailer_Add_Button extends BaseClass_SE {
 
 	
 	@Test
@@ -159,9 +160,7 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		});
 		Thread.sleep(1000);
 		
-		
-		
-		
+
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__11", "Verify that user click on Route dropdown", () ->{
 		Liabrary_Havmor.custom_click(Add.getRoute(), "click on Route dropdown");      
@@ -176,13 +175,13 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__13", "Verify that user send Retailer Firm Name", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getRetailerFirmName(), excel.getStringdata2("Retailer_Add", 1, 0), "send Retailer Firm Name");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getRetailerFirmName(), excel.getStringdata2("Retailer_Add", 2, 0), "send Retailer Firm Name");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__14", "Verify that user send ERP Code", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getERPCode(), excel.getStringdata2("Retailer_Add", 1, 1), "send ERP Code");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getERPCode(), excel.getStringdata2("Retailer_Add", 2, 1), "send ERP Code");    
 		});
 		Thread.sleep(1000);
 		
@@ -236,13 +235,13 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__23", "Verify that user send Address line 1", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getAddressLine1(), excel.getStringdata2("Retailer_Add", 1, 2), "send Address line 1");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getAddressLine1(), excel.getStringdata2("Retailer_Add", 2, 2), "send Address line 1");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__24", "Verify that user send Land Mark", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getLandmark(), excel.getStringdata2("Retailer_Add", 1, 3), "send Land Mark");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getLandmark(), excel.getStringdata2("Retailer_Add", 2, 3), "send Land Mark");    
 		});
 		Thread.sleep(1000);
 		
@@ -285,43 +284,43 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__31", "Verify that user send PinCode", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getLandmark(), excel.getStringdata2("Retailer_Add", 1, 4), "send PinCode");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getLandmark(), excel.getStringdata2("Retailer_Add", 2, 4), "send PinCode");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__32", "Verify that user send Contact Person Name", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getContactPersonName(), excel.getStringdata2("Retailer_Add", 1, 5), "send Contact Person Name");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getContactPersonName(), excel.getStringdata2("Retailer_Add", 2, 5), "send Contact Person Name");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__33", "Verify that user send Contact Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getContactNumber(), excel.getStringdata2("Retailer_Add", 1, 6), "send Contact Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getContactNumber(), excel.getStringdata2("Retailer_Add", 2, 6), "send Contact Number");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__34", "Verify that user send Email Address", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getEmailId(), excel.getStringdata2("Retailer_Add", 1, 7), "send Email Address");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getEmailId(), excel.getStringdata2("Retailer_Add", 2, 7), "send Email Address");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__35", "Verify that user send Date Of Birth", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getDOB(), excel.getStringdata2("Retailer_Add", 1, 8), "send Date Of Birth");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getDOB(), excel.getStringdata2("Retailer_Add", 2, 8), "send Date Of Birth");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__36", "Verify that user send PAN Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getPANNo(), excel.getStringdata2("Retailer_Add", 1, 9), "send PAN Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getPANNo(), excel.getStringdata2("Retailer_Add", 2, 9), "send PAN Number");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__37", "Verify that user send Potential Business", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getTotlBusinessInConstructionChemicals(), excel.getStringdata2("Retailer_Add", 1, 10), "send Potential Business");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getTotlBusinessInConstructionChemicals(), excel.getStringdata2("Retailer_Add", 2, 10), "send Potential Business");    
 		});
 		Thread.sleep(1000);
 		
@@ -339,13 +338,13 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__40", "Verify that user send GST Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getGstNumbers(), excel.getStringdata2("Retailer_Add", 1, 11), "send GST Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getGstNumbers(), excel.getStringdata2("Retailer_Add", 2, 11), "send GST Number");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__41", "Verify that user send Food License Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getLiceseNumber(), excel.getStringdata2("Retailer_Add", 1, 12), "send Food License Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getLiceseNumber(), excel.getStringdata2("Retailer_Add", 2, 12), "send Food License Number");    
 		});
 		Thread.sleep(1000);
 		
@@ -363,7 +362,7 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__44", "Verify that user send Expiry Date", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getExpiry_date(), excel.getStringdata2("Retailer_Add", 1, 13), "send Food Expiry Date");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getExpiry_date(), excel.getStringdata2("Retailer_Add", 2, 13), "send Food Expiry Date");    
 		});
 		Thread.sleep(1000);
 		
@@ -381,13 +380,13 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__47", "Verify that user send Bank Account Number", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getBankAccountNo(), excel.getStringdata2("Retailer_Add", 1, 14), "send Bank Account Number");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getBankAccountNo(), excel.getStringdata2("Retailer_Add", 2, 14), "send Bank Account Number");    
 		});
 		Thread.sleep(1000);
 		
 		
 		ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__48", "Verify that user send Bank IFSC Code", () ->{
-		Liabrary_Havmor.custom_Sendkeys(Add.getBankIfscCode(), excel.getStringdata2("Retailer_Add", 1, 15), "send Bank IFSC Code");    
+		Liabrary_Havmor.custom_Sendkeys(Add.getBankIfscCode(), excel.getStringdata2("Retailer_Add", 2, 15), "send Bank IFSC Code");    
 		});
 		Thread.sleep(1000);
 		
@@ -501,14 +500,14 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
     	
     	
     	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__56", "Verify that user send Godown Address Name", () ->{
-    		Liabrary_Havmor.custom_Sendkeys(Add.getShippingAddressName(), excel.getStringdata2("Retailer_Add", 1, 16), "send Godown Address Name");
+    		Liabrary_Havmor.custom_Sendkeys(Add.getShippingAddressName(), excel.getStringdata2("Retailer_Add", 2, 16), "send Godown Address Name");
     		});
     		Thread.sleep(1000);
     	
     	
     		
     	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__57", "Verify that user send Godown Address", () ->{
-    		Liabrary_Havmor.custom_Sendkeys(Add.getShippingAddress(), excel.getStringdata2("Retailer_Add", 1, 17), "send Godown Address");
+    		Liabrary_Havmor.custom_Sendkeys(Add.getShippingAddress(), excel.getStringdata2("Retailer_Add", 2, 17), "send Godown Address");
     		});
     		Thread.sleep(1000);	
     		
@@ -537,20 +536,15 @@ public class Retailer_Master_AddPage_Test extends BaseClass {
        	Thread.sleep(1000);
 		
        	ObjectRepo_Havmor.startTestAndLog_1_SS("Retailer_Master_Test_Add_TC__62", "Verify that user send Godown Pincode", () ->{
-    		Liabrary_Havmor.custom_Sendkeys(Add.getPinCode_Godown(), excel.getStringdata2("Retailer_Add", 1, 18), "send Godown Pincode");
+    		Liabrary_Havmor.custom_Sendkeys(Add.getPinCode_Godown(), excel.getStringdata2("Retailer_Add", 2, 18), "send Godown Pincode");
     		});
     		Thread.sleep(1000);
 		
-				
+		
+		
 		
 		
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 	
