@@ -79,7 +79,7 @@ public class DEDC_Request_Test extends BaseClass_otp{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12));
 	boolean retailerSelected = false;
 
-	// 1) Distributor dropdown खोलो
+	// 1) Opend Distributor dropdown 
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_05", "Open Distributor dropdown", () -> {
 	    Liabrary_Havmor.custom_click(ass.getDistributor_dropdown(), "Click Distributor dropdown");
 	});
@@ -100,12 +100,12 @@ public class DEDC_Request_Test extends BaseClass_otp{
 
 	    String distToSelect = distributors.get(i);
 
-	    // dropdown दुबारा खोलो (custom menus click पर बंद हो जाते हैं)
+	    // Again dropdown opend 
 	    ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_06", "Re-open Distributor dropdown", () -> {
 	        Liabrary_Havmor.custom_click(ass.getDistributor_dropdown(), "Re-open Distributor dropdown");
 	    });
 
-	    // options visible होने का wait
+	    // wait for options visible 
 	    wait.until(d -> ass.getDistributor_options().size() > 0);
 
 	    // current distributor option re-fetch करके click करो
@@ -121,22 +121,22 @@ public class DEDC_Request_Test extends BaseClass_otp{
 	        Liabrary_Havmor.custom_click(currentDist, "Distributor -> " + distToSelect);
 	    });
 
-	    // थोड़ा रुककर retailer को load होने दो
+	    // wait for loading retailer
 	    Thread.sleep(800);
 
-	    // 4) Retailer dropdown खोलो
+	    // 4) Open Retailer dropdown 
 	    ObjectRepo_Havmor.startTestAndLog_1_SS("Add_DEDC_Request_Test_08", "Open Retailer dropdown", () -> {
 	        Liabrary_Havmor.custom_click(ass.getOutlet_dropdown(), "Click Retailer dropdown");
 	    });
 
 	    try {
-	        // Retailer options आने का wait (कम से कम 1 valid option)
+	        // wait for Retailer options (atleast 1 valid option)
 	        wait.until(d -> {
 	            List<WebElement> ops = ass.getOutlet_options();
 	            return ops != null && ops.size() > 0;
 	        });
 
-	        // options पढ़ो और placeholder/no-record को हटा दो (सुरक्षा के लिए)
+	        // read options and remove placeholder/no-record (for security)
 	        List<WebElement> validRetailers = new ArrayList<>();
 	        for (WebElement li : ass.getOutlet_options()) {
 	            String t = li.getText().trim();
@@ -158,16 +158,16 @@ public class DEDC_Request_Test extends BaseClass_otp{
 	            });
 
 	            retailerSelected = true;
-	            break; // ✅ success — loop खत्म
+	            break; // ✅ success — loop end
 	        } else {
 	            System.out.println("No retailer for: " + distToSelect + " — trying next distributor…");
 	        }
 
-	    } catch (Exception e) { // यहाँ generic catch रखो (TimeoutException की ज़रूरत नहीं)
+	    } catch (Exception e) { 
 	        System.out.println("Retailer list did not load for: " + distToSelect + " — trying next distributor…");
 	    }
 
-	    // अगला distributor try करने से पहले छोटा pause
+	   
 	    Thread.sleep(600);
 	}
 
@@ -222,9 +222,9 @@ public class DEDC_Request_Test extends BaseClass_otp{
 	        //From Date
 	        	
 	     // Define expected values
-	        String expectedMonth = "October";
+	        String expectedMonth = "November";
 	        String expectedYear = "2025";
-	        String expectedDate = "20";
+	        String expectedDate = "10";
 	         
 	        // Step 1: Click on calendar icon to open the calendar
 
@@ -287,11 +287,11 @@ public class DEDC_Request_Test extends BaseClass_otp{
 	        
 	     // ===== Expected To Date =====
 
-	        String toMonth = "October";
+	        String toMonth = "November";
 
 	        String toYear  = "2025";
 
-	        String toDay   = "30";
+	        String toDay   = "11";
 	         
 	        // Open the To Date calendar
 
