@@ -18,7 +18,7 @@ import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 import RSM_Portal_Main.Saleman_Master_RSM_Main;
 
-public class Saleman_Master_RSM_Test extends BaseClass_RSM{
+public class Saleman_Master_RSM_Test extends BaseClass_RSM {
 	
 	
 	@Test

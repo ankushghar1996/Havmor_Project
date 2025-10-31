@@ -18,7 +18,7 @@ import Com_Utility_Havmor.BaseClass_otp;
 import Com_Utility_Havmor.Liabrary_Havmor;
 import Com_Utility_Havmor.ObjectRepo_Havmor;
 
-public class ASM_DEDC_Request_ADD extends BaseClass_ASM{
+public class ASM_DEDC_Request_ADD extends BaseClass_ASM {
 	
 	
 	@Test
