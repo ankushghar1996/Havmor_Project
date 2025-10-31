@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 public class PJP_Upload_Main {
 
 	
-	@FindBy(how = How.XPATH, using = "//div[@id='mainDiv']//li//p[text()='PJP Upload']")
+	@FindBy(how = How.XPATH, using = "//div[@id='mainDiv']//p[contains(text(),'PJP Upload')]")
 	   private WebElement Pjp_Upload;
 	
 	
