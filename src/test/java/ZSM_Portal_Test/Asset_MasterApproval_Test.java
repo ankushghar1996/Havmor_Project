@@ -9,16 +9,13 @@ import Com_Utility_Havmor.ObjectRepo_Havmor;
 import ZSM_Portal_Main.Asset_MasterApproval_Main;
 
 public class Asset_MasterApproval_Test extends BaseClass_ZSM {
-
 	
 	
 	@Test
 	public void Asser_master_Approval() throws Exception {
-	
-	
+		
 	Asset_MasterApproval_Main ass = PageFactory.initElements(driver , Asset_MasterApproval_Main.class);
-	
-	
+		
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Asser_master_Approval_Test_01", "Verify that user Click On Asset Menu", () ->{
 	Liabrary_Havmor.custom_click(ass.getAsset_Menu(), "Click On Asset Menu");      
 	});
@@ -48,10 +45,7 @@ public class Asset_MasterApproval_Test extends BaseClass_ZSM {
 //	});
 //	Thread.sleep(1000);
 	
-	
-	
-	
-	
+
 	
 	}
 	

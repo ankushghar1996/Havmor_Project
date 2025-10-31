@@ -10,14 +10,11 @@ import ZSM_Portal_Main.DEDC_Approval_ZSM_Main;
 
 public class DEDC_Approval_ZSM_Test extends BaseClass_ZSM {
 
-	
 	@Test
 	public void Asser_master_Approval() throws Exception {
-	
-	
+
     DEDC_Approval_ZSM_Main ass = PageFactory.initElements(driver , DEDC_Approval_ZSM_Main.class);
-	
-	
+
 	ObjectRepo_Havmor.startTestAndLog_1_SS("Asser_master_Approval_Test_01", "Verify that user Click On Scheme Menu", () ->{
 	Liabrary_Havmor.custom_click(ass.getScheme_Menu(), "Click On Scheme Menu");      
 	});

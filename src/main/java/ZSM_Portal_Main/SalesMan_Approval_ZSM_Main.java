@@ -5,10 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class SalesMan_Approval_ZSM_Main {
-
-	
-	
-	
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='ParentMasterContentPlaceHolder1_btnYes']")
 	private WebElement YES_Button;
