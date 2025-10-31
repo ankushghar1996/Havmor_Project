@@ -26,9 +26,9 @@ public class PJP_Master_Page_Test extends BaseClass {
     	Thread.sleep(1000);
 	
     	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_PJP_Master_TC_02", "Verify that user click on Route Master Sub Menu ", () ->{
-    		Liabrary_Havmor.custom_click(PJP.getRoute_Master_Submenu(), "Route Master Submenu");      
-    		});
-    		Thread.sleep(1000);
+    	Liabrary_Havmor.custom_click(PJP.getRoute_Master_Submenu(), "Route Master Submenu");      
+    	});
+    	Thread.sleep(1000);
     	 	
     	ObjectRepo_Havmor.startTestAndLog_1_SS("ADMIN_PJP_Master_TC_03", "Verify that user Click on PJP Master ", () ->{
     	Liabrary_Havmor.custom_click(PJP.getPjp_Master(), "PJP Master");
@@ -80,10 +80,6 @@ public class PJP_Master_Page_Test extends BaseClass {
         });
         Thread.sleep(1000);
 	
-	
-	
-	
-	
-	
+
 	}	
 }
